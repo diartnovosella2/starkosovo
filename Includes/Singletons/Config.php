@@ -46,14 +46,14 @@ class Config extends _Config
     {
 
         $child_array = array(
-            array(
-                'name'     => 'casino',
-                'singular' => array('Casino', 'casino'),
-                'plural'   => array('Casinos', 'casinos'),
-                'supports' => array('title', 'thumbnail', 'revisions'),
-                'order'    => 5,
-                'rewrite'  => 'casinos'
-            ),
+            // array(
+            //     'name'     => 'casino',
+            //     'singular' => array('Casino', 'casino'),
+            //     'plural'   => array('Casinos', 'casinos'),
+            //     'supports' => array('title', 'thumbnail', 'revisions'),
+            //     'order'    => 5,
+            //     'rewrite'  => 'casinos'
+            // ),
         );
 
         return parent::post_types($child_array);

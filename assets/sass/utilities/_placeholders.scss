@@ -1,0 +1,43 @@
+// Add any placeholder classes here
+
+// GENERAL
+%no-list-style {
+  list-style-type: none;
+}
+
+%no-padding-no-margin {
+  padding: $no-padding;
+  margin: $no-margin;
+}
+
+// MODULES
+%last-of-type { // Module components that come last should not have a margin
+  margin: $no-margin;
+}
+
+// BUTTONS
+%btn {
+  min-width: 18.8rem;
+  height: 4.4rem;
+}
+
+%btn-main {
+  @extend %btn;
+
+  &:visited, &:hover, &:active, &:focus {
+
+  }
+}
+
+%btn-inactive {
+  @extend %btn;
+
+  &:visited, &:hover, &:active, &:focus {
+
+  }
+}
+
+%btn-full { // Use this for full-width CTA buttons in components
+  @extend %btn-main;
+  width: $full-width;
+}
