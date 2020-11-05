@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./assets/sass/style-admin.scss"],"names":[],"mappings":"AAAA,c","file":"admin.css","sourcesContent":["/* Includes */\n@import \"includes/_settings\";\n"],"sourceRoot":""}
