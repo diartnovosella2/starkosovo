@@ -1,0 +1,103 @@
+.content {
+    &__left,
+    &__right {
+        flex-basis: 100%;
+    }
+    &__left {
+        @include mq(tablet) {
+            flex-basis: 58%;
+        }
+        &.get__started {
+            background-color: $darkBlue;
+        }
+        &.success__story {
+            background-color: $lightGray;
+            .content__left__footer {
+                background-color: $darkGray;
+            }
+        }
+        &.register {}
+        &__form {
+            flex-basis: 100%;
+            border-top: 1px solid $darkYellow;
+            margin: 0 12px 32px 0;
+            @include mq(tablet) {
+                flex-basis: 46%;
+            }
+            &__title {
+                padding: 24px 0 16px 0;
+                font-weight: 750;
+                font-size: 18px;
+                color: white;
+            }
+            &__description {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 19px;
+                color: rgb(226 226 226 / 80%);
+            }
+            &__url {
+                display: block;
+                margin-top: 16px;
+                text-decoration: underline;
+                font-size: 14px;
+                line-height: 17px;
+                color: $darkYellow;
+                &:hover {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+        &__topDesc {
+            &__success__story {
+                font-style: italic;
+                font-weight: 750;
+                font-size: 16px;
+                line-height: 20px;
+                color: $starOrange;
+            }
+        }
+        &__title {
+            &__get__started {
+                margin-bottom: 24px;
+                font-weight: 750;
+                font-size: 30px;
+                color: $darkYellow;
+            }
+            &__success__story {
+                font-style: italic;
+                font-weight: 750;
+                font-size: 16px;
+                line-height: 18px;
+                color: $darkBlue;
+            }
+            &__register {}
+        }
+        &__footer {
+            background-color: $lightGray;
+            &__title {
+                color: $starOrange;
+                font-style: italic;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+            }
+            &__desc {
+                color: $darkBlue;
+                font-size: 14px;
+                line-height: 19px;
+                text-decoration-line: underline;
+            }
+        }
+    }
+    &__right {
+        @include mq(tablet) {
+            flex-basis: 42%;
+        }
+        img {
+            height: 100% !important;
+            object-fit: cover;
+        }
+    }
+}
