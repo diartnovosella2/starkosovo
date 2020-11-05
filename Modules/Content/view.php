@@ -26,7 +26,7 @@
                 <?php endforeach; ?>
             </div>
             <?php } else { ?>
-                <h3 class="content__left__topDesc__<?= $styleClassTitlez; ?> d-flex justify-content-end pl-2 pl-lg-5 pr-3 mb-0">SUCCESS STORY</h3>
+                <h3 class="content__left__topdesc__<?= $styleClassTitle; ?> d-flex justify-content-end pl-2 pl-lg-5 pr-3 mb-0">SUCCESS STORY</h3>
                 <div class="content__left__description px-2 px-lg-5 ">
                     <h2 class="content__left__title__<?= $styleClass;?> pr-0 pr-lg-5 mb-2 mb-lg-3"><?= $data['title']; ?></h2>
                     <?= $data['content_description'];?>
