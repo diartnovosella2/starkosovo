@@ -4,5 +4,4 @@
 node_modules
 /assets/dist/*
 package-lock.json
-/Modules/*
 !/Modules/.keepmehere
