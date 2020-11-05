@@ -1,0 +1,58 @@
+// Add common styles for the entire site here
+
+html {
+  font-size: 10px; // This makes using rem easier (x10)
+
+  body {
+
+    // LINKS
+    a:link, a:visited, a:hover, a:active, a:focus {
+      font-weight: $link-font-weight;
+    }
+
+    // BUTTONS
+    .btn-main {
+      @extend %btn-main;
+    }
+
+    .btn-inactive {
+      @extend %btn-inactive;
+    }
+
+    // MODULES
+    .module {
+      margin-top: $spacer;
+
+      &.no-top-margin {
+        margin-top: 0;
+      }
+
+      img {
+        max-width: $full-width; // Responsive images within modules (especially useful for content modules)
+        height: auto;
+      }
+    }
+
+    // Equal spacing for headings & modules
+    p {
+      &:last-of-type {
+        @extend %last-of-type;
+      }
+    }
+
+    .module-title {
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: $no-margin;
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: $spacer;
+    }
+
+    // LAYOUT
+    main {
+      width: $full-width;
+    }
+  }
+}

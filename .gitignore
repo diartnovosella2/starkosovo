@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+.sass-cache
+.idea
+node_modules
+/assets/dist/*
+package-lock.json
+/Modules/*
+!/Modules/.keepmehere
