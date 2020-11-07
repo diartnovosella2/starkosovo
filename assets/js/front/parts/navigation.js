@@ -1,47 +1,46 @@
 jQuery(document).ready(function ($) {
-
-    var closable = false;
-
-    $('#wsn-nav [data-toggle="dropdown"]').on({
-        "click": function () {
-            closable = true;
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('.header').outerHeight();
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+  
+    
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
         }
-    });
-    $('#wsn-nav').on({
-        "shown.bs.dropdown": function () {
-            closable = false;
-        },
-        "hide.bs.dropdown": function () {
-            return closable;
+    }, 250);
+  
+    function hasScrolled() {
+        var st = $(this).scrollTop();
+  
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+  
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('.header').css('top','-80px');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('.header').css('top','0');
+            }
         }
-    });
+  
+        lastScrollTop = st;
+    }
+      $(".header__navigation-toggle").click(function(){
+        $(".header__navigation").toggleClass("header__navigation-active");
+        $('body').toggleClass("filter-overlay");
+        $("header__navigation-active").slideToggle();
+        $(".header__navigation-toggle").toggleClass("active");
+      });
 
-    $('#wsn-nav .dropdown-menu li.active').parent().siblings('.dropdown-toggle').click();
-
-    // Mobile: keep active nav items open
-    $('.navbar-toggle').on('click', function () {
-        //console.log($('.dropdown.active'));
-        //$( this ).parent().find( '.dropdown.active' ).find( '.dropdown-toggle' ).dropdown( 'toggle' ); // Not working!
-    });
-
-    // Click behaviour before reload
-    $('.navbar-nav li, .dropdown-menu li').not('.menu-item-has-children').click(function () {
-        $(this).parents('.navbar-nav').find('.active').removeClass('active'); // Find any currently active items and remove them
-        $(this).addClass('active'); // Make the clicked item active
-    });
-
-    // Stop dropdown from collapsing on click
-    $('.dropdown-menu li').click(function (e) {
-        e.stopPropagation();
-    });
-
-    // Slide animation when expanding dropdown
-    $('.dropdown').on('show.bs.dropdown', function () {
-        $(this).find('.dropdown-menu').slideDown(300);
-    });
-
-    // Slide animation when collapsing dropdown
-    $('.dropdown').on('hide.bs.dropdown', function () {
-        $(this).find('.dropdown-menu').slideUp(0);
-    });
-});
+  });

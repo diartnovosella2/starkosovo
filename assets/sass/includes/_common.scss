@@ -40,6 +40,10 @@ html {
       }
     }
 
+    &.home .module-page{
+      margin-top: 8.4rem;
+    }
+
     .module-title {
       h1, h2, h3, h4, h5, h6 {
         margin-top: $no-margin;
