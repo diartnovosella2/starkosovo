@@ -16,7 +16,31 @@
                 background-color: $darkGray;
             }
         }
-        &.register {}
+        &.register {
+            .apply__button {
+                border: none;
+                padding: 16px 25px;
+                background: $starOrange;
+                border-radius: 4px;
+                a {
+                    color: white;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                &:hover {
+                    background: #eb7466c9;
+                }
+                &__other {
+                    margin-left: 5rem;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-align: center;
+                    text-decoration-line: underline;
+                    color: $darkBlue;
+                }
+            }
+        }
         &__form {
             flex-basis: 100%;
             border-top: 1px solid $darkYellow;
@@ -72,7 +96,12 @@
                 line-height: 18px;
                 color: $darkBlue;
             }
-            &__register {}
+            &__register {
+                text-transform: uppercase;
+                font-weight: 750;
+                font-size: 28px;
+                color: $darkBlue;
+            }
         }
         &__footer {
             background-color: $lightGray;
@@ -98,6 +127,18 @@
         img {
             height: 100% !important;
             object-fit: cover;
+        }
+    }
+    .bg_gray {
+        background-color: $lightGray;
+    }
+    .bg_blue {
+        background-color: $turqouiseBlue;
+    }
+    .bg_yellow {
+        background-color: $mixedYellow;
+        .content__left__footer {
+            background-color: $darkYellow;
         }
     }
 }
