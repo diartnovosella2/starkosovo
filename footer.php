@@ -1,6 +1,18 @@
       </div> <!-- .container -->
     </main> <!-- .module-page -->
     <footer>
+
+      <div class="gallery-module">
+        <?php 
+          $gallery = get_field('picture', 'option');
+          foreach ($gallery as $ga) {?>
+            <div class="img-wrapper">
+              <img src="<?= $ga ?>" alt="img" >
+            </div>
+          <?php }
+        ?>
+
+      </div>
       <div class="footer">
         <div class="footer__container">
           <div class="footer__entry">

@@ -1,9 +1,9 @@
 .header {
     display: block;
     width: 100%;
-    background: #1E5C6B;
     z-index: 9999;
     height: 50px;
+    background: transparent;
     @include mq(laptop){
       height: 68px;
     }
@@ -120,7 +120,7 @@
         }
       }
       &-active {
-        background: #1E5C6B;
+        background: transparent;
         height: 45vh;
         position: absolute;
         right: 0;

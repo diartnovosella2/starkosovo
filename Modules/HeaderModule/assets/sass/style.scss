@@ -1,0 +1,113 @@
+.header-module-module {
+    .col-12 {
+        position: inherit;
+    }
+    .header-module {
+        height: 65rem;
+        margin-bottom: 3.2rem;
+        display: flex;
+        align-items: center;
+        .background-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 77rem;
+            z-index: -1;
+            &-picture {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(.6);
+            }
+            .clouds-wrapper {
+                position: absolute;
+                bottom: 0;
+                .img-clouds{
+                    @include max(767) {
+                        height: 170px;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        .module-container{
+            .text-wrapper{
+                @include min-max(100, 992) {
+                    text-align: center !important; 
+                }
+                padding: 0px 35px;
+                @include mq(laptop){
+                    width: 52%;
+                    padding: 0;
+                }
+                .title{
+                    font-style: italic;
+                    font-weight: 900;
+                    font-size: 36px;
+                    color: #FFFFFF;
+                    line-height: 1;
+                    @include mq(laptop){
+                        font-size: 60px;
+                    }
+                }
+
+                .description{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #FFFFFF;
+                    margin-top: 10px;
+                }
+
+                .btn-txt-wrapper{
+                    margin-top: 24px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    @include mq(laptop){
+                       flex-direction: row;
+                    }
+                    .aff-button{
+                        a {
+                            color: white;
+                            &:hover {
+                                color: white;
+                                text-decoration: none;
+                            }
+                            .get-started-btn {
+                                background: #EB7466;
+                                width: 154px;
+                                height: 44px;
+                                border-radius: 4px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                span {
+                                    font-style: italic;
+                                    text-transform: uppercase;
+                                    color: #FFFFFF;
+                                    font-weight: 750;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                    .remaining-days{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #FFFFFF;
+                        margin-top: 24px;
+                        @include mq(laptop){
+                            margin: 0 0 0 47px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
