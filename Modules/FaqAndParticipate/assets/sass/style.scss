@@ -1,0 +1,87 @@
+.fp {
+    &__faq,
+    &__participate {
+        color: $darkBlue;
+    }
+    &__participate {
+        &__repeater {
+            &__single {
+                flex-basis: 100%;
+                margin: 16px 0;
+                border-top: 1px solid $darkBlue;
+                @include mq(laptop) {
+                    flex-basis: 30%;
+                }
+                &__title {
+                    margin-top: 16px;
+                    font-weight: 750;
+                    font-size: 18px;
+                }
+                &__desc {
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+    &__faq {
+        @include mq(laptop) {
+            flex-direction: row !important;
+        }
+        &__left {
+            flex-basis: 100%;
+            @include mq(laptop) {
+                flex-basis: 30%;
+            }
+            &__subtitle {
+                span {
+                    font-weight: bold;
+                    font-style: italic;
+                }
+                a {
+                    font-weight: 750;
+                    font-size: 16px;
+                    line-height: 103%;
+                    letter-spacing: -0.07em;
+                    color: $starOrange;
+                    font-style: italic;
+                }
+            }
+        }
+        &__repeater {
+            flex-basis: 100%;
+            @include mq(laptop) {
+                flex-basis: 70%;
+            }
+            &__single {
+                display: flex;
+                flex-basis: 100%;
+                margin: 16px 0;
+                border-top: 1px solid rgba(30, 92, 107, 0.3);
+                @include mq(laptop) {
+                    flex-basis: 40%;
+                }
+                span {
+                    margin: 2.4rem 3rem 0 0;
+                    font-style: italic;
+                    font-weight: 750;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: $darkBlue;
+                }
+                &__title {
+                    font-style: italic;
+                    font-weight: 650;
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+                &__desc {
+                    margin-top: 16px !important;
+                    font-weight: bold;
+                    font-size: 12px;
+                    color: black;
+                }
+            }
+        }
+    }
+}

@@ -1,20 +1,22 @@
 /* Our Variables and Bootstrap */
-@import "utilities/variables"; 
+
+@import "utilities/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 /* # Utilities */
+
 @import "utilities/media-queries";
 @import "utilities/placeholders";
 @import "utilities/mixins";
 @import "utilities/fonts";
 
 /* Includes */
-@import "includes/swiper";
+
 @import "includes/common";
 @import "includes/parts/share-button";
 @import "includes/navigation";
 @import "includes/footer";
 
-
 /* Modules */
+
 @import "../../Modules/*/assets/sass/style.scss";
