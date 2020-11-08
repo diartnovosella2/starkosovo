@@ -1,0 +1,154 @@
+.text-module-module {
+    .col-12 {
+        position: initial;
+    }
+}
+
+.text {
+    &__between {
+        &__content {
+            text-align: center;
+            @include mq(tablet) {
+                text-align: left;
+            }
+            h2 {
+                color: $darkBlue;
+                font-weight: 750;
+                font-size: 30px;
+                text-transform: uppercase;
+                flex-basis: 40%;
+                margin: 12px 0;
+            }
+            p {
+                flex-basis: 50%;
+                font-size: 14px;
+                line-height: 19px;
+                margin: 12px 0 !important;
+            }
+        }
+    }
+    &__centered {
+        justify-content: center;
+        @include mq(tablet) {
+            background-image: url("../images/world.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &__content {
+            max-width: 100%;
+            @include mq(tablet) {
+                max-width: 80%;
+            }
+            @include mq(laptop) {
+                max-width: 40%;
+            }
+            h2 {
+                max-width: 70%;
+                font-style: italic;
+                font-weight: 750;
+                font-size: 35px;
+                line-height: 103%;
+                color: $darkBlue;
+            }
+            p {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 19px;
+                margin: 16px 0 !important;
+                text-align: center;
+                color: black;
+            }
+            a {
+                font-style: italic;
+                font-weight: 750;
+                font-size: 14px;
+                line-height: 17px;
+                color: $starOrange;
+                &:hover {
+                    text-decoration: none;
+                    color: #eb7466cf;
+                }
+            }
+            &__img {
+                position: absolute;
+                object-fit: cover;
+                @include mq(tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__with__repeater {
+        justify-content: space-between;
+        flex-direction: column;
+        @include mq(laptop) {
+            flex-direction: row;
+        }
+        @include mq(tablet) {
+            background-image: url("../images/world.svg");
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        &__content {
+            max-width: 100%;
+            @include mq(tablet) {
+                max-width: 80%;
+            }
+            @include mq(laptop) {
+                max-width: 40%;
+            }
+            h2 {
+                max-width: 70%;
+                font-style: italic;
+                font-weight: 750;
+                font-size: 35px;
+                line-height: 103%;
+                color: $darkBlue;
+            }
+            p {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 19px;
+                margin: 16px 0 !important;
+                color: black;
+            }
+            a {
+                font-style: italic;
+                font-weight: 750;
+                font-size: 14px;
+                line-height: 17px;
+                color: $starOrange;
+                &:hover {
+                    text-decoration: none;
+                    color: #eb7466cf;
+                }
+            }
+            &__img {
+                position: absolute;
+                object-fit: cover;
+                top: 0;
+                @include mq(tablet) {
+                    display: none;
+                }
+            }
+        }
+        &__right {
+            flex-basis: 40%;
+            margin-top: 24px;
+            @include mq(laptop) {
+                margin-top: 0;
+            }
+            p {
+                font-style: italic;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 2rem;
+                color: $darkBlue;
+                &:not(:first-child) {
+                    padding-top: 16px;
+                    border-top: 1px solid $darkBlue;
+                }
+            }
+        }
+    }
+}

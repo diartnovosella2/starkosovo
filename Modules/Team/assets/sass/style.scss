@@ -1,0 +1,45 @@
+.team {
+    &__description {
+        max-width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: black;
+        @include mq(laptop) {
+            max-width: 60%;
+        }
+    }
+    &__members {
+        &__single {
+            margin: 16px 0;
+            &:nth-child(even) {
+                margin: 16px 0;
+                @include mq(laptop) {
+                    margin: 32px 0 0 0;
+                }
+            }
+            h2 {
+                font-weight: 750;
+                font-size: 18px;
+                line-height: 103%;
+                text-transform: uppercase;
+                color: $darkBlue;
+                text-align: center;
+                @include mq(laptop) {
+                    text-align: left;
+                }
+            }
+            p {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 138.9%;
+                color: black;
+                text-align: center;
+                @include mq(laptop) {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

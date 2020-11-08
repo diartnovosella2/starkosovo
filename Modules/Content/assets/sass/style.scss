@@ -8,37 +8,12 @@
             flex-basis: 58%;
         }
         &.get__started {
-            background-color: $darkBlue;
+            background-color: $darkBlue !important;
         }
         &.success__story {
-            background-color: $lightGray;
+            background-color: $lightGray !important;
             .content__left__footer {
-                background-color: $darkGray;
-            }
-        }
-        &.register {
-            .apply__button {
-                border: none;
-                padding: 16px 25px;
-                background: $starOrange;
-                border-radius: 4px;
-                a {
-                    color: white;
-                    &:hover {
-                        text-decoration: none;
-                    }
-                }
-                &:hover {
-                    background: #eb7466c9;
-                }
-                &__other {
-                    margin-left: 5rem;
-                    font-size: 14px;
-                    line-height: 17px;
-                    text-align: center;
-                    text-decoration-line: underline;
-                    color: $darkBlue;
-                }
+                background-color: $darkGray !important;
             }
         }
         &__form {
@@ -140,5 +115,29 @@
         .content__left__footer {
             background-color: $darkYellow;
         }
+    }
+}
+
+.apply__button {
+    border: none;
+    padding: 16px 25px;
+    background: $starOrange;
+    border-radius: 4px;
+    a {
+        color: white;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &:hover {
+        background: #eb7466e8;
+    }
+    &__other {
+        margin-left: 5rem;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-decoration-line: underline;
+        color: $darkBlue;
     }
 }
