@@ -64,17 +64,16 @@ class Config extends _Config
      */
     public function taxonomies($child_array = [])
     {
-        /*
+        
         $child_array = array(
             array(
-                'name'     => 'article-type',
-                'singular' => 'Article Type',
-                'plural'   => 'Article Types',
-                'posttype' => 'article',
-                'rewrite'  => 'articles/category',
+                'name'     => 'job-type',
+                'singular' => 'Job Type',
+                'plural'   => 'Job Types',
+                'posttype' => 'job',
+                'rewrite'  => 'jobs/category',
             ),
         );
-        */
 
         return parent::taxonomies($child_array);
     }

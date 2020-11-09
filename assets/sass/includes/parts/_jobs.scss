@@ -1,0 +1,63 @@
+.page-template-page-jobs {
+    .module-page>div:first-child {
+        max-width: unset;
+        padding: 0;
+    }
+}
+
+.jobs {
+    &__title {
+        h2 {
+            font-weight: 750;
+            font-size: 35px;
+            line-height: 103%;
+            color: $darkBlue;
+        }
+        p {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+            color: black;
+        }
+    }
+    &__container {
+        padding-top: 24px;
+        background-color: $lightGray;
+        &__single {
+            background-color: white;
+            border: 1px solid rgba(210, 213, 219, 0.35);
+            box-sizing: border-box;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
+            &__data {
+                .job__name {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 152.9%;
+                    color: $darkBlue;
+                }
+                .job__title {
+                    font-style: italic;
+                    font-weight: 750;
+                    font-size: 20px;
+                    line-height: 103%;
+                    color: $darkBlue;
+                }
+                .job__locationPrice {
+                    svg {
+                        height: 14px;
+                        width: 14px;
+                    }
+                    p {
+                        margin-left: 14px;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 12px;
+                        line-height: 152.9%;
+                        color: $lightBlue;
+                    }
+                }
+            }
+        }
+    }
+}
