@@ -21,7 +21,7 @@
         }
     }
     &__container {
-        padding-top: 24px;
+        padding: 24px 0;
         background-color: $lightGray;
         &__single {
             background-color: white;
@@ -57,6 +57,21 @@
                         color: $lightBlue;
                     }
                 }
+            }
+        }
+    }
+    &__otherDetails {
+        &__single {
+            svg {
+                height: 14px;
+                width: 14px;
+            }
+            p {
+                margin-left: 14px !important;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 152.9%;
+                color: $lightBlue;
             }
         }
     }
