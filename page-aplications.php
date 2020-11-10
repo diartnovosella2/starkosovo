@@ -1,5 +1,5 @@
 <?php 
-    /* Template Name: Jobs */
+    /* Template Name: aplications */
     get_header(); 
     $args = array(
         'post_type'      => 'job',
