@@ -1,8 +1,8 @@
 <?php 
-    /* Template Name: Jobs */
+    /* Template Name: Job Application */
     get_header(); 
     $args = array(
-        'post_type'      => 'job',
+        'post_type'      => 'application',
         'post_status'    => 'publish',
         'posts_per_page' =>  10,
         'orderby'        => 'publish_date',
@@ -30,12 +30,13 @@
         <div class="container">
             <?php foreach($jobs as $jobId) { 
                 $otherDetails = get_field('other_details', $jobId);
-                $jobTitle  = get_the_title($jobId);
+                $description  = get_field('description', $jobId);
                 $price     = get_field('price_per_hour', $jobId);
                 $thumbnail = get_the_post_thumbnail($jobId);
                 $jobName   = get_field('job_name', $jobId);
                 $location  = get_field('location', $jobId);
                 $subtitle  = get_field('subtitle', $jobId);
+                $jobTitle  = get_the_title($jobId);
             ?> 
                 <div class="jobs__container__single d-flex flex-column flex-md-row justify-content-between mb-3 p-3">
                     <div class="jobs__container__single__data d-flex">
@@ -62,8 +63,11 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="w-25">
                         <?= $subtitle; ?>
+                        <div>
+                            <?= $description; ?>
+                        </div>
                     </div>
 
                     <?php if( !empty($otherDetails) ) { ?>

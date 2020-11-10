@@ -67,11 +67,11 @@ class Config extends _Config
         
         $child_array = array(
             array(
-                'name'     => 'job-type',
-                'singular' => 'Job Type',
-                'plural'   => 'Job Types',
-                'posttype' => 'job',
-                'rewrite'  => 'jobs/category',
+                'name'     => 'application-type',
+                'singular' => 'Application Type',
+                'plural'   => 'Application Types',
+                'posttype' => 'application',
+                'rewrite'  => 'applications/category',
             ),
         );
 

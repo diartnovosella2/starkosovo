@@ -23,7 +23,9 @@
             .clouds-wrapper {
                 position: absolute;
                 bottom: 0;
-                .img-clouds{
+                width: 100%;
+                .img-clouds {
+                    width: 100%;
                     @include max(767) {
                         height: 170px;
                         object-fit: cover;
@@ -31,29 +33,27 @@
                 }
             }
         }
-
-        .module-container{
-            .text-wrapper{
+        .module-container {
+            .text-wrapper {
                 @include min-max(100, 992) {
-                    text-align: center !important; 
+                    text-align: center !important;
                 }
                 padding: 0px 35px;
-                @include mq(laptop){
+                @include mq(laptop) {
                     width: 52%;
                     padding: 0;
                 }
-                .title{
+                .title {
                     font-style: italic;
                     font-weight: 900;
                     font-size: 36px;
                     color: #FFFFFF;
                     line-height: 1;
-                    @include mq(laptop){
+                    @include mq(laptop) {
                         font-size: 60px;
                     }
                 }
-
-                .description{
+                .description {
                     font-style: normal;
                     font-weight: normal;
                     font-size: 14px;
@@ -61,16 +61,15 @@
                     color: #FFFFFF;
                     margin-top: 10px;
                 }
-
-                .btn-txt-wrapper{
+                .btn-txt-wrapper {
                     margin-top: 24px;
                     display: flex;
                     align-items: center;
                     flex-direction: column;
-                    @include mq(laptop){
-                       flex-direction: row;
+                    @include mq(laptop) {
+                        flex-direction: row;
                     }
-                    .aff-button{
+                    .aff-button {
                         a {
                             color: white;
                             &:hover {
@@ -95,14 +94,14 @@
                             }
                         }
                     }
-                    .remaining-days{
+                    .remaining-days {
                         font-style: normal;
                         font-weight: normal;
                         font-size: 14px;
                         line-height: 17px;
                         color: #FFFFFF;
                         margin-top: 24px;
-                        @include mq(laptop){
+                        @include mq(laptop) {
                             margin: 0 0 0 47px;
                         }
                     }
