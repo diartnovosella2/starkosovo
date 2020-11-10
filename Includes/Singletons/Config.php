@@ -47,12 +47,12 @@ class Config extends _Config
 
         $child_array = array(
             array(
-                'name'     => 'job',
-                'singular' => array('Job', 'job'),
-                'plural'   => array('Jobs', 'jobs'),
+                'name'     => 'application',
+                'singular' => array('Application', 'application'),
+                'plural'   => array('Applications', 'applications'),
                 'supports' => array('title', 'thumbnail', 'revisions'),
                 'order'    => 5,
-                'rewrite'  => 'jobs'
+                'rewrite'  => 'applications'
             )
         );
 
