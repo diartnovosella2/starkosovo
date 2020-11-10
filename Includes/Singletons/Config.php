@@ -53,6 +53,14 @@ class Config extends _Config
                 'supports' => array('title', 'thumbnail', 'revisions'),
                 'order'    => 5,
                 'rewrite'  => 'applications'
+            ),
+            array(
+                'name'     => 'registration',
+                'singular' => array('Registration', 'registration'),
+                'plural'   => array('Registrations', 'registrations'),
+                'supports' => array('title', 'thumbnail', 'revisions'),
+                'order'    => 5,
+                'rewrite'  => 'registrations'
             )
         );
 
