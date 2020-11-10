@@ -51,8 +51,8 @@ class Config extends _Config
                 'singular' => array('Job', 'job'),
                 'plural'   => array('Jobs', 'jobs'),
                 'supports' => array('title', 'thumbnail', 'revisions'),
-                'order'    => 5,
-                'rewrite'  => 'jobs'
+                'order'    => 5
+                // 'rewrite'  => 'jobs'
             )
         );
 
