@@ -5,3 +5,7 @@ node_modules
 assets/dist/*
 package-lock.json
 !/Modules/.keepmehere
+assets/dist/front.css
+assets/dist/front.css.map
+assets/dist/front.js
+assets/dist/front.js.map
