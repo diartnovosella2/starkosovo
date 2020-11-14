@@ -1,0 +1,104 @@
+.page-template-page-reg {
+    .text__centered {
+        background-image: unset;
+        &__content__img {
+            z-index: -1;
+            display: block;
+        }
+    }
+    .register__page__content {
+        margin: 0 auto;
+        max-width: 40.5rem;
+        input,
+        select {
+            margin: 10px 0;
+            padding: 16px;
+            border-radius: 4px;
+            border: none;
+            background-color: $lightGray;
+        }
+        select {
+            background-color: white;
+            border: 1px solid black;
+            font-weight: 600;
+        }
+        &__text {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: black;
+        }
+        &__parents {
+            flex-basis: 48%;
+            position: relative;
+            input[type=radio] {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                margin: 0;
+                &:hover {
+                    cursor: pointer;
+                }
+                &:checked+label {
+                    background: rgba(115, 190, 196, 0.3);
+                }
+            }
+            label {
+                padding: 10px;
+                border-radius: 4px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+            }
+        }
+        .apply__button {
+            input {
+                margin: 0;
+                padding: 0;
+                background: transparent;
+                color: white;
+                font-weight: 600;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.form__success {
+    &__title {
+        display: none;
+    }
+    svg {
+        height: 0;
+    }
+    .circ {
+        opacity: 0;
+        stroke-dasharray: 130;
+        stroke-dashoffset: 130;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -ms-transition: all 1s;
+        -o-transition: all 1s;
+        transition: all 1s;
+    }
+    .tick {
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
+        -webkit-transition: stroke-dashoffset 1s 0.5s ease-out;
+        -moz-transition: stroke-dashoffset 1s 0.5s ease-out;
+        -ms-transition: stroke-dashoffset 1s 0.5s ease-out;
+        -o-transition: stroke-dashoffset 1s 0.5s ease-out;
+        transition: stroke-dashoffset 1s 0.5s ease-out;
+    }
+    .drawn {
+        margin-top: 2.4rem;
+        &+svg {
+            height: 125px;
+        }
+        &+svg .path {
+            opacity: 1;
+            stroke-dashoffset: 0;
+        }
+    }
+}
