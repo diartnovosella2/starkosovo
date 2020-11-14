@@ -15,7 +15,7 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'	=> 'Gallery',
         'parent_slug'	=> 'options',
     ));
-  }
+}
 
 add_action('init', 'addRegisterFileds');
 function addRegisterFileds() {
@@ -33,7 +33,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '15',
+                        'width' => '25',
                         'class' => '',
                         'id' => '',
                     ),
@@ -52,7 +52,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '15',
+                        'width' => '25',
                         'class' => '',
                         'id' => '',
                     ),
@@ -71,7 +71,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '15',
+                        'width' => '25',
                         'class' => '',
                         'id' => '',
                     ),
@@ -90,7 +90,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '15',
+                        'width' => '25',
                         'class' => '',
                         'id' => '',
                     ),
@@ -109,7 +109,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '15',
+                        'width' => '40',
                         'class' => '',
                         'id' => '',
                     ),
@@ -128,7 +128,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '15',
+                        'width' => '30',
                         'class' => '',
                         'id' => '',
                     ),
@@ -147,7 +147,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '10',
+                        'width' => '30',
                         'class' => '',
                         'id' => '',
                     ),
@@ -345,5 +345,44 @@ function addRegisterFileds() {
             'active' => true,
             'description' => '',
         ));
-        endif;
+    endif;
+}
+
+// Localize Script for JS
+wp_register_script( 'registerForm', get_stylesheet_directory_uri() . '/assets/js/registerForm.js', array('jquery') );
+wp_localize_script( 'registerForm', 'script_object', array('ajax_url' => admin_url('admin-ajax.php')) );
+wp_enqueue_script( 'registerForm' );
+
+
+// Add these action so JS can see these functions
+add_action('wp_ajax_populate_register_fields', 'populate_register_fields');
+add_action('wp_ajax_nopriv_populate_register_fields', 'populate_register_fields');
+
+function populate_register_fields() {
+    $new_post = array(
+        'post_title' => 'Registration Form ' . $_GET['firstName'] . ' ' . $_GET['lastName'],
+        'post_date' => date('Y-m-d H:i:s'),
+        'post_type' => 'registration',
+        'post_status' => 'publish'
+    );
+    $post_id = wp_insert_post($new_post);
+
+    $registerFields = [ 
+        'first_name',  'last_name', 'date_of_birth', 'phone_number', 
+        'email', 'degree', 'department', 'university_details_registered_year', 
+        'university_details_year_of_studies', 'university_details_english_level', 
+        'university_details_average_grade', 'university_details_exams_passed', 
+        'father_work', 'mother_work', 'star_work_info', 
+    ];
+    $registerFieldsArray = [
+        $_GET['firstName'], $_GET['lastName'], $_GET['dateOfBirth'], $_GET['phoneNumber'], 
+        $_GET['email'], $_GET['university'], $_GET['department'], $_GET['yearOfUni'], 
+        $_GET['yearOfStudies'], $_GET['englishLevel'], $_GET['avgGrade'], $_GET['numberOfExams'], 
+        $_GET['father_work'], $_GET['mother_work'], $_GET['starWorkInfo']
+    ];
+    foreach ($registerFields as $key => $value) {
+        update_post_meta($post_id, $value, $registerFieldsArray[$key]);
+    }
+    wp_send_json_success( array('data' => 'success' ) , 200);
+    wp_die();
 }
