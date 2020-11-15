@@ -1,0 +1,219 @@
+.blog-header-module{
+    position: relative;
+    height: 600px;
+    .blog-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        @include mq(tablet){
+            flex-direction: row;
+        }
+        .module-info{
+            .module-title{
+                p{
+                    text-align: center;
+                    font-style: italic;
+                    font-weight: 900;
+                    font-size: 35px;
+                    color: #1E5C6B;
+                    text-transform: uppercase;
+                    @include mq(tablet){
+                        text-align: left;
+                    }
+                }
+            }
+            .module-description{
+                p{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #000000;
+                    text-align: center;
+                }
+            }
+        }
+
+        .sub-wrapper{
+            display: flex;
+            flex-direction: column;
+            .subscribe-form{
+                display: flex;
+                flex-direction: column;
+                @include mq(tablet){
+                    flex-direction: row;
+                }
+                .subscribe-input{
+                    @include mq(tablet){
+                        margin-right: 10px;
+                    }
+                    input{
+                        width: 303px;
+                        height: 50px;
+                        border: 0;
+                        background: #F3F3F3;
+                        border-radius: 4px;
+                        padding: 17px 23px;
+                        outline: none;
+                    }
+                    ::placeholder {
+                        color: #1E5C6B;
+                        opacity: 1; 
+                      }
+                      
+                      :-ms-input-placeholder { 
+                        color: #1E5C6B;
+                      }
+                      
+                      ::-ms-input-placeholder { 
+                        color: #1E5C6B;
+                      }
+                }
+
+                .single-p-m{
+                    margin: 10px 0;
+                    @include mq(tablet){
+                        display: none;
+                    }
+                    p{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 152.9%;
+                        color: #000000;
+                        opacity: 0.4;
+                        text-align: center;
+                    }
+                }
+    
+                .header-button{
+                    a{
+                        &:hover{
+                            text-decoration: none;
+                        }
+                        .subsribe-btn{
+                            background: #1E5C6B;
+                            border-radius: 4px;
+                            color: white;
+                            width: 100%;
+                            @include mq(tablet){
+                                width: 152px;
+                            }
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-transform: uppercase;
+                            font-weight: 900;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+
+            .single-p-d{
+                display: none;
+                padding-top: 5px;
+                @include mq(tablet){
+                    display: block;
+                }
+                p{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 152.9%;
+                    color: #000000;
+                    opacity: 0.4;
+                    text-align: right;
+                }
+            }
+        }
+
+       
+    }
+
+    .background-img{
+        margin-top: 52px;
+        img{
+            object-fit: cover;
+            left: 0;
+            width: 100%;
+            height: 367px;
+            @include mq(tablet){
+                object-fit: fill;
+                height: 450px;
+            }
+            display: block;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    .article-container{
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        justify-content: center;
+        padding-left: 27px;
+        width: 73%;
+        @include mq(tablet){
+            padding-left: 84px;
+            width: 40%;
+        }
+        
+        .featured-holder{
+            span{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 19px;
+                color: #F6CA2C;
+                text-transform: uppercase;
+            }
+        }
+        .article-title{
+            font-style: italic;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 103%;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+
+        .article-description{
+            margin-top: 10px;
+            min-height: 85px;
+            @include mq(tablet){
+                min-height: 73px;
+            }
+            p{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 19px;
+                color: #FFFFFF;
+                opacity: 0.5;
+            }
+        }
+
+        .article-btn{
+            a{
+                &:hover{
+                    text-decoration: none;
+                }
+
+                .read-more-btn{
+                    span{
+                        font-style: italic;
+                        font-weight: 750;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #FFFFFF;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}

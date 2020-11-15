@@ -57,4 +57,22 @@ html {
             width: $full-width;
         }
     }
+
+    .blogz{
+        padding: 0 15px;
+        flex-wrap: wrap !important;
+        margin-top: 80px !important;
+        @include mq(tablet){
+            margin-top: unset;
+        }
+        .article-card{
+            &:nth-child(3n){
+                margin-right: 0 !important;
+            }
+            @include mq(tablet){
+                width: 30.98% !important;
+                margin-bottom: 75px !important;
+            }
+        }
+    }
 }
