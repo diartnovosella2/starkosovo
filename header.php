@@ -14,14 +14,12 @@
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.svg" alt="starkosovo-logo" class="logo">
           </a>
           <div class="header__navigation">
-            <ul id="menu-main-menu" class="header__navigation-menu">
-              <li>Home</li>
-              <li>Find Jobs</li>
-              <li>Work & Travel</li>
-              <li>How it Works</li>
-              <li>About Us</li>
-              <li>Blog</li>
-            </ul>
+            <?php wp_nav_menu(
+                array(
+                  'theme_location' => 'header-menu',
+                  'menu_class'      => 'header__navigation-menu',
+                )
+              ); ?>
           </div>
           <div class="header__button">
             <a href="#">

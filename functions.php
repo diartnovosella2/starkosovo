@@ -386,3 +386,138 @@ function populate_register_fields() {
     wp_send_json_success( array('data' => 'success' ) , 200);
     wp_die();
 }
+
+
+function article_postype_fields(){
+    if( function_exists('acf_add_local_field_group') ):
+
+        acf_add_local_field_group(array(
+            'key' => 'group_5fb03da237cc6',
+            'title' => 'Articles Fields',
+            'fields' => array(
+                array(
+                    'key' => 'field_5fb03dc97d2ad',
+                    'label' => 'Content',
+                    'name' => 'content',
+                    'type' => 'wysiwyg',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'delay' => 0,
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'article',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'acf_after_title',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        
+    endif;
+}
+
+add_action('init', 'article_postype_fields');
+
+
+function gallery_fields(){
+    if( function_exists('acf_add_local_field_group') ):
+
+        acf_add_local_field_group(array(
+            'key' => 'group_5fb036e9e78c0',
+            'title' => 'Gallery Module Fields',
+            'fields' => array(
+                array(
+                    'key' => 'field_5fb03c9badc79',
+                    'label' => 'Picture',
+                    'name' => 'picture',
+                    'type' => 'gallery',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'url',
+                    'preview_size' => 'full',
+                    'insert' => 'append',
+                    'library' => 'all',
+                    'min' => '',
+                    'max' => '',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'options_page',
+                        'operator' => '==',
+                        'value' => 'acf-options-gallery',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        
+    endif;
+}
+
+add_action('init', 'gallery_fields');
+
+
+function short_content($content, $len){
+    if (strlen($content) > $len){
+      $content = substr($content, 0, $len);
+      $content = explode(' ', $content);
+      array_pop($content); // remove last word from array
+      $content = implode(' ', $content);
+    } 
+    return $content;
+}
+  
+
+function register_menus () {
+    register_nav_menus(
+      array(
+        'header-menu' => __( 'Header Menu' ),
+        'footer-menu' => __( 'Footer Menu' )
+      )
+    );
+  }
+add_action( 'init', 'register_menus' );
+  

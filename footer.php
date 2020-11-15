@@ -5,11 +5,13 @@
       <div class="gallery-module">
         <?php 
           $gallery = get_field('picture', 'option');
-          foreach ($gallery as $ga) {?>
+          if($gallery):
+          foreach ($gallery as $ga): ?>
             <div class="img-wrapper">
               <img src="<?= $ga ?>" alt="img" >
             </div>
-          <?php }
+          <?php endforeach;
+          endif;
         ?>
 
       </div>

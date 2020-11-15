@@ -1,0 +1,155 @@
+.resources-preview-container{
+    .resources-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        @include mq(tablet){
+            flex-direction: row;
+        }
+        .resources-info{
+          @include max(767){
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+          }
+            .resources-title{
+                span{
+                    font-style: italic;
+                    font-weight: 900;
+                    font-size: 35px;
+                    color: #1E5C6B;
+                    text-transform: uppercase;
+                }
+            }
+            .resources-description{
+                width: 255px;
+                margin-top: 45px;
+                @include mq(tablet){
+                    width: unset;
+                    margin: 0;
+                }
+                p{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #000000;
+                    text-align: center;
+                }
+            }
+        }
+
+        .header-button{
+            margin-top: 32px;
+            @include mq(tablet){
+               margin: 0;
+            }
+            a{
+                &:hover{
+                    text-decoration: none;
+                }
+                .blog-btn{
+                    width: 109px;
+                    height: 50px;
+                    background: #EB7466;
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-transform: uppercase;
+                    color: white;
+                    font-weight: 900;
+                    font-size: 14px;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    .articles-container{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        @include mq(tablet){
+            margin-top: 75px;
+            flex-wrap: unset;
+        }
+        .article-card{
+            margin-top: 32px;
+            width: 100%;
+            &:first-child{
+                margin-top: 0;
+            }
+            @include mq(tablet){
+                margin: 0 38px 0 0;
+                width: 31%;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            .article-header{
+                margin: 0 -35px;
+                @include mq(tablet){
+                    margin: 0;
+                }
+                .article-image{
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+
+            .article-body{
+                min-height: 155px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .article-title{
+                    padding-top: 29px;
+                    min-height: 77px;
+                    span{
+                        font-style: italic;
+                        font-weight: 900;
+                        font-size: 18px;
+                        line-height: 103%;
+                        text-transform: uppercase;
+                        color: #1E5C6B;
+                    }
+                }
+                .article-description{
+                    padding-top: 5px;
+                    span{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: rgba(0, 0, 0, 0.94);
+                        opacity: 0.5;
+                    }
+                }
+
+                .article-btn{
+                    padding-top: 30px;
+                    a{
+                        &:hover{
+                            text-decoration: none;
+                        }
+                        .read-more-btn{
+                            span{
+                                font-style: italic;
+                                font-weight: 900;
+                                font-size: 14px;
+                                line-height: 17px;
+                                text-align: center;
+                                text-transform: uppercase;
+                                color: #EB7466;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
