@@ -43,10 +43,10 @@ jQuery(document).ready(function ($) {
         $(".header__navigation-toggle").toggleClass("active");
       });
 
-
+      var home_url = window.location.origin;
       if (window.location.href.indexOf("blog") > -1 || window.location.href.indexOf("registration-form") > -1  ) { 
         $('.header__navigation-menu li a').css('color', '#1E5C6B');
-        $('.logo').attr('src', 'http://localhost/starks/wp-content/themes/starkosovo/assets/images/blue-logo.svg');
+        $('.logo').attr('src', home_url  + '/wp-content/themes/starkosovo/assets/images/blue-logo.svg');
         $('.header').css('border-bottom', '1px solid #1E5C6B');
       }
 
