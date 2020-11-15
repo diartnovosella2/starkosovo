@@ -1,7 +1,11 @@
       </div> <!-- .container -->
     </main> <!-- .module-page -->
     <footer>
-
+      <div class="container">
+        <div class="follow-us">
+          <span>FOLLOW US @STARKOSOVA</span>
+        </div>
+      </div>
       <div class="gallery-module">
         <?php 
           $gallery = get_field('picture', 'option');
