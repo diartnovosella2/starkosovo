@@ -212,7 +212,7 @@
             @include mq(tablet){
                 min-height: 73px;
             }
-            p{
+            span{
                 font-style: normal;
                 font-weight: normal;
                 font-size: 14px;
@@ -241,8 +241,4 @@
             }
         }
     }
-}
-
-.single-article-module{
-    height: 750px;
 }
