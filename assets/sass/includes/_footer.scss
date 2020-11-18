@@ -38,6 +38,7 @@
                         color: #FFFFFF;
                         font-weight: 750;
                         font-size: 14px;
+                        font-family: $font-family-base;
                     }
                 }
             }
@@ -143,5 +144,6 @@
         align-items: center;
         color: #1E5C6B;
         text-transform: uppercase;
+        font-family: $font-family-base;
     }
 }

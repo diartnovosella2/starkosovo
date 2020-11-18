@@ -16,11 +16,15 @@
           }
             .resources-title{
                 span{
+                    font-family: $font-family-base;
                     font-style: italic;
                     font-weight: 900;
-                    font-size: 35px;
+                    font-size: 30px;
                     color: #1E5C6B;
                     text-transform: uppercase;
+                    @include mq(tablet){
+                        font-size: 35px;
+                    }
                 }
             }
             .resources-description{
@@ -63,6 +67,9 @@
                     font-weight: 900;
                     font-size: 14px;
                     font-style: italic;
+                    span{
+                        font-family: $font-family-base;
+                    }
                 }
             }
         }
@@ -116,6 +123,7 @@
                         line-height: 103%;
                         text-transform: uppercase;
                         color: #1E5C6B;
+                        font-family: $font-family-base;
                     }
                 }
                 .article-description{
@@ -145,11 +153,16 @@
                                 text-align: center;
                                 text-transform: uppercase;
                                 color: #EB7466;
+                                font-family: $font-family-base;
                             }
                         }
                     }
                 }
             }
         }
+    }
+
+    .art-container{
+        margin-top: 30px;
     }
 }
