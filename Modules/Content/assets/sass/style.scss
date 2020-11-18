@@ -144,10 +144,10 @@
 }
 
 .content-wrapper{
+    margin: 182px auto 50px;
     @include mq(tablet){
         width: 482px;
-        margin: 152px auto 50px;
-
+        margin: 102px auto 50px;
     }
     h1{
         font-family: $font-family-base;
