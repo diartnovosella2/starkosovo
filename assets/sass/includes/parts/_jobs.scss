@@ -29,6 +29,12 @@
             box-sizing: border-box;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
             &__data {
+                &__img {
+                    border: 1px solid $lightGray;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    padding: 25px;
+                }
                 .job__name {
                     font-style: normal;
                     font-weight: normal;
@@ -58,6 +64,16 @@
                     }
                 }
             }
+            &__text {
+                &__desc {
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+                &__sub {
+                    font-size: 12px;
+                    margin-bottom: 5px !important;
+                }
+            }
         }
     }
     &__otherDetails {
@@ -72,6 +88,69 @@
                 font-size: 12px;
                 line-height: 152.9%;
                 color: $lightBlue;
+            }
+        }
+    }
+    &__filters {
+        &__select {
+            font-weight: normal;
+            font-size: 12px;
+            color: black;
+            select {
+                padding: 11px 20px;
+                background: $lightGray;
+                border-radius: 4px;
+                margin-right: 7px;
+                border: none;
+                width: 100%;
+                font-weight: bold;
+                font-size: 14px;
+                color: black;
+            }
+        }
+        &__submit {
+            flex-basis: 100%;
+            @include mq(laptop) {
+                flex-basis: 12%;
+            }
+            button,
+            input {
+                background: none;
+                border: none;
+            }
+            input {
+                font-family: $font-family-base;
+                color: white;
+                font-style: italic;
+                font-weight: 750;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                color: $starOrange;
+            }
+        }
+        &__location {
+            flex-basis: 100%;
+            @include mq(laptop) {
+                flex-basis: 22%;
+            }
+        }
+        &__position {
+            flex-basis: 100%;
+            @include mq(laptop) {
+                flex-basis: 22%;
+            }
+        }
+        &__hours {
+            flex-basis: 100%;
+            @include mq(laptop) {
+                flex-basis: 22%;
+            }
+        }
+        &__salary {
+            flex-basis: 100%;
+            @include mq(laptop) {
+                flex-basis: 22%;
             }
         }
     }

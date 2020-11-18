@@ -1,5 +1,4 @@
 // Add any imported fonts using @font-face here
-
 // EXAMPLE
 //@font-face {
 //  font-family: 'Rubik';
@@ -8,3 +7,42 @@
 //  font-display: swap;
 //  unicode-range: U+0000-00FF; // Latin
 //}
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/Futura/FuturaStdBold.otf") format("opentype");
+    font-weight: 600;
+    font-display: swap;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/Futura/FuturaStdExtraBold.otf") format("opentype");
+    font-weight: 750;
+    font-display: swap;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-display: swap;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-SemiBold.otf") format("opentype");
+    font-weight: 600;
+    font-display: swap;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Bold.otf") format("opentype");
+    font-weight: 600;
+    font-display: swap;
+    unicode-range: U+0000-00FF;
+}

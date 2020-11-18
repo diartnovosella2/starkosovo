@@ -22,7 +22,58 @@
         </div>
         <div class="jobs__filters mb-4">
             <form>
-                <input type="text" value="Here we add the filters">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="jobs__filters__select jobs__filters__location">
+                        <p>Location</p>
+                        <div class="d-flex my-2">
+                            <select name="location" id="location">
+                                <option value="" selected>City</option>
+                                <option value="Pristina">Pristina</option>
+                                <option value="Peja">Peja</option>
+                            </select>
+                            <select name="state" id="state">
+                                <option value="" selected>State</option>
+                                <option value="Kosova">Kosova</option>
+                                <option value="Albania">Albania</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="jobs__filters__select jobs__filters__position">
+                        <p>Select Position</p>
+                        <div class="d-flex my-2">
+                            <select name="position" id="position">
+                                <option value="Product Designer" selected>Product Designer</option>
+                                <option value="Product Designer1">Product Designer</option>
+                                <option value="Product Designer2">Product Designer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="jobs__filters__select jobs__filters__hours">
+                        <p>Hours/week</p>
+                        <div class="d-flex my-2">
+                            <select name="hours" id="hours">
+                                <option value="40h" selected>40h</option>
+                                <option value="20h">20h</option>
+                                <option value="30h">30h</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="jobs__filters__select jobs__filters__salary">
+                        <p>Salary/hour</p>
+                        <div class="d-flex my-2">
+                            <select name="salary" id="salary">
+                                <option value="20" selected>$20</option>
+                                <option value="40">$40</option>
+                                <option value="60">$60</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="jobs__filters__submit d-flex justify-content-center align-items-center">
+                        <button class="mt-2"> 
+                            <input type="submit" value="FILTER" id="submitvals">
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -39,13 +90,13 @@
                 $jobTitle  = get_the_title($jobId);
             ?> 
                 <div class="jobs__container__single d-flex flex-column flex-md-row justify-content-between mb-3 p-3">
-                    <div class="jobs__container__single__data d-flex">
-                        <div class="mr-4">
+                    <div class="jobs__container__single__data d-flex align-items-center">
+                        <div class="jobs__container__single__data__img mr-4">
                             <?= $thumbnail;?>
                         </div>
                         <div>
                             <p class="job__name"><?= $jobName;?></p>
-                            <p class="job__title"><?= $jobTitle;?></p>
+                            <h2 class="job__title"><?= $jobTitle;?></h2>
                             <div class="d-flex flex-column mt-2 job__locationPrice">
                                 <div class="d-flex mb-1">
                                     <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,9 +114,9 @@
                         </div>
                     </div>
 
-                    <div class="w-25">
-                        <?= $subtitle; ?>
-                        <div>
+                    <div class="jobs__container__single__text w-25">
+                        <p class="jobs__container__single__text__sub" ><?= $subtitle; ?></p>
+                        <div class="jobs__container__single__text__desc">
                             <?= $description; ?>
                         </div>
                     </div>
