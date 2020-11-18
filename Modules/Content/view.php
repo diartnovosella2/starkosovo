@@ -15,6 +15,7 @@
     $toggleMargin    = strlen($data['footer_title']) !== 0 ? "mt-2 mt-lg-5" : "mt-2";
 ?>
 
+<?php if($chooseStyle != 'Wysiwyg Editor'){ ?>
 <div class="content d-flex flex-column flex-md-<?= $imagePosition;?>">
     <div class="content__left <?= $styleClass;?> content__left d-flex flex-column <?= $toggleFooter; ?> n bg_<?= $bgColor; ?>">
         <?php if($chooseStyle === 'Get Started')  { ?>
@@ -62,3 +63,12 @@
         <img src="<?= $data['image']['url']; ?>" alt="<?= $data['image']['title']; ?>">
     </div>
 </div>
+
+<?php } else{ ?>
+
+    <div class="content-wrapper">
+        <?= $data['wysiwyng_editor']?> 
+    </div>
+<?php
+}
+?>

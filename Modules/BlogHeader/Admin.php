@@ -169,6 +169,28 @@ class Admin
             'title' => ucwords(str_replace(array('-', '_'), ' ', $this->name())),
             'fields' => array(
                 array(
+                    'key' => 'field_5fb58a0cf6609',
+                    'label' => 'Module Name',
+                    'name' => 'module_name',
+                    'type' => 'button_group',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'Blog Page' => 'Blog Page',
+                        'Single Article' => 'Single Article',
+                    ),
+                    'allow_null' => 0,
+                    'default_value' => '',
+                    'layout' => 'horizontal',
+                    'return_format' => 'value',
+                ),
+                array(
                     'key' => 'field_5fb16b760670a',
                     'label' => 'Title',
                     'name' => 'title',
@@ -237,7 +259,15 @@ class Admin
                     'type' => 'relationship',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5fb58a0cf6609',
+                                'operator' => '==',
+                                'value' => 'Blog Page',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
