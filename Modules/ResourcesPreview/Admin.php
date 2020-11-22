@@ -184,6 +184,28 @@ class Admin
                     'layout' => 'block',
                     'sub_fields' => array(
                         array(
+                            'key' => 'field_1ec43e0cf1619',
+                            'label' => 'Show Description',
+                            'name' => 'show_description',
+                            'type' => 'button_group',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'choices' => array(
+                                'Yes' => 'Yes',
+                                'No' => 'No',
+                            ),
+                            'allow_null' => 0,
+                            'default_value' => '',
+                            'layout' => 'horizontal',
+                            'return_format' => 'value',
+                        ),
+                        array(
                             'key' => 'field_5fb047151d6dc',
                             'label' => 'Title',
                             'name' => 'title',
@@ -209,7 +231,15 @@ class Admin
                             'type' => 'text',
                             'instructions' => '',
                             'required' => 0,
-                            'conditional_logic' => 0,
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field' => 'field_1ec43e0cf1619',
+                                        'operator' => '==',
+                                        'value' => 'Yes',
+                                    ),
+                                ),
+                            ),
                             'wrapper' => array(
                                 'width' => '60',
                                 'class' => '',

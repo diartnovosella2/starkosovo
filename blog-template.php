@@ -23,6 +23,14 @@
                 $article_description = get_field('content', $article_id);
                 $article_thumbnail = get_the_post_thumbnail($article_id);
                 $article_permalink = get_permalink($article_id);
+                $page_modules = get_field('modules_list',$article_id);
+                $content = '';
+                foreach ($page_modules as $module) {
+                    if($module['acf_fc_layout'] == 'content'){
+                        $content = $module['wysiwyng_editor']; break;
+                    }
+                }
+                $content = strip_tags(substr($content, strpos($content, "<p"), strpos($content, "</p>")+4));
             ?>
             <div class="article-card">
                 <div class="article-header">
@@ -37,13 +45,13 @@
                         <span> <?= $article_title ?></span>
                     </div>
                     <div class="article-description">
-                        <span><?= short_content($article_description, 105); ?>... </span>
+                        <span><?= short_content($content, 80); ?>... </span>
                     </div>
                     <div class="article-btn">
                     <a href="<?= $article_permalink ?>">
-                            <div class="read-more-btn">
-                                <span>Read article</span>
-                            </div>
+                        <div class="read-more-btn">
+                            <span>Read article</span>
+                        </div>
                     </a>
                     </div>
                 </div>

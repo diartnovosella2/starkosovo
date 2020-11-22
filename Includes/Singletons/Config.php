@@ -61,7 +61,7 @@ class Config extends _Config
                 'supports' => array('title', 'thumbnail', 'revisions'),
                 'order'    => 5,
                 'rewrite'  => 'registrations'
-            )
+            ),
         );
 
         return parent::post_types($child_array);
