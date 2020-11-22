@@ -22,16 +22,18 @@
         <?php if(!$article_page): ?>
         <div class="sub-wrapper">
             <div class="subscribe-form">
-                <div class="subscribe-input">
-                    <input type="text" placeholder="Email Address">
-                </div>
+                <form id="post-subscriber">
+                    <div class="subscribe-input">
+                        <input id="email" type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                </form>
                 <div class="single-p-m">
                     <p>We hate spam as much as you do!</p>
                 </div>
                 <div class="header-button">
                     <a href="#">
                         <div class="subsribe-btn">
-                            <span>Subscribe</span>
+                            <input type="submit" value="Subscribe" id="submitsub">
                         </div>
                     </a>
                 </div>

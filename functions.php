@@ -22,7 +22,9 @@ function register_menus () {
     register_nav_menus(
       array(
         'header-menu' => __( 'Header Menu' ),
-        'footer-menu' => __( 'Footer Menu' )
+        'footer-menu' => __( 'Footer Menu' ),
+        'blog-menu' => __( 'Blog Menu' ),
+        'social-media' => __( 'Social Media' )
       )
     );
 }
@@ -462,5 +464,88 @@ function short_content($content, $len){
       $content = implode(' ', $content);
     } 
     return $content;
+}
+
+
+function add_email_subscriber_fields(){
+    if( function_exists('acf_add_local_field_group') ):
+
+        acf_add_local_field_group(array(
+            'key' => 'group_5fba948966137',
+            'title' => 'Email Subscibers fields',
+            'fields' => array(
+                array(
+                    'key' => 'field_5fba9496d371b',
+                    'label' => 'Email Address',
+                    'name' => 'email_address',
+                    'type' => 'email',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '30',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'subscriber',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'acf_after_title',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        
+    endif;
+}
+add_action('init', 'add_email_subscriber_fields');
+
+wp_register_script( 'subscriberForm', get_stylesheet_directory_uri() . '/assets/js/front/parts/emailSubscriber.js', array('jquery') );
+wp_localize_script( 'subscriberForm', 'script_object', array('ajax_url' => admin_url('admin-ajax.php')) );
+wp_enqueue_script( 'subscriberForm' );
+
+// Add these action so JS can see these functions
+add_action('wp_ajax_populate_subscriber_field', 'populate_subscriber_field');
+add_action('wp_ajax_nopriv_populate_subscriber_field', 'populate_subscriber_field');
+
+function populate_subscriber_field() {
+    $new_subscriber = array(
+        'post_title' => 'Registration form ' . $_GET['email'],
+        'post_date' => date('Y-m-d H:i:s'),
+        'post_type' => 'subscriber',
+        'post_status' => 'publish'
+    );
+
+    $post_id = wp_insert_post($new_subscriber);
+
+    $subscriberFields = [ 
+        'email_address', 
+    ];
+
+    $subscriberFieldsArray = [
+        $_GET['email']
+    ];
+
+    foreach ($subscriberFields as $key => $value) {
+        update_post_meta($post_id, $value, $subscriberFieldsArray[$key]);
+    }
+    wp_send_json_success( array('data' => 'success' ) , 200);
+    wp_die();
 }
   
