@@ -53,7 +53,7 @@ $classes = $show_description == 'No' ? 'art-container' : '';
         </div>
         <?php if($show_description == 'Yes'): ?>
         <div class="header-button">
-            <a href="#">
+            <a href="<?= home_url('/blog');?>">
                 <div class="blog-btn">
                     <span>Blog</span>
                 </div>

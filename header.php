@@ -22,7 +22,7 @@
               ); ?>
           </div>
           <div class="header__button">
-            <a href="#">
+            <a href="<?= home_url('/registration-form');?>">
               <div class="apply-now-btn">
                 <span>Apply now</span>
               </div>

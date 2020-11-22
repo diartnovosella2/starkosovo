@@ -39,13 +39,11 @@
             </a>
             <div class="footer__menus-quick-links">
               <span>Quicklinks</span>
-              <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Work & Travel</li>
-                <li>How it Works</li>
-                <li>Contact Us</li>
-              </ul>
+              <?php wp_nav_menu(
+                array(
+                  'theme_location' => 'footer-menu',
+                )
+              ); ?>
             </div>
             <div class="footer__menus-top-5-jobs">
             <span>Top 5 Jobs</span>
@@ -59,25 +57,22 @@
             </div>
             <div class="footer__menus-blog">
               <span>From the blog</span>
-              <ul>
-                <li>Blog Article</li>
-                <li>Blog Article</li> 
-                <li>Blog Article</li>
-                <li>Blog Article</li>
-                <li>Blog Article</li>
-              </ul>
+              <?php wp_nav_menu(
+                array(
+                  'theme_location' => 'blog-menu',
+                )
+              ); ?>
             </div>
             <div class="footer__menus-social-media">
               <span>Social Media</span>
-              <ul>
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>Linkedin</li>
-                <li>Youtube</li>
-              </ul>
+              <?php wp_nav_menu(
+                array(
+                  'theme_location' => 'social-media',
+                )
+              ); ?>
             </div>
             <div class="footer__menus-button">
-              <a href="#">
+              <a href="<?= home_url('/registration-form');?>">
                 <div class="get-started-btn">
                   <span>Get Started</span>
                 </div>
