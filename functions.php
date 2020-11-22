@@ -487,7 +487,7 @@ function filter_jobs() {
         'order'         => 'DESC',
         'fields'        => 'ids',
         'meta_query'	=> array(
-            'relation'  => 'AND',
+            'relation'  => 'OR',
             $cityQuery,
             $stateQuery,
             $salaryQuery,
