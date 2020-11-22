@@ -63,17 +63,20 @@
         .sub-wrapper{
             display: flex;
             flex-direction: column;
+            @include mq(laptop){
+                width: 50%;
+                align-items: flex-end;
+            }
             .subscribe-form{
-                display: flex;
-                flex-direction: column;
-                @include mq(tablet){
-                    flex-direction: row;
-                }
-                .subscribe-input{
+                .es_subscription_form{
+                    display: flex;
+                    flex-direction: column;
                     @include mq(tablet){
-                        margin-right: 10px;
+                        flex-direction: row;
                     }
-                    input{
+                }
+                .emaillist{
+                    .es_txt_email{
                         width: 303px;
                         height: 50px;
                         border: 0;
@@ -81,6 +84,9 @@
                         border-radius: 4px;
                         padding: 17px 23px;
                         outline: none;
+                        @include mq(tablet){
+                            margin-right: 10px;
+                        }
                     }
                     ::placeholder {
                         color: #1E5C6B;
@@ -94,8 +100,33 @@
                       ::-ms-input-placeholder { 
                         color: #1E5C6B;
                       }
+
+                      .es_submit_button{
+                        background: #1E5C6B;
+                        border-radius: 4px;
+                        color: white;
+                        width: 100%;
+                        @include mq(tablet){
+                            width: 152px;
+                        }
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-transform: uppercase;
+                        font-weight: 900;
+                        font-style: italic;
+                        border: none;
+                        &:focus{
+                            outline: none;
+                            border: none;
+                        }
+                      }
                 }
 
+                .es_spinner_image{
+                    display: none !important;
+                }
                 .single-p-m{
                     margin: 10px 0;
                     @include mq(tablet){
@@ -109,30 +140,6 @@
                         color: #000000;
                         opacity: 0.4;
                         text-align: center;
-                    }
-                }
-    
-                .header-button{
-                    a{
-                        &:hover{
-                            text-decoration: none;
-                        }
-                        .subsribe-btn{
-                            background: #1E5C6B;
-                            border-radius: 4px;
-                            color: white;
-                            width: 100%;
-                            @include mq(tablet){
-                                width: 152px;
-                            }
-                            height: 50px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            text-transform: uppercase;
-                            font-weight: 900;
-                            font-style: italic;
-                        }
                     }
                 }
             }

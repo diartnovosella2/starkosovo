@@ -22,18 +22,11 @@
         <?php if(!$article_page): ?>
         <div class="sub-wrapper">
             <div class="subscribe-form">
-                <div class="subscribe-input">
-                    <input type="text" placeholder="Email Address">
-                </div>
+                <?php 
+                    echo do_shortcode('[email-subscribers-form id="2"]');    
+                ?>
                 <div class="single-p-m">
                     <p>We hate spam as much as you do!</p>
-                </div>
-                <div class="header-button">
-                    <a href="#">
-                        <div class="subsribe-btn">
-                            <span>Subscribe</span>
-                        </div>
-                    </a>
                 </div>
             </div>
             <div class="single-p-d">
