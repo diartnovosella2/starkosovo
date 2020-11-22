@@ -418,7 +418,6 @@ function gallery_fields(){
     endif;
 }
 
-
 function short_content($content, $len){
     if (strlen($content) > $len){
       $content = substr($content, 0, $len);
@@ -434,14 +433,15 @@ add_action('wp_ajax_populate_register_fields', 'populate_register_fields');
 add_action('wp_ajax_nopriv_populate_register_fields', 'populate_register_fields');
 
 function populate_register_fields() {
+
     $new_post = array(
         'post_title' => 'Registration Form ' . $_GET['firstName'] . ' ' . $_GET['lastName'],
         'post_date' => date('Y-m-d H:i:s'),
         'post_type' => 'registration',
         'post_status' => 'publish'
     );
-    $post_id = wp_insert_post($new_post);
 
+    $post_id = wp_insert_post($new_post);
     $registerFields = [ 
         'first_name',  'last_name', 'date_of_birth', 'phone_number', 
         'email', 'degree', 'department', 'university_details_registered_year', 
@@ -449,12 +449,14 @@ function populate_register_fields() {
         'university_details_average_grade', 'university_details_exams_passed', 
         'father_work', 'mother_work', 'star_work_info', 
     ];
+
     $registerFieldsArray = [
         $_GET['firstName'], $_GET['lastName'], $_GET['dateOfBirth'], $_GET['phoneNumber'], 
         $_GET['email'], $_GET['university'], $_GET['department'], $_GET['yearOfUni'], 
         $_GET['yearOfStudies'], $_GET['englishLevel'], $_GET['avgGrade'], $_GET['numberOfExams'], 
         $_GET['father_work'], $_GET['mother_work'], $_GET['starWorkInfo']
     ];
+
     foreach ($registerFields as $key => $value) {
         update_post_meta($post_id, $value, $registerFieldsArray[$key]);
     }
@@ -472,10 +474,10 @@ function filter_jobs() {
     $jobPos  = isset($_GET['job_name']) ? $_GET['job_name'] : null;
     $salary  = isset($_GET['salary'])   ? $_GET['salary']   : null;
 
-    $cityQuery   = $city   !== '' ? array( 'key' => 'city', 'value' => $city, 'compare' => 'LIKE' ) : '';
-    $stateQuery  = $state  !== '' ? array('key' => 'state','value' => $state, 'compare' => 'LIKE') : '';
+    $cityQuery   = $city   !== '' ? array('key' => 'city', 'value' => $city, 'compare' => 'LIKE')          : '';
+    $stateQuery  = $state  !== '' ? array('key' => 'state','value' => $state, 'compare' => 'LIKE')         : '';
     $salaryQuery = $salary !== '' ? array('key' => 'price_per_hour', 'value' => $salary, 'compare' => '=') : '';
-    $jobPosQuery = $jobPos !== '' ? array('key' => 'job_name', 'value' => $jobPos, 'compare' => 'LIKE') : '';
+    $jobPosQuery = $jobPos !== '' ? array('key' => 'job_name', 'value' => $jobPos, 'compare' => 'LIKE')    : '';
     
     $args = array(
         'post_type'     => 'application',
