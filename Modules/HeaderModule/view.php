@@ -11,8 +11,8 @@ $desktop_bg = $data['module_fields']['desktop_background']['url'];
 $title = $data['module_fields']['title'];
 $description = $data['module_fields']['description'];
 $button_text = $data['module_fields']['button_text'];
-$remaining_days = $data['module_fields']['remaining_days'];
 $text_position = $data['module_fields']['text_position'];
+$end_date = $data['module_fields']['end_date'];
 
 ?>
 <div class="header-module">
@@ -33,14 +33,21 @@ $text_position = $data['module_fields']['text_position'];
             </div>
             <div class="btn-txt-wrapper">
                 <div class="aff-button">
-                    <a href="#">
+                    <a href="<?= home_url('/registration-form');?>">
                         <div class="get-started-btn">
                             <span><?= $button_text?></span>
                         </div>
                     </a>
                 </div>
                 <div class="remaining-days">
-                    <span><?= $remaining_days ?> days left to apply</span>
+                    <?php 
+                        $current_date = date("Y-m-d");
+                        $date1 = new DateTime($current_date); 
+                        $date2 = new DateTime($end_date);
+                        $diff = $date2->diff($date1)->format("%a");
+                        $days = intval($diff);   //rounding days
+                    ?>
+                    <span><?= $days; ?> days left to apply</span>
                 </div>
             </div>
         </div>

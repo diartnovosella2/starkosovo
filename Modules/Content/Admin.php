@@ -185,6 +185,7 @@ class Admin
                         'Get Started' => 'Get Started',
                         'Success Story' => 'Success Story',
                         'Register' => 'Register',
+                        'Wysiwyg Editor' => 'Wysiwyg Editor'
                     ),
                     'allow_null' => 0,
                     'default_value' => '',
@@ -198,7 +199,15 @@ class Admin
                     'type' => 'button_group',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5fa471e0e1435',
+                                'operator' => '!=',
+                                'value' => 'Wysiwyg Editor',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '50',
                         'class' => '',
@@ -220,7 +229,15 @@ class Admin
                     'type' => 'image',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5fa471e0e1435',
+                                'operator' => '!=',
+                                'value' => 'Wysiwyg Editor',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '50',
                         'class' => '',
@@ -244,7 +261,15 @@ class Admin
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5fa471e0e1435',
+                                'operator' => '!=',
+                                'value' => 'Wysiwyg Editor',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '50',
                         'class' => '',
@@ -303,6 +328,13 @@ class Admin
                                 'field' => 'field_5fa471e0e1435',
                                 'operator' => '==',
                                 'value' => 'Get Started',
+                            ),
+                        ),
+                        array(
+                            array(
+                                'field' => 'field_5fa471e0e1435',
+                                'operator' => '!=',
+                                'value' => 'Wysiwyg Editor',
                             ),
                         ),
                     ),
@@ -513,7 +545,15 @@ class Admin
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5fa471e0e1435',
+                                'operator' => '!=',
+                                'value' => 'Wysiwyg Editor',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '50',
                         'class' => '',
@@ -532,7 +572,15 @@ class Admin
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5fa471e0e1435',
+                                'operator' => '!=',
+                                'value' => 'Wysiwyg Editor',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '50',
                         'class' => '',
@@ -543,6 +591,33 @@ class Admin
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5cc413ec11e2aa',
+                    'label' => 'Wysiwyng Editor',
+                    'name' => 'wysiwyng_editor',
+                    'type' => 'wysiwyg',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5fa471e0e1435',
+                                'operator' => '==',
+                                'value' => 'Wysiwyg Editor',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'delay' => 0,
                 ),
             ),
             'location' => array(

@@ -44,7 +44,7 @@ jQuery(document).ready(function ($) {
       });
 
       var home_url = window.location.origin;
-      if (window.location.href.indexOf("blog") > -1 || window.location.href.indexOf("registration-form") > -1  ) { 
+      if (window.location.href.indexOf("blog") > -1 || window.location.href.indexOf("registration-form") > -1 || window.location.href.indexOf("articles") > -1  ) { 
         $('.header__navigation-menu li a').css('color', '#1E5C6B');
         $('.logo').attr('src', home_url  + '/wp-content/themes/starkosovo/assets/images/blue-logo.svg');
         $('.header').css('border-bottom', '1px solid #1E5C6B');
