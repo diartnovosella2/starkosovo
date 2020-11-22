@@ -33,7 +33,7 @@ $end_date = $data['module_fields']['end_date'];
             </div>
             <div class="btn-txt-wrapper">
                 <div class="aff-button">
-                    <a href="#">
+                    <a href="<?= home_url('/registration-form');?>">
                         <div class="get-started-btn">
                             <span><?= $button_text?></span>
                         </div>
