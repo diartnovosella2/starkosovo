@@ -28,12 +28,12 @@
                         <p>Location</p>
                         <div class="d-flex my-2">
                             <select name="city" id="city">
-                                <option value="" selected>City</option>
+                                <option selected>City</option>
                                 <option value="Pristina">Pristina</option>
                                 <option value="Peja">Peja</option>
                             </select>
                             <select name="state" id="state">
-                                <option value="" selected>State</option>
+                                <option selected>State</option>
                                 <option value="Kosova">Kosova</option>
                                 <option value="Albania">Albania</option>
                             </select>
@@ -43,9 +43,10 @@
                         <p>Select Position</p>
                         <div class="d-flex my-2">
                             <select name="job_name" id="job_name">
-                                <option value="Product Designer" selected>Product Designer</option>
+                                <option selected>Job Position</option>
+                                <option value="Vodafone">Vodafone</option>
                                 <option value="Starlabs">Starlabs</option>
-                                <option value="Product Designer2">Product Designer</option>
+                                <option value="Product Designer">Product Designer</option>
                             </select>
                         </div>
                     </div>
@@ -53,7 +54,8 @@
                         <p>Hours/week</p>
                         <div class="d-flex my-2">
                             <select name="hours" id="hours">
-                                <option value="40" selected>40h</option>
+                                <option selected>Hours/week</option>
+                                <option value="40">40h</option>
                                 <option value="20">20h</option>
                                 <option value="30">30h</option>
                             </select>
@@ -63,7 +65,9 @@
                         <p>Salary/hour</p>
                         <div class="d-flex my-2">
                             <select name="salary" id="salary">
-                                <option value="20" selected>$20</option>
+                                <option selected>Hours</option>
+                                <option value="15">$15</option>
+                                <option value="20">$20</option>
                                 <option value="40">$40</option>
                                 <option value="60">$60</option>
                             </select>
