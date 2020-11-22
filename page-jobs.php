@@ -115,7 +115,7 @@
                         </div>
                     </div>
 
-                    <div class="jobs__container__single__text w-25">
+                    <div class="jobs__container__single__text">
                         <p class="jobs__container__single__text__sub" ><?= $subtitle; ?></p>
                         <div class="jobs__container__single__text__desc">
                             <?= $description; ?>

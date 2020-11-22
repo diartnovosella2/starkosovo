@@ -65,6 +65,10 @@
                 }
             }
             &__text {
+                width: 100%;
+                @include mq(laptop) {
+                    width: 25%;
+                }
                 &__desc {
                     font-size: 14px;
                     line-height: 19px;
