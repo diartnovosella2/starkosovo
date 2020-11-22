@@ -418,10 +418,16 @@ function gallery_fields(){
     endif;
 }
 
-// Localize Script for JS
-wp_register_script( 'registerForm', get_stylesheet_directory_uri() . '/assets/js/front/parts/registerForm.js', array('jquery') );
-wp_localize_script( 'registerForm', 'script_object', array('ajax_url' => admin_url('admin-ajax.php')) );
-wp_enqueue_script( 'registerForm' );
+
+function short_content($content, $len){
+    if (strlen($content) > $len){
+      $content = substr($content, 0, $len);
+      $content = explode(' ', $content);
+      array_pop($content); // remove last word from array
+      $content = implode(' ', $content);
+    } 
+    return $content;
+}
 
 // Add these action so JS can see these functions
 add_action('wp_ajax_populate_register_fields', 'populate_register_fields');
@@ -456,12 +462,61 @@ function populate_register_fields() {
     wp_die();
 }
 
-function short_content($content, $len){
-    if (strlen($content) > $len){
-      $content = substr($content, 0, $len);
-      $content = explode(' ', $content);
-      array_pop($content); // remove last word from array
-      $content = implode(' ', $content);
-    } 
-    return $content;
+// Add these action so JS can see these functions
+add_action('wp_ajax_filter_jobs', 'filter_jobs');
+add_action('wp_ajax_nopriv_filter_jobs', 'filter_jobs');
+
+function filter_jobs() {
+    $city    = isset($_GET['city'])     ? $_GET['city']     : null;
+    $state   = isset($_GET['state'])    ? $_GET['state']    : null;
+    $jobPos  = isset($_GET['job_name']) ? $_GET['job_name'] : null;
+    $salary  = isset($_GET['salary'])   ? $_GET['salary']   : null;
+
+    $cityQuery   = $city   !== '' ? array( 'key' => 'city', 'value' => $city, 'compare' => 'LIKE' ) : '';
+    $stateQuery  = $state  !== '' ? array('key' => 'state','value' => $state, 'compare' => 'LIKE') : '';
+    $salaryQuery = $salary !== '' ? array('key' => 'price_per_hour', 'value' => $salary, 'compare' => '=') : '';
+    $jobPosQuery = $jobPos !== '' ? array('key' => 'job_name', 'value' => $jobPos, 'compare' => 'LIKE') : '';
+    
+    $args = array(
+        'post_type'     => 'application',
+        'post_status'   => 'publish',
+        'posts_per_page' =>  10,
+        'orderby'       => 'publish_date',
+        'order'         => 'DESC',
+        'fields'        => 'ids',
+        'meta_query'	=> array(
+            'relation'  => 'OR',
+            $cityQuery,
+            $stateQuery,
+            $salaryQuery,
+            $jobPosQuery
+        ),
+    );
+    $query = new WP_Query($args);
+    $jobsArray = [];
+    $filterJobs = [];
+
+    foreach($query->posts as $jobId) { 
+        $otherDetails = get_field('other_details', $jobId);
+        $description  = get_field('description', $jobId);
+        $price        = get_field('price_per_hour', $jobId);
+        $thumbnail    = get_the_post_thumbnail($jobId);
+        $jobName      = get_field('job_name', $jobId);
+        $location     = get_field('location', $jobId);
+        $subtitle     = get_field('subtitle', $jobId);
+        $jobTitle     = get_the_title($jobId);
+
+        $filterJobs['thumbnail']    = $thumbnail;
+        $filterJobs['jobName']      = $jobName;
+        $filterJobs['jobTitle']     = $jobTitle;
+        $filterJobs['location']     = $location;
+        $filterJobs['otherDetails'] = $otherDetails;
+        $filterJobs['subtitle']     = $subtitle;
+        $filterJobs['description']  = $description;
+        $filterJobs['price']        = $price;
+        array_push($jobsArray, $filterJobs);
+    };
+    
+    echo json_encode($jobsArray);
+    wp_die();
 }
