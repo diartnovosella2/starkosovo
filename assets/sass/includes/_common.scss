@@ -63,6 +63,12 @@ html {
         main {
             width: $full-width;
         }
+        button,
+        input {
+            &:focus {
+                outline: none;
+            }
+        }
     }
     .blogz {
         padding: 0 15px;
