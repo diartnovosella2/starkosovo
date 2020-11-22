@@ -40,14 +40,19 @@
         display: flex;
         align-items: center;
       }
+      &-bluelogo{
+        padding-left: 10px;
+        @include mq(laptop){
+          display: none;
+        }
+      }
       &-menu{
         display: flex;
         flex-direction: column;
         margin-bottom: 0;
-        padding:1.3rem 0;
+        padding:0;
         @include mq(laptop){
           flex-direction: row;
-          padding:0;
         }
         ul{
           display: flex;
@@ -117,7 +122,7 @@
         &.active{
           .header__navigation-toggle--exit{
             display: block;
-            font-size: 1.2rem;
+            object-fit: contain;
           }
           .header__navigation-toggle--open{
             display: none;
@@ -125,17 +130,25 @@
         }
       }
       &-active {
-        background: transparent;
-        height: 45vh;
+        background: $white;
+        height: 42vh;
         position: absolute;
         right: 0;
         width: 74%;
         display: block;
-        top: 4.1rem;
+        top: 0;
         border-bottom-left-radius: 4rem;
         z-index: 9;
+        padding: 0 2.5rem;
         @include mq(tablet){
           width: 35%;
+        }
+        ul{
+          li{
+            a{
+              color: #1E5C6B;
+            }
+          }
         }
       }
       
