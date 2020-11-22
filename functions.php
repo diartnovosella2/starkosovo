@@ -504,21 +504,22 @@ function filter_jobs() {
         $price        = get_field('price_per_hour', $jobId);
         $thumbnail    = get_the_post_thumbnail($jobId);
         $jobName      = get_field('job_name', $jobId);
-        $location     = get_field('location', $jobId);
+        $city         = get_field('city', $jobId);
+        $state        = get_field('state', $jobId);
         $subtitle     = get_field('subtitle', $jobId);
         $jobTitle     = get_the_title($jobId);
 
         $filterJobs['thumbnail']    = $thumbnail;
         $filterJobs['jobName']      = $jobName;
         $filterJobs['jobTitle']     = $jobTitle;
-        $filterJobs['location']     = $location;
+        $filterJobs['city']         = $city;
+        $filterJobs['state']        = $state;
         $filterJobs['otherDetails'] = $otherDetails;
         $filterJobs['subtitle']     = $subtitle;
         $filterJobs['description']  = $description;
         $filterJobs['price']        = $price;
         array_push($jobsArray, $filterJobs);
     };
-    
     echo json_encode($jobsArray);
     wp_die();
 }
