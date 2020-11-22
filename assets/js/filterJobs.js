@@ -1,16 +1,25 @@
 jQuery(document).ready(function ($) {
     $('#filterJobs').on('submit', function(e) {
         e.preventDefault();
+        cityValue = $('#city').children("option:selected").attr('value');
+        stateValue = $('#state').children("option:selected").attr('value');
+        jobName = $('#job_name').children("option:selected").attr('value');
+        salaryValue = $('#salary').children("option:selected").attr('value');
+
+        cityValue   = $('#city').children("option:selected").attr('value') !== undefined ? cityValue : null;
+        stateValue  = $('#state').children("option:selected").attr('value') !== undefined ? stateValue : null;
+        jobName     = $('#job_name').children("option:selected").attr('value') !== undefined ? jobName : null;
+        salaryValue = $('#salary').children("option:selected").attr('value') !== undefined ? salaryValue : null;
         $.ajax({
             type: "GET",
             url: script_object.ajax_url,
             dataType: 'json',
             data: {
                 'action'   : 'filter_jobs',
-                'city'     : $('#city').children("option:selected").val(),
-                'state'    : $('#state').children("option:selected").val(),
-                'job_name' : $('#job_name').children("option:selected").val(),
-                'salary'   : $('#salary').children("option:selected").val(),
+                'city'     : cityValue,
+                'state'    : stateValue,
+                'job_name' : jobName,
+                'salary'   : salaryValue,
             },
             beforeSend: function() {
                 $('.filter__jobs').empty();
