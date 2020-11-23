@@ -1,15 +1,15 @@
 jQuery(document).ready(function ($) {
     $('#filterJobs').on('submit', function(e) {
         e.preventDefault();
-        cityValue = $('#city').children("option:selected").attr('value');
-        stateValue = $('#state').children("option:selected").attr('value');
-        jobName = $('#job_name').children("option:selected").attr('value');
+        cityValue   = $('#city').children("option:selected").attr('value');
+        stateValue  = $('#state').children("option:selected").attr('value');
+        jobName     = $('#job_name').children("option:selected").attr('value');
         salaryValue = $('#salary').children("option:selected").attr('value');
 
-        cityValue   = $('#city').children("option:selected").attr('value') !== undefined ? cityValue : null;
-        stateValue  = $('#state').children("option:selected").attr('value') !== undefined ? stateValue : null;
-        jobName     = $('#job_name').children("option:selected").attr('value') !== undefined ? jobName : null;
-        salaryValue = $('#salary').children("option:selected").attr('value') !== undefined ? salaryValue : null;
+        cityValue   = cityValue   !== undefined ? cityValue   : null;
+        stateValue  = stateValue  !== undefined ? stateValue  : null;
+        jobName     = jobName     !== undefined ? jobName     : null;
+        salaryValue = salaryValue !== undefined ? salaryValue : null;
         $.ajax({
             type: "GET",
             url: script_object.ajax_url,
@@ -80,7 +80,7 @@ jQuery(document).ready(function ($) {
                             ` + otherDetailsContainer + `
                             <div>
                                 <button class="apply__button mt-3"> 
-                                    <a href="">APPLY NOW</a>
+                                    <a href="`+ element['jobUrl'] +`">APPLY NOW</a>
                                 </button>
                             </div>
                         </div>`;

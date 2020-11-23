@@ -119,14 +119,12 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="jobs__container__single__text">
                         <p class="jobs__container__single__text__sub" ><?= $subtitle; ?></p>
                         <div class="jobs__container__single__text__desc">
                             <?= $description; ?>
                         </div>
                     </div>
-
                     <?php if( !empty($otherDetails) ) { ?>
                         <div class="jobs__otherDetails"> 
                             <?php foreach ($otherDetails as $details) { ?>
@@ -142,7 +140,7 @@
                     <?php } ?>
                     <div>
                         <button class="apply__button mt-3"> 
-                            <a href="">APPLY NOW</a>
+                            <a href="<?= get_home_url(); ?>/registration-form/?id=<?= $jobId;?>">APPLY NOW</a>
                         </button>
                     </div>
                 </div>
