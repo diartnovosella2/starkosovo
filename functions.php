@@ -37,6 +37,44 @@ function addRegisterFileds() {
             'title' => 'Registration Fields',
             'fields' => array(
                 array(
+                    'key' => 'field_5fbc1164d93f7',
+                    'label' => 'Job Name',
+                    'name' => 'job_name',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '50',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5fbc116bd93f8',
+                    'label' => 'Job Url',
+                    'name' => 'job_url',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '50',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
                     'key' => 'field_5fab05bca662b',
                     'label' => 'First Name',
                     'name' => 'first_name',
@@ -45,7 +83,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '25',
+                        'width' => '15',
                         'class' => '',
                         'id' => '',
                     ),
@@ -64,7 +102,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '25',
+                        'width' => '15',
                         'class' => '',
                         'id' => '',
                     ),
@@ -83,7 +121,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '25',
+                        'width' => '15',
                         'class' => '',
                         'id' => '',
                     ),
@@ -102,7 +140,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '25',
+                        'width' => '15',
                         'class' => '',
                         'id' => '',
                     ),
@@ -121,7 +159,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '40',
+                        'width' => '15',
                         'class' => '',
                         'id' => '',
                     ),
@@ -140,7 +178,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '30',
+                        'width' => '15',
                         'class' => '',
                         'id' => '',
                     ),
@@ -159,7 +197,7 @@ function addRegisterFileds() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '30',
+                        'width' => '10',
                         'class' => '',
                         'id' => '',
                     ),
@@ -442,19 +480,22 @@ function populate_register_fields() {
     );
 
     $post_id = wp_insert_post($new_post);
+    $jobTitle = isset($_GET['siteTitle']) ? $_GET['siteTitle'] : 'None';
+    $jobUrl   = isset($_GET['siteUrl'])   ? $_GET['siteUrl']   : 'None';
+
     $registerFields = [ 
         'first_name',  'last_name', 'date_of_birth', 'phone_number', 
         'email', 'degree', 'department', 'university_details_registered_year', 
         'university_details_year_of_studies', 'university_details_english_level', 
         'university_details_average_grade', 'university_details_exams_passed', 
-        'father_work', 'mother_work', 'star_work_info', 
+        'father_work', 'mother_work', 'star_work_info', 'job_name', 'job_url' 
     ];
 
     $registerFieldsArray = [
         $_GET['firstName'], $_GET['lastName'], $_GET['dateOfBirth'], $_GET['phoneNumber'], 
         $_GET['email'], $_GET['university'], $_GET['department'], $_GET['yearOfUni'], 
         $_GET['yearOfStudies'], $_GET['englishLevel'], $_GET['avgGrade'], $_GET['numberOfExams'], 
-        $_GET['father_work'], $_GET['mother_work'], $_GET['starWorkInfo']
+        $_GET['father_work'], $_GET['mother_work'], $_GET['starWorkInfo'], $jobUrl, $jobTitle
     ];
 
     foreach ($registerFields as $key => $value) {
@@ -480,7 +521,7 @@ function filter_jobs() {
     $stateQuery  = $state  !== '' ? $meta_args[] = array('key' => 'state', 'value' => $state, 'compare' => 'LIKE')        : null;
     $salaryQuery = $salary !== '' ? $meta_args[] = array('key' => 'price_per_hour', 'value' => $salary, 'compare' => '=') : null;
     $jobPosQuery = $jobPos !== '' ? $meta_args[] = array('key' => 'job_name', 'value' => $jobPos, 'compare' => 'LIKE')    : null;
-  
+
     $args = array(
         'post_type'     => 'application',
         'post_status'   => 'publish',
@@ -518,6 +559,7 @@ function filter_jobs() {
         $filterJobs['subtitle']     = $subtitle;
         $filterJobs['description']  = $description;
         $filterJobs['price']        = $price;
+        $filterJobs['jobUrl']       = get_home_url() . '/registration-form/?id=' . $jobId;
         array_push($jobsArray, $filterJobs);
     };
     echo json_encode($jobsArray);

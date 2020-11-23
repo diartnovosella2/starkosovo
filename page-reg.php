@@ -1,6 +1,8 @@
 <?php 
     /* Template Name: Register Template */
     get_header(); 
+    $query = array();
+    parse_str($_SERVER['QUERY_STRING'], $query);
 ?>
 
 <div class="d-flex text__centered py-3 flex-column">
@@ -15,6 +17,8 @@
 
         <form id="post-register">
             <div class="d-flex flex-column register__page__content ">
+                <input id="siteTitle"   type="text"  name="siteTitle" value="<?= get_permalink((int)$query['id']); ?>" class="d-none">
+                <input id="siteUrl"     type="text"  name="siteUrl"   value="<?= get_the_title((int)$query['id']); ?>" class="d-none">
                 <input id="firstName"   type="text"  name="firstName"   placeholder="First Name"    required>
                 <input id="lastName"    type="text"  name="lastName"    placeholder="Last Name"     required>
                 <input id="dateOfBirth" type="date"  name="dateOfBirth" placeholder="Date of Brith" required>
@@ -27,9 +31,7 @@
                     <option value="High School">High School</option>
                     <option value="University">University</option>
                 </select>
-
                 <input id="department" type="text" name="department" placeholder="Department">
-
                 <div class="d-flex flex-column my-2">
                     <p class="text-center register__page__content__text">In which year you were Registered in the University?</p>
                     <select name="yearOfUni" id="yearOfUni">
@@ -38,7 +40,6 @@
                         <option value="2004">2004</option>
                     </select>
                 </div>
-                
                 <div class="d-flex flex-column my-2">
                     <p class="text-center register__page__content__text">Year of Studies</p>
                     <select name="yearOfStudies" id="yearOfStudies">
@@ -49,7 +50,6 @@
                         <option value="5">5</option>
                     </select>
                 </div>
-
                 <div class="d-flex flex-column my-2">
                     <p class="text-center register__page__content__text">Number of Exams Passed</p>
                     <select name="numberOfExams" id="numberOfExams">

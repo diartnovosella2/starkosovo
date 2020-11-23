@@ -21,6 +21,8 @@ jQuery(document).ready(function($) {
                 'father_work'   : $("input[name='fatherWork']:checked").val(),
                 'mother_work'   : $("input[name='motherWork']:checked").val(),
                 'starWorkInfo'  : $('#starWorkInfo').children("option:selected").val(),
+                'siteTitle'     : $('#siteTitle').val(),
+                'siteUrl'       : $('#siteUrl').val(),
             },
             success: function(response) {
                 $('.form__submit').hide();
