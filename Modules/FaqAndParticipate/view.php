@@ -1,5 +1,7 @@
 
 <?php 
+    global $post;
+    $jobId = $post->ID;
     $chooseDesign = $data['choose_design'] == 'FAQ' ? "faq" : "participate"; 
 ?> 
 
@@ -30,7 +32,11 @@
     <?php if( $data['choose_design'] !== 'FAQ') { ?>  
         <div>
             <button class="apply__button mt-3"> 
-                <a href="<?= $data['register_url'];?>"><?= $data['register_text'];?></a>
+                <?php if (strlen($data['register_url']) !== 0 ) { ?>
+                    <a href="<?= $data['register_url'];?>"><?= $data['register_text'];?></a>
+                <?php } else { ?>
+                    <a href="<?= get_home_url(); ?>/registration-form/?id=<?= $jobId;?>">REGISTER NOW</a>
+                <?php } ?>
             </button>   
         </div>
     <?php } ?>
