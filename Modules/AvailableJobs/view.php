@@ -46,7 +46,7 @@ switch($data['selector']){
             </div>
         </div>
         <div class="header-button">
-            <a href="<?= home_url('/available-jobs');?>">
+            <a href="<?= home_url('/find-jobs');?>">
                 <div class="jobs-btn">
                     <span>AVAILABLE JOBS</span>
                 </div>
