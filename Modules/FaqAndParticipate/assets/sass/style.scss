@@ -1,7 +1,5 @@
 .fp {
-    @include mq(tablet) {
-    margin-top: 87px;
-    }
+   
     &__faq,
     &__participate {
         color: $darkBlue;
@@ -28,6 +26,9 @@
         }
     }
     &__faq {
+        @include mq(tablet) {
+            margin-top: 87px;
+        }
         @include mq(laptop) {
             flex-direction: row !important;
         }
