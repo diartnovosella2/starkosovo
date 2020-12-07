@@ -1,4 +1,8 @@
 .avaliable-jobs-container {
+    margin-top: 25px;
+    @include mq(tablet){
+        margin-top: 100px;
+    }
     .module-header{
         display: flex;
         justify-content: space-between;

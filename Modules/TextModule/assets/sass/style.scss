@@ -29,10 +29,12 @@
     }
     &__centered {
         justify-content: center;
+        margin-bottom: 20px;
         @include mq(tablet) {
             background-image: url("../images/world.svg");
             background-repeat: no-repeat;
             background-position: center;
+            margin-bottom: 85px;
         }
         &__content {
             max-width: 100%;
