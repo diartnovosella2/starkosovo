@@ -40,12 +40,12 @@
                 }
                 padding: 0px 35px;
                 @include mq(laptop) {
-                    width: 52%;
+                    width: 55%;
                     padding: 0;
                 }
                 .title {
                     font-style: italic;
-                    font-weight: 900;
+                    font-weight: 750;
                     font-size: 36px;
                     color: #FFFFFF;
                     line-height: 1;
@@ -60,6 +60,7 @@
                     line-height: 21px;
                     color: #FFFFFF;
                     margin-top: 10px;
+                    font-family: 'Montserrat';
                 }
                 .btn-txt-wrapper {
                     margin-top: 24px;
