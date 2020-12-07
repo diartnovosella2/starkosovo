@@ -1,4 +1,7 @@
 .resources-preview-container{
+    @include mq(tablet){
+        margin-top: 100px;
+    }
     .resources-header{
         display: flex;
         justify-content: space-between;

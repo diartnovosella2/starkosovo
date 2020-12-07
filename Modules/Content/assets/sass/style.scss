@@ -1,4 +1,8 @@
 .content {
+    margin-top: 10px;
+    @include mq(tablet){
+        margin-top: 85px;
+    }
     &__left,
     &__right {
         flex-basis: 100%;
