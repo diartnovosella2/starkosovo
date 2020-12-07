@@ -33,18 +33,25 @@
             @include mq(laptop) {
                 flex-basis: 30%;
             }
+            h2{
+                font-style: italic;
+                font-weight: 750;
+                font-size: 30px;
+                line-height: 137.5%;
+            }
             &__subtitle {
                 span {
                     font-weight: bold;
                     font-style: italic;
                 }
                 a {
-                    font-weight: 750;
+                    font-weight: 750 !important;
                     font-size: 16px;
                     line-height: 103%;
                     letter-spacing: -0.07em;
                     color: $starOrange;
                     font-style: italic;
+                    font-family: 'Futura';
                 }
             }
         }
@@ -77,7 +84,7 @@
                 }
                 &__desc {
                     margin-top: 16px !important;
-                    font-weight: bold;
+                    font-weight: 500;
                     font-size: 12px;
                     color: black;
                 }

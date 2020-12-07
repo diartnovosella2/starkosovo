@@ -29,6 +29,7 @@
                 font-weight: 700;
                 font-size: 18px;
                 color: white;
+                width: 75%;
             }
             &__description {
                 font-weight: normal;
@@ -64,6 +65,10 @@
                 font-weight: 750;
                 font-size: 30px;
                 color: $darkYellow;
+                width: 80%;
+                @include mq(tablet){
+                    width: 70%;
+                }
             }
             &__success__story {
                 font-style: italic;
@@ -71,6 +76,7 @@
                 font-size: 16px;
                 line-height: 18px;
                 color: $darkBlue;
+                font-family: 'Futura';
             }
             &__register {
                 text-transform: uppercase;
@@ -83,8 +89,9 @@
             background-color: $lightGray;
             &__title {
                 color: $starOrange;
+                font-family: 'Futura';
                 font-style: italic;
-                font-weight: bold;
+                font-weight: 750;
                 font-size: 14px;
                 line-height: 17px;
             }
@@ -92,7 +99,10 @@
                 color: $darkBlue;
                 font-size: 14px;
                 line-height: 19px;
-                text-decoration-line: underline;
+                text-decoration-line: underline; 
+                margin-left: 20px;
+                font-weight: 600 !important;
+                font-style: normal;
             }
         }
     }
