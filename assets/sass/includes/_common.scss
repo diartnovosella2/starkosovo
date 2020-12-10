@@ -88,4 +88,16 @@ html {
             }
         }
     }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin-right: auto;
+        margin-left: auto; 
+    }
+    @media (min-width: 576px) {
+        .container {
+            max-width: 1300px; 
+        } 
+    }
 }
