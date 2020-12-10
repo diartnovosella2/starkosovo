@@ -54,7 +54,7 @@
         @include mq(laptop) {
             margin-top: 0;
         }
-        span{
+        span {
             font-family: $font-family-base;
         }
         ul {
@@ -62,13 +62,15 @@
             margin-top: 5px;
             li {
                 list-style: none;
-                a{
+                a {
                     color: white;
-                    font-weight: 600;
-                    font-size: 14px;
                     font-family: 'Futura';
                     font-style: italic;
-                    &:hover{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 17px;
+                    letter-spacing: 1.5px;
+                    &:hover {
                         text-decoration: none;
                     }
                 }
@@ -125,39 +127,41 @@
                 padding: 0;
                 margin-top: 5px;
                 li {
+                    margin: 5px 0;
                     list-style: none;
                     color: white;
-                    font-weight: 600;
-                    font-size: 14px;
                     font-family: 'Futura';
                     font-style: italic;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 17px;
+                    letter-spacing: 1.5px;
                 }
             }
         }
     }
 }
 
-.gallery-module{
+.gallery-module {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    @include min(500){
+    @include min(500) {
         flex-wrap: unset;
     }
-    .img-wrapper{
+    .img-wrapper {
         width: 50%;
-        img{
+        img {
             width: 100%;
             max-width: 100%;
             height: auto;
         }
     }
-   
 }
 
-.follow-us{
+.follow-us {
     margin: 50px 0 30px;
-    span{
+    span {
         font-style: italic;
         font-weight: 900;
         font-size: 14px;
@@ -170,17 +174,15 @@
     }
 }
 
-
-.page-404-container{
+.page-404-container {
     display: table;
     width: 100%;
     height: 60vh;
     text-align: center;
-
-    .fof{
+    .fof {
         display: table-cell;
         vertical-align: middle;
-        h1{
+        h1 {
             font-size: 50px;
             display: inline-block;
             padding-right: 12px;
@@ -188,7 +190,7 @@
             color: #1E5C6B;
             font-family: $font-family-base;
         }
-        .home-btn{
+        .home-btn {
             background: #EB7466;
             width: 154px;
             height: 44px;
@@ -197,12 +199,12 @@
             align-items: center;
             justify-content: center;
             margin: 30px auto 0;
-            a{
+            a {
                 color: white;
-                &:hover{
+                &:hover {
                     text-decoration: none;
                 }
-                span{
+                span {
                     font-style: italic;
                     text-transform: uppercase;
                     color: #FFFFFF;
@@ -215,7 +217,11 @@
     }
 }
 
-@keyframes type{
-    from{box-shadow: inset -3px 0px 0px #1E5C6B;}
-    to{box-shadow: inset -3px 0px 0px transparent;}
+@keyframes type {
+    from {
+        box-shadow: inset -3px 0px 0px #1E5C6B;
+    }
+    to {
+        box-shadow: inset -3px 0px 0px transparent;
+    }
 }
