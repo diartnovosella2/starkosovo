@@ -34,6 +34,7 @@
             }
         }
         .module-container {
+            width: 100%;
             .text-wrapper {
                 @include min-max(100, 992) {
                     text-align: center !important;
@@ -91,6 +92,7 @@
                                     color: #FFFFFF;
                                     font-weight: 750;
                                     font-size: 14px;
+                                    font-family: 'Futura';
                                 }
                             }
                         }
@@ -107,6 +109,10 @@
                         }
                     }
                 }
+            }
+
+            .my-center{
+                width: 100% !important;
             }
         }
     }

@@ -3,6 +3,7 @@
     &__faq,
     &__participate {
         color: $darkBlue;
+     
     }
     &__participate {
         &__repeater {
@@ -47,6 +48,7 @@
                 span {
                     font-weight: bold;
                     font-style: italic;
+                    font-size: 14px;
                 }
                 a {
                     font-weight: 750 !important;
@@ -55,7 +57,7 @@
                     letter-spacing: -0.07em;
                     color: $starOrange;
                     font-style: italic;
-                    font-family: 'Futura';
+                    font-family: 'Futura' !important;
                 }
             }
         }

@@ -45,12 +45,15 @@
                 max-width: 50%;
             }
             h2 {
-                max-width: 69%;
+                max-width: 100%;
                 font-style: italic;
                 font-weight: 750;
                 font-size: 35px;
                 line-height: 103%;
                 color: $darkBlue;
+                @include mq(tablet) {
+                    max-width: 59%;
+                }
             }
             p {
                 font-weight: normal;
@@ -63,6 +66,7 @@
             a {
                 font-style: italic;
                 font-weight: 750 !important;
+                font-family: 'Futura' !important;
                 font-size: 14px;
                 line-height: 17px;
                 color: $starOrange;
@@ -116,7 +120,8 @@
             }
             a {
                 font-style: italic;
-                font-weight: 750;
+                font-weight: 750 !important;
+                font-family: 'Futura' !important;
                 font-size: 14px;
                 line-height: 17px;
                 color: $starOrange;

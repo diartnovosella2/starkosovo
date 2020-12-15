@@ -206,7 +206,8 @@
         }
         .article-title{
             font-style: italic;
-            font-weight: 900;
+            font-weight: 750 !important;
+            font-family: 'Futura' !important;
             font-size: 18px;
             line-height: 103%;
             text-transform: uppercase;
@@ -238,7 +239,8 @@
                 .read-more-btn{
                     span{
                         font-style: italic;
-                        font-weight: 750;
+                        font-weight: 750 !important;
+                        font-family: 'Futura' !important;
                         font-size: 14px;
                         line-height: 17px;
                         color: #FFFFFF;
