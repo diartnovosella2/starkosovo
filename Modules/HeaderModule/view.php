@@ -24,7 +24,7 @@ $end_date = $data['module_fields']['end_date'];
         </div>
     </div>
     <div class="module-container">
-        <div class="text-wrapper text-<?= $text_position; ?>">
+        <div class="text-wrapper text-<?= $text_position; ?> my-<?= $text_position ?>">
             <div class="title">
                 <?= $title ?>
             </div>
@@ -32,13 +32,16 @@ $end_date = $data['module_fields']['end_date'];
                 <?= $description ?>
             </div>
             <div class="btn-txt-wrapper">
+                <?php if($button_text != ""):?>
                 <div class="aff-button">
                     <a href="<?= home_url('/registration-form');?>">
+                    
                         <div class="get-started-btn">
                             <span><?= $button_text?></span>
                         </div>
                     </a>
                 </div>
+                <?php endif;?>
                 <div class="remaining-days">
                     <?php 
                         $current_date = date("Y-m-d");
@@ -47,7 +50,9 @@ $end_date = $data['module_fields']['end_date'];
                         $diff = $date2->diff($date1)->format("%a");
                         $days = intval($diff);   //rounding days
                     ?>
+                    <?php if($days != 0):?>
                     <span><?= $days; ?> days left to apply</span>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
