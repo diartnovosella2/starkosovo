@@ -206,12 +206,14 @@
         }
         .article-title{
             font-style: italic;
-            font-weight: 750 !important;
-            font-family: 'Futura' !important;
             font-size: 18px;
             line-height: 103%;
             text-transform: uppercase;
             color: #FFFFFF;
+            span{
+                font-weight: 750 !important;
+                font-family: 'Futura' !important;
+            }
         }
 
         .article-description{
