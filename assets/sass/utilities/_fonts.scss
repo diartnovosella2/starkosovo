@@ -17,16 +17,24 @@
 
 @font-face {
     font-family: "Futura";
-    src: url("../fonts/Futura/FuturaStdBold.otf") format("opentype");
-    font-weight: 600;
+    src: url("../fonts/Futura/FuturaStdBold-New.otf") format("opentype");
+    font-weight: 700;
     font-display: swap;
     unicode-range: U+0000-00FF;
 }
 
 @font-face {
     font-family: "Futura";
-    src: url("../fonts/Futura/FuturaStdExtraBold.otf") format("opentype");
-    font-weight: 750;
+    src: url("../fonts/Futura/FuturaStdExtraBold-New.otf") format("opentype");
+    font-weight: 800;
+    font-display: swap;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/Futura/FuturaStdExtraBold-New.otf") format("opentype");
+    font-weight: 900;
     font-display: swap;
     unicode-range: U+0000-00FF;
 }
