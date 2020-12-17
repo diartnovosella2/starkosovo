@@ -5,21 +5,25 @@ jQuery(document).ready(function ($) {
         stateValue  = $('#state').children("option:selected").attr('value');
         jobName     = $('#job_name').children("option:selected").attr('value');
         salaryValue = $('#salary').children("option:selected").attr('value');
+        empValue    = $('#employee').children("option:selected").attr('value');
 
         cityValue   = cityValue   !== undefined ? cityValue   : null;
         stateValue  = stateValue  !== undefined ? stateValue  : null;
         jobName     = jobName     !== undefined ? jobName     : null;
         salaryValue = salaryValue !== undefined ? salaryValue : null;
+        empValue    = empValue    !== undefined ? empValue    : null;
+
         $.ajax({
             type: "GET",
             url: script_object.ajax_url,
             dataType: 'json',
             data: {
-                'action'   : 'filter_jobs',
-                'city'     : cityValue,
-                'state'    : stateValue,
-                'job_name' : jobName,
-                'salary'   : salaryValue,
+                'action'     : 'filter_jobs',
+                'city'       : cityValue,
+                'state'      : stateValue,
+                'job_name'   : jobName,
+                'salary'     : salaryValue,
+                'employee'   : empValue,
             },
             beforeSend: function() {
                 $('.filter__jobs').empty();
@@ -29,6 +33,7 @@ jQuery(document).ready(function ($) {
                 $('.filter__jobs').append(loadingSvg);
             },
             success: function(response) {
+                console.log(response);
                 $('.filter__jobs').empty();
                 if( response.length !== 0) {
                     response.forEach(element => {
