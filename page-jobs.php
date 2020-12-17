@@ -38,6 +38,16 @@
                             </select>
                         </div>
                     </div>
+                    <div class="jobs__filters__select jobs__filters__hours">
+                        <p>Employee</p>
+                        <div class="d-flex my-2">
+                            <select name="employee" id="employee">
+                                <option selected>Employee</option>
+                                <option value="Vodafone">Vodafone</option>
+                                <option value="Starlabs">Starlabs</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="jobs__filters__select jobs__filters__position">
                         <p>Select Position</p>
                         <div class="d-flex my-2">
@@ -46,17 +56,6 @@
                                 <option value="Vodafone">Vodafone</option>
                                 <option value="Starlabs">Starlabs</option>
                                 <option value="Product Designer">Product Designer</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="jobs__filters__select jobs__filters__hours">
-                        <p>Hours/week</p>
-                        <div class="d-flex my-2">
-                            <select name="hours" id="hours">
-                                <option selected>Hours/week</option>
-                                <option value="40">40h</option>
-                                <option value="20">20h</option>
-                                <option value="30">30h</option>
                             </select>
                         </div>
                     </div>
