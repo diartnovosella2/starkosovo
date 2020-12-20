@@ -53,9 +53,10 @@
                         <div class="d-flex my-2">
                             <select name="job_name" id="job_name">
                                 <option selected>Job Position</option>
-                                <option value="Vodafone">Vodafone</option>
-                                <option value="Starlabs">Starlabs</option>
+                                <option value="Web Developer">Web Developer</option>
                                 <option value="Product Designer">Product Designer</option>
+                                <option value="Programmer">Programmer</option>
+                                <option value="Networking">Networking</option>
                             </select>
                         </div>
                     </div>

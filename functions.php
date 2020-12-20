@@ -514,7 +514,6 @@ function title_like_posts_where( $where, $wp_query ) {
     return $where;
 }
 // Add these action so JS can see these functions
-// add_action('init', 'filter_jobs');
 add_action('wp_ajax_filter_jobs', 'filter_jobs');
 add_action('wp_ajax_nopriv_filter_jobs', 'filter_jobs');
 
@@ -527,10 +526,11 @@ function filter_jobs() {
     $salary   = isset($_GET['salary'])   ? $_GET['salary']   : null;
     $employee = isset($_GET['employee']) ? $_GET['employee'] : null;
 
-    $cityQuery   = $city     !== '' ? $meta_args[] = array('key' => 'city', 'value' => $city, 'compare' => 'LIKE')           : null;
-    $stateQuery  = $state    !== '' ? $meta_args[] = array('key' => 'state', 'value' => $state, 'compare' => 'LIKE')         : null;
-    $salaryQuery = $salary   !== '' ? $meta_args[] = array('key' => 'price_per_hour', 'value' => $salary, 'compare' => '=')  : null;
-    $empQuery    = $employee !== '' ? $meta_args[] = array('key' => 'job_name', 'value' => $employee, 'compare' => 'LIKE')   : null;
+    $cityQuery   = $city     !== '' ? $meta_args[] = array('key' => 'city', 'value' => $city, 'compare' => 'LIKE')               : null;
+    $stateQuery  = $state    !== '' ? $meta_args[] = array('key' => 'state', 'value' => $state, 'compare' => 'LIKE')             : null;
+    $salaryQuery = $salary   !== '' ? $meta_args[] = array('key' => 'price_per_hour', 'value' => $salary, 'compare' => '=')      : null;
+    $empQuery    = $employee !== '' ? $meta_args[] = array('key' => 'job_name', 'value' => $employee, 'compare' => 'LIKE')       : null;
+    $jobQueru    = $jobTitle !== '' ? $meta_args[] = array('key' => 'job_position', 'value' => $jobTitle, 'compare' => 'LIKE')   : null;
 
     $args = array(
         'post_type'       => 'application',
@@ -574,4 +574,12 @@ function filter_jobs() {
     };
     echo json_encode($jobsArray);
     wp_die();
+}
+
+add_action( 'save_post', 'my_save_post_function', 10, 3 );
+function my_save_post_function( $post_id, $post, $update ) {
+  if($post->post_type) {
+    $getJobPosition = get_the_title($post_id);
+    update_post_meta($post_id, 'job_position', $getJobPosition);
+  }
 }
