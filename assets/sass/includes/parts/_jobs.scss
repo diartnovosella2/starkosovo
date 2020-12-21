@@ -159,3 +159,44 @@
         }
     }
 }
+
+.filterJobs__container {
+    display: none;
+    @include mq(tablet) {
+        display: flex;
+    }
+}
+
+.filter_slide {
+    background: #EB7466;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 11px 30px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    @include mq(tablet) {
+        display: none;
+    }
+}
+
+.filters__jobs__available {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 152.9%;
+    color: #000000;
+    opacity: 0.5;
+}
+
+.rotate__arrow,
+.arrow_filter {
+    transition: .2s all ease-in-out;
+}
+
+.rotate__arrow {
+    transform: rotate(90deg);
+}
