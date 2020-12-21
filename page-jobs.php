@@ -100,10 +100,12 @@
                 $state     = get_field('state', $jobId);
                 $subtitle  = get_field('subtitle', $jobId);
                 $jobTitle  = get_the_title($jobId);
+                $positions_a = get_field('positions_avaliable', $jobId);
+
             ?> 
-                <div class="jobs__container__single d-flex flex-column flex-md-row justify-content-between mb-3 p-3">
+                <div class="jobs__container__single d-flex flex-column flex-md-row justify-content-between mb-2 p-3">
                     <div class="jobs__container__single__data d-flex align-items-center">
-                        <div class="jobs__container__single__data__img mr-4">
+                        <div class="jobs__container__single__data__img">
                             <?= $thumbnail;?>
                         </div>
                         <div>
@@ -123,16 +125,23 @@
                                     <p class="ml-2"><?= $price;?>/h</p>
                                 </div>
                             </div>
+                            <?php if( !empty($otherDetails) ) { ?>
+                            <div class="positions">
+                                <span><?= $positions_a ?> positions avaliable</span>
+                            </div>
+                            <?php } ?>
                         </div>
                     </div>
+                    <div class="seperator"></div>
                     <div class="jobs__container__single__text">
                         <p class="jobs__container__single__text__sub" ><?= $subtitle; ?></p>
                         <div class="jobs__container__single__text__desc">
                             <?= $description; ?>
                         </div>
                     </div>
+                    <div class="seperator"></div>
                     <?php if( !empty($otherDetails) ) { ?>
-                        <div class="jobs__otherDetails"> 
+                        <div class="jobs__otherDetails desktop-details"> 
                             <?php foreach ($otherDetails as $details) { ?>
                                 <div class="jobs__otherDetails__single d-flex align-items-center mb-1"> 
                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,10 +153,23 @@
                             <?php } ?>
                         </div>
                     <?php } ?>
-                    <div>
-                        <button class="apply__button mt-3"> 
+                    <div class="mobile-trip">
+                        <button class="apply__button"> 
                             <a href="<?= get_home_url(); ?>/registration-form/?id=<?= $jobId;?>">APPLY NOW</a>
                         </button>
+                        <?php if( !empty($otherDetails) ) { ?>
+                            <div class="jobs__otherDetails mobile-details"> 
+                                <?php foreach ($otherDetails as $details) { ?>
+                                    <div class="jobs__otherDetails__single d-flex align-items-center mb-1"> 
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.17621 9.05866C5.95798 9.05784 5.74921 8.97054 5.59562 8.81572L4.36033 7.58044C4.03874 7.25885 4.03874 6.73672 4.36033 6.41516C4.68192 6.0936 5.20405 6.09357 5.52562 6.41516L6.22149 7.11103L8.52326 5.13867C8.90085 4.88503 9.41267 4.9859 9.6659 5.36349C9.87631 5.67726 9.84667 6.09354 9.59385 6.37395L6.71149 8.84454C6.56452 8.97797 6.3747 9.05413 6.17621 9.05866Z" fill="#399EAC"/>
+                                            <path d="M7 14C3.13395 14 0 10.8661 0 7C0 3.13395 3.13395 0 7 0C10.8661 0 14 3.13395 14 7C14 10.8661 10.8661 14 7 14ZM7 1.64705C4.04354 1.64705 1.64705 4.04354 1.64705 7C1.64705 9.95646 4.04354 12.3529 7 12.3529C9.95646 12.3529 12.3529 9.95646 12.3529 7C12.3529 4.04354 9.95646 1.64705 7 1.64705Z" fill="#399EAC"/>
+                                        </svg>
+                                        <p><?= $details['name']; ?></p> 
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             <?php } ?>
