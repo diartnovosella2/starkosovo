@@ -21,8 +21,15 @@
             <p>List of available jobs to apply.</p>
         </div>
         <div class="jobs__filters mb-4">
+            <button class="filters__toggle filter_slide">
+                Filter Results
+                <svg class="arrow_filter" width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.5 0.5L4 4L0.5 7.5" stroke="white"/>
+                </svg>
+            </button>
+            <span class="filters__jobs__available text-center d-block d-md-none"></span>
             <form id="filterJobs">
-                <div class="d-flex flex-column flex-lg-row">
+                <div class="filterJobs__container flex-column flex-lg-row">
                     <div class="jobs__filters__select jobs__filters__location">
                         <p>Location</p>
                         <div class="d-flex my-2">

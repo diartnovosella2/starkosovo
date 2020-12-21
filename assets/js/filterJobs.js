@@ -36,6 +36,9 @@ jQuery(document).ready(function ($) {
                 console.log(response);
                 $('.filter__jobs').empty();
                 if( response.length !== 0) {
+                    jobsValue = response.length === 1 ? ' job' : ' jobs';
+                    jobsAvailable = response.length + jobsValue + ' available within your search';
+                    $('.filters__jobs__available').text(jobsAvailable);
                     response.forEach(element => {
                         if (element['otherDetails'].length !== 0) {
                             otherDetailsContainer = `<div class="jobs__otherDetails">`;
@@ -100,10 +103,17 @@ jQuery(document).ready(function ($) {
                             </div>
                         </div>
                     </div>`;
+                    jobsAvailable = 'Sorry, we have no jobs available within your search';
+                    $('.filters__jobs__available').text(jobsAvailable);
                     $('.filter__jobs').append(newData);
                 }
             }
         });
+    });
+
+    $('.filters__toggle').on('click', function(e){
+        $('.filterJobs__container').slideToggle();
+        $('.arrow_filter').toggleClass('rotate__arrow');
     });
 });
 
