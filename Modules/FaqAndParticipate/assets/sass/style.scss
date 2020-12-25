@@ -41,13 +41,19 @@
                 font-weight: 750;
                 font-size: 30px;
                 line-height: 137.5%;
+                margin-bottom: 32px;
+                @include mq(laptop) {
+                    margin-bottom: 0;
+                }
             }
             &__subtitle {
                 background: rgba(247, 202, 198, 0.2);
                 border-radius: 4px;
                 padding: 26px 16px;
                 text-align: center;
+                margin-bottom: 32px;
                 @include mq(laptop) {
+                    margin-bottom: 0;
                     background: none;
                     border-radius: 0;
                     padding: unset;
@@ -80,10 +86,11 @@
                 margin: 16px 0;
                 border-top: 1px solid rgba(30, 92, 107, 0.3);
                 @include mq(laptop) {
+                    margin-right: 42px;
                     flex-basis: 40%;
                 }
                 span {
-                    margin: 2.4rem 3rem 0 0;
+                    margin: 3.2rem 3rem 0 0;
                     font-style: italic;
                     font-weight: 750;
                     font-size: 14px;
@@ -95,12 +102,14 @@
                     font-weight: 650;
                     font-size: 14px;
                     line-height: 17px;
+                    margin: 32px 0;
                 }
                 &__desc {
                     margin-top: 16px !important;
                     font-weight: 500;
                     font-size: 12px;
                     color: black;
+                    margin-bottom: 32px;
                 }
             }
         }

@@ -17,7 +17,7 @@
     <?php } else {?>
         <h2><?= $data['title']; ?></h2>
     <?php } ?>
-    <div class="d-flex flex-wrap flex-wrap fp__<?= $chooseDesign; ?>__repeater justify-content-between">
+    <div class="d-flex flex-wrap flex-wrap fp__<?= $chooseDesign; ?>__repeater <?php if($chooseDesign == 'participate') { echo 'justify-content-between'; } else { echo 'justify-content-end';}?>">
         <?php foreach ($data['repeater'] as $index => $object) { ?>
             <div class="fp__<?= $chooseDesign; ?>__repeater__single">
                 <?php if($chooseDesign == 'faq') {?>
