@@ -1,3 +1,7 @@
+footer{
+    margin-top: 162px;
+}
+
 .footer {
     width: 100%;
     background: #1E5C6B;
@@ -160,7 +164,7 @@
 }
 
 .follow-us {
-    margin: 50px 0 30px;
+    margin: 50px 15px 30px;
     span {
         font-style: italic;
         font-weight: 900;
@@ -223,5 +227,14 @@
     }
     to {
         box-shadow: inset -3px 0px 0px transparent;
+    }
+}
+
+.footer-logo{
+    width: 100px;
+    height: 50px;
+    @include mq(laptop){
+        width: 70px;
+        height: 34px;
     }
 }

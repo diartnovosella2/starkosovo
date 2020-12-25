@@ -1,4 +1,5 @@
 .resources-preview-container{
+    margin-top: 5px;
     @include mq(tablet){
         margin-top: 100px;
     }
@@ -87,7 +88,7 @@
         flex-wrap: wrap;
         margin-top: 50px;
         @include mq(tablet){
-            margin-top: 75px;
+            margin-top: 46px;
             flex-wrap: unset;
         }
         .article-card{
@@ -122,7 +123,7 @@
                 justify-content: space-between;
                 .article-title{
                     padding-top: 29px;
-                    min-height: 77px;
+                    min-height: 66px;
                     span{
                         font-style: italic;
                         font-weight: 900;
@@ -134,7 +135,6 @@
                     }
                 }
                 .article-description{
-                    padding-top: 5px;
                     span{
                         font-style: normal;
                         font-weight: normal;
@@ -146,7 +146,11 @@
                 }
 
                 .article-btn{
-                    padding-top: 30px;
+                    padding-top: 47px;
+                    @include mq(tablet){
+                        padding-top:30px;
+                    }
+                    
                     a{
                         &:hover{
                             text-decoration: none;
