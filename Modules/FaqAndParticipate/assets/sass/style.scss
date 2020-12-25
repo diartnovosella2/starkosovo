@@ -4,6 +4,12 @@
         color: $darkBlue;
     }
     &__participate {
+        h2 {
+            margin: 32px 0;
+            @include mq(laptop) {
+                margin: 2.4rem 0;
+            }
+        }
         &__repeater {
             &__single {
                 flex-basis: 100%;
