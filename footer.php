@@ -35,7 +35,7 @@
           </div>
           <div class="footer__menus">
             <a class="footer__menus-logo" href="<?php echo home_url(); ?>" title="<?php echo bloginfo('name'); ?>">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/footer-logo.svg" alt="starkosovo-logo" class="logo">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/footer-logo.svg" alt="starkosovo-logo" class="footer-logo">
             </a>
             <div class="footer__menus-quick-links">
               <span>Quicklinks</span>

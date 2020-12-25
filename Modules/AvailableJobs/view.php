@@ -67,11 +67,9 @@ switch($data['selector']){
         ?>
         <div class="job-card">
             <div class="job-header">
-                <a href="<?= $job_permalink ?>">
-                    <div class="featured-img">
-                        <?= $job_thumbnail?>
-                    </div>
-                </a>
+                <div class="featured-img">
+                    <?= $job_thumbnail?>
+                </div>
             </div>
             <div class="job-body">
                 <span class="owner"><?= $owner ?></span>
@@ -89,11 +87,6 @@ switch($data['selector']){
                     <span class="cost">$<?= $price ?>/h</span>
                 </div>
                 <span class="positions"><?= $positons ?> positions available</span>
-                <a href="<?= $job_permalink ?>">
-                    <div class="view-details">
-                        <span>View Details</span>
-                    </div>
-                </a>
             </div>
         </div>
         <?php endforeach; ?>

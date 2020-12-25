@@ -7,6 +7,7 @@
 
 .jobs {
     &__title {
+        margin-top: 85px;
         h2 {
             font-weight: 750;
             font-size: 35px;
@@ -233,6 +234,10 @@
         justify-content: unset;
         align-items: unset;
         margin-top: unset;
+    }
+
+    .apply__button{
+        padding: 9.5px 21px;
     }
 }
 
