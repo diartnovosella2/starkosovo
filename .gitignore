@@ -8,3 +8,6 @@ package-lock.json
 
 *.map
 /assets/dist/*
+*.map
+assets/dist/front.css
+assets/dist/front.js
