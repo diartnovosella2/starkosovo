@@ -40,10 +40,13 @@
             }
             &__title {
                 font-family: 'Futura';
-                padding: 24px 0 16px 0;
+                padding: 51px 0 16px 0;
                 font-weight: 700;
                 font-size: 18px;
                 color: white;
+                @include mq(laptop) {
+                    padding: 24px 0 16px 0;
+                }
                 @include mq(desktop) {
                     width: 62%;
                 }
@@ -53,7 +56,10 @@
                 font-size: 14px;
                 line-height: 19px;
                 color: rgb(226 226 226 / 80%);
-                margin-bottom: 40px;
+                margin-bottom: 24px !important;
+                @include mq(laptop) {
+                    margin-bottom: inherit;
+                }
             }
             &__url {
                 display: block;

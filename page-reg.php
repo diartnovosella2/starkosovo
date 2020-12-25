@@ -5,7 +5,7 @@
     parse_str($_SERVER['QUERY_STRING'], $query);
 ?>
 
-<div class="d-flex text__centered py-3 flex-column">
+<div class="d-flex text__centered py-3 pt-5 flex-column">
     <div class="form__submit">
         <div class="d-flex justify-content-center position-relative">
             <img class="text__centered__content__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/world.svg" alt="World">

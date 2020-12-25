@@ -16,6 +16,10 @@
             border-radius: 4px;
             border: none;
             background-color: $lightGray;
+            width: 100%;
+            @include mq(tablet) {
+                width: inherit;
+            }
         }
         select {
             background-color: white;

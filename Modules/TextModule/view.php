@@ -14,7 +14,7 @@
         <div class="d-flex flex-column align-items-center text-center text__<?= $styleClass; ?>__content">
             <h2><?= $data['title']; ?></h2>
             <p><?= $data['description']; ?></p>
-            <a href="<?= $data['link_url']; ?>"> <?= $data['link_text']; ?></a>
+            <a class="mt-3 mt-lg-1" href="<?= $data['link_url']; ?>"> <?= $data['link_text']; ?></a>
         </div>
         <img class="text__<?= $styleClass; ?>__content__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/world.svg" alt="World"/>
     <?php } else if($styleClass === 'between') {?>
