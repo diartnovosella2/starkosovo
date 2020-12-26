@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+
 define('MODC_THEME_DIR', __DIR__);
 
 if( function_exists('acf_add_options_page') ) {
@@ -497,6 +499,60 @@ function populate_register_fields() {
         $_GET['yearOfStudies'], $_GET['englishLevel'], $_GET['avgGrade'], $_GET['numberOfExams'], 
         $_GET['father_work'], $_GET['mother_work'], $_GET['starWorkInfo'], $jobUrl, $jobTitle
     ];
+
+    $client = new \Google_Client();
+    $client->setApplicationName('Google sheets and php');
+    $client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
+    $client->setAccessType('offline');
+    $client->setAuthConfig(__DIR__ . '/credentials.json');
+
+    $service = new Google_Service_Sheets($client);
+    // id e sheetit, duhesh me ja bo share edhe emailin qe e ki te credentials.json 
+    $spreadsheetID = '1jxUI_eGAcnuPdj7E7qhSj-dePssNUtr3nnyGompPAsk'; 
+
+
+    $range = "Sheet1"; // emri i sheetit aty posht kur te hin ne google sheet 
+
+    $values = [
+        [
+            $_GET['firstName'],
+            $_GET['lastName'],
+            $_GET['dateOfBirth'],
+            $_GET['phoneNumber'],
+            $_GET['email'],
+            $_GET['university'],
+            $_GET['department'],
+            $_GET['yearOfUni'],
+            $_GET['yearOfStudies'],
+            $_GET['englishLevel'],
+            $_GET['avgGrade'],
+            $_GET['numberOfExams'],
+            $_GET['father_work'],
+            $_GET['mother_work'],
+            $_GET['starWorkInfo'],
+        ],
+    ];
+
+    $body = new Google_Service_Sheets_ValueRange([
+        'values' => $values
+    ]);
+
+    $params = [
+        'valueInputOption' => 'RAW'
+    ];
+ 
+    $insert = [
+        "insertDataOption" => "INSERT_ROWS"
+    ];
+
+    $results = $service->spreadsheets_values->append(
+        $spreadsheetID,
+        $range,
+        $body,
+        $params,
+        $insert
+    );
+
 
     foreach ($registerFields as $key => $value) {
         update_post_meta($post_id, $value, $registerFieldsArray[$key]);
