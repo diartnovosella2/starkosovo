@@ -48,23 +48,25 @@
             <div class="content__left__description content__left__description__register px-2 px-lg-5 <?= $toggleMargin; ?> mb-5 mb-lg-0">
                 <h2 class="content__left__title__<?= $styleClass;?> pr-0 pr-lg-5 mb-4 mb-lg-3"><?= $data['title']; ?></h2>
                 <?= $data['content_description'];?>
-                <?php if (strlen($data['register_button_text']) !== 0) { ?>
-                    <button class="apply__button mt-3 <?= $buttonMargin; ?>"> 
-                        <?php if( strlen($data['register_button_url']) !== 0) {?>
-                            <a href="<?= $data['register_button_url'];?>/?id=<?= $jobId;?>"><?= $data['register_button_text'];?></a>
-                        <?php } else {?>
-                            <a href="<?= get_home_url(); ?>/registration-form/?id=<?= $jobId;?>"><?= $data['register_button_text'];?></a>
-                        <?php }?>
-                    </button>
-                <?php } ?>
-                    <?php if( strlen($data['other_url']) !== 0){?>
-                        <a class="apply__button__other" href="<?= $data['other_url'];?>"><?= $data['other_text'];?></a>
-                <?php } ?>
+                <div class="<?php if( strlen($data['other_url']) !== 0){ echo "content__apply__with__others"; } else { echo "d-flex justify-content-center justify-content-md-start";}?>">
+                    <?php if (strlen($data['register_button_text']) !== 0) { ?>
+                        <button class="apply__button mt-3 <?= $buttonMargin; ?>"> 
+                            <?php if( strlen($data['register_button_url']) !== 0) {?>
+                                <a href="<?= $data['register_button_url'];?>/?id=<?= $jobId;?>"><?= $data['register_button_text'];?></a>
+                            <?php } else {?>
+                                <a href="<?= get_home_url(); ?>/registration-form/?id=<?= $jobId;?>"><?= $data['register_button_text'];?></a>
+                            <?php }?>
+                        </button>
+                    <?php } ?>
+                        <?php if( strlen($data['other_url']) !== 0){?>
+                            <a class="apply__button__other" href="<?= $data['other_url'];?>"><?= $data['other_text'];?></a>
+                    <?php } ?>
+                </div>
             </div>
         <?php } ?>
         <?php if (strlen($data['footer_title']) !== 0) { ?>        
             <div class="content__left__footer px-2 px-lg-0 pl-0 pl-lg-5 py-3 <?php if($styleClass == 'register'){ ?>register__footer__container <?php } ?>">
-                <p class="content__left__footer__title <?php if($chooseStyle === 'Success Story') {?> d-flex flex-column flex-lg-row <?php } ?>">
+                <p class="content__left__footer__title <?php if($chooseStyle === 'Success Story') {?> d-flex flex-column flex-lg-row align-items-center<?php } ?>">
                     <span <?php if($styleClass == 'register'){ ?>class="register__footer__container__title" <?php } ?>><?= $data['footer_title']; ?></span>
                     <a class="content__left__footer__desc" href="tel:<?= $data['footer_description']; ?>"><?= $data['footer_description']; ?></a>
                 </p>
