@@ -422,7 +422,7 @@ class Admin
                         ),
                     ),
                     'wrapper' => array(
-                        'width' => '15',
+                        'width' => '30',
                         'class' => '',
                         'id' => '',
                     ),
@@ -453,7 +453,7 @@ class Admin
                         ),
                     ),
                     'wrapper' => array(
-                        'width' => '15',
+                        'width' => '30',
                         'class' => '',
                         'id' => '',
                     ),
@@ -480,7 +480,7 @@ class Admin
                         ),
                     ),
                     'wrapper' => array(
-                        'width' => '25',
+                        'width' => '40',
                         'class' => '',
                         'id' => '',
                     ),
@@ -504,7 +504,7 @@ class Admin
                         ),
                     ),
                     'wrapper' => array(
-                        'width' => '20',
+                        'width' => '30',
                         'class' => '',
                         'id' => '',
                     ),
@@ -531,7 +531,7 @@ class Admin
                         ),
                     ),
                     'wrapper' => array(
-                        'width' => '25',
+                        'width' => '30',
                         'class' => '',
                         'id' => '',
                     ),
@@ -555,7 +555,7 @@ class Admin
                         ),
                     ),
                     'wrapper' => array(
-                        'width' => '50',
+                        'width' => '40',
                         'class' => '',
                         'id' => '',
                     ),
