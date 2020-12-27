@@ -1,6 +1,10 @@
 .blog-header-module{
     position: relative;
     height: 600px;
+    margin-top: 14px;
+    @include mq(tablet){
+        margin-top: 37px;
+    }
     .blog-header{
         display: flex;
         justify-content: space-between;
@@ -26,12 +30,18 @@
             }
             .module-description{
                 p{
+                    margin: 8px 0 13px;
                     font-style: normal;
-                    font-weight: normal;
+                    font-weight: 550;
                     font-size: 14px;
                     line-height: 21px;
                     color: #000000;
                     text-align: center;
+                    @include mq(tablet){
+                        margin-top: 0;
+                        text-align: left;
+                        width: 90%;
+                    }
                 }
             }
         }
@@ -84,6 +94,8 @@
                         border-radius: 4px;
                         padding: 17px 23px;
                         outline: none;
+                        font-weight: 550;
+                        font-size: 14px;
                         @include mq(tablet){
                             margin-right: 10px;
                         }

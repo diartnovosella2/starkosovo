@@ -1,0 +1,103 @@
+.subscribe-module {
+    border-top: 1px solid rgba(30, 92, 107, 0.2);
+    border-bottom: 1px solid rgba(30, 92, 107, 0.2);
+    height: 338px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .title{
+        p{
+            font-family: "Futura";
+            font-style: italic;
+            font-weight: 900;
+            font-size: 35px;
+            line-height: 103%;
+            text-align: center;
+            color: #1E5C6B;
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+    .description{
+        p{
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+            text-align: center;
+            color: #000000;
+            width: 68%;
+            margin: 0 auto;
+        }
+    }
+
+    .sub-wrapper{
+        display: flex;
+        flex-direction: column;
+        .subscribe-form{
+            .es_subscription_form{
+                display: flex;
+                flex-direction: column;
+                @include mq(tablet){
+                    flex-direction: row;
+                }
+            }
+            .emaillist{
+                .es_txt_email{
+                    width: 303px;
+                    height: 50px;
+                    border: 0;
+                    background: #F3F3F3;
+                    border-radius: 4px;
+                    padding: 17px 23px;
+                    outline: none;
+                    font-weight: 550;
+                    font-size: 14px;
+                    @include mq(tablet){
+                        margin-right: 10px;
+                    }
+                }
+                ::placeholder {
+                    color: #1E5C6B;
+                    opacity: 1; 
+                  }
+                  
+                  :-ms-input-placeholder { 
+                    color: #1E5C6B;
+                  }
+                  
+                  ::-ms-input-placeholder { 
+                    color: #1E5C6B;
+                  }
+
+                  .es_submit_button{
+                    background: #1E5C6B;
+                    border-radius: 4px;
+                    color: white;
+                    width: 100%;
+                    @include mq(tablet){
+                        width: 152px;
+                    }
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    font-weight: 900;
+                    font-style: italic;
+                    border: none;
+                    &:focus{
+                        outline: none;
+                        border: none;
+                    }
+                  }
+            }
+
+            .es_spinner_image{
+                display: none !important;
+            }
+        }
+    }
+}
