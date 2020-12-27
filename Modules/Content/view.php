@@ -12,7 +12,7 @@
     $styleClass      = ($chooseStyle === 'Get Started') ? "get__started pt-2 pt-md-5" : (( $chooseStyle === "Success Story" )  ? "success__story pt-2 pt-md-2" : "register");
     $styleClassTitle = ($chooseStyle === 'Get Started') ? "get__started" : (( $chooseStyle === "Success Story" )  ? "success__story" : "register");
     $imagePosition   = $data['choose_position'] == "Left" ? "row-reverse" : "row";
-    $columnReverse   = ($chooseStyle === 'Success Story') ? "flex-column-reverse" : "flex-column";
+    $columnReverse   = ($chooseStyle === 'Success Story' || $chooseStyle === 'Register') ? "flex-column-reverse" : "flex-column";
     $bgColor         = strlen($data['bg_color']) != 0 ? $data['bg_color'] : 'default' ;
     $toggleFooter    = strlen($data['footer_title']) != 0 ? "justify-content-between" : "justify-content-center";
     $toggleMargin    = strlen($data['footer_title']) != 0 ? "mt-2 mt-lg-5" : "mt-2";
@@ -21,7 +21,7 @@
 
 <?php if($chooseStyle != 'Wysiwyg Editor'){ ?>
 <div class="content d-flex <?= $columnReverse; ?> flex-md-<?= $imagePosition;?>">
-    <div class="content__left <?= $styleClass;?> content__left d-flex flex-column <?= $toggleFooter; ?> n bg_<?= $bgColor; ?>">
+    <div class="content__left <?= $styleClass;?> content__left d-flex flex-column <?= $toggleFooter; ?> bg_<?= $bgColor; ?>">
         <?php if($chooseStyle === 'Get Started')  { ?>
             <h2 class="content__left__title__<?= $styleClassTitle;?> pl-0 pl-lg-5"><?= $data['title']; ?></h2>
             <div class="d-flex flex-wrap pl-0 pl-lg-5">
@@ -38,32 +38,34 @@
             <?php } else if($chooseStyle === 'Success Story') { ?>
                 <h3 class="content__left__topdesc__<?= $styleClassTitle; ?> d-none d-md-flex justify-content-end pl-2 pl-lg-5 pr-3 mb-0">SUCCESS STORY</h3>
                 <div class="content__left__description px-2 px-lg-5 pb-5">
-                    <h2 class="content__left__title__<?= $styleClass;?> pr-0 pr-lg-5 mb-2 mb-lg-3 mt-5 mt-lg-3"><?= $data['title']; ?></h2>
-                    <div class="">
+                    <h2 class="content__left__title__<?= $styleClass;?> pr-0 pr-lg-5 mb-4 mb-lg-3 mt-5 mt-lg-3"><?= $data['title']; ?></h2>
+                    <div class="mb-3 mb-md-1">
                         <?= $data['content_description'];?>
                         <h3 class="content__left__topdesc__<?= $styleClassTitle; ?> d-flex justify-content-end pl-0 pl-lg-5 pr-0 mb-0 mt-0 d-block d-md-none float-right">SUCCESS STORY</h3>
                     </div>
                 </div>
         <?php } else {?>
             <div class="content__left__description content__left__description__register px-2 px-lg-5 <?= $toggleMargin; ?> mb-5 mb-lg-0">
-                <h2 class="content__left__title__<?= $styleClass;?> pr-0 pr-lg-5 mb-2 mb-lg-3"><?= $data['title']; ?></h2>
+                <h2 class="content__left__title__<?= $styleClass;?> pr-0 pr-lg-5 mb-4 mb-lg-3"><?= $data['title']; ?></h2>
                 <?= $data['content_description'];?>
+                <?php if (strlen($data['register_button_text']) !== 0) { ?>
                     <button class="apply__button mt-3 <?= $buttonMargin; ?>"> 
                         <?php if( strlen($data['register_button_url']) !== 0) {?>
                             <a href="<?= $data['register_button_url'];?>/?id=<?= $jobId;?>"><?= $data['register_button_text'];?></a>
                         <?php } else {?>
-                            <a href="<?= get_home_url(); ?>/registration-form/?id=<?= $jobId;?>">VIEW JOBS</a>
+                            <a href="<?= get_home_url(); ?>/registration-form/?id=<?= $jobId;?>"><?= $data['register_button_text'];?></a>
                         <?php }?>
                     </button>
+                <?php } ?>
                     <?php if( strlen($data['other_url']) !== 0){?>
                         <a class="apply__button__other" href="<?= $data['other_url'];?>"><?= $data['other_text'];?></a>
                 <?php } ?>
             </div>
         <?php } ?>
         <?php if (strlen($data['footer_title']) !== 0) { ?>        
-            <div class="content__left__footer px-2 px-lg-0 pl-0 pl-lg-5 py-3">
+            <div class="content__left__footer px-2 px-lg-0 pl-0 pl-lg-5 py-3 <?php if($styleClass == 'register'){ ?>register__footer__container <?php } ?>">
                 <p class="content__left__footer__title <?php if($chooseStyle === 'Success Story') {?> d-flex flex-column flex-lg-row <?php } ?>">
-                    <?= $data['footer_title']; ?> 
+                    <span <?php if($styleClass == 'register'){ ?>class="register__footer__container__title" <?php } ?>><?= $data['footer_title']; ?></span>
                     <a class="content__left__footer__desc" href="tel:<?= $data['footer_description']; ?>"><?= $data['footer_description']; ?></a>
                 </p>
             </div>

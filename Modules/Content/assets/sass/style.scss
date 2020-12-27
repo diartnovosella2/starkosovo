@@ -81,6 +81,7 @@
                 font-weight: 750;
                 font-size: 16px;
                 line-height: 20px;
+                margin-top: 30px !important;
                 color: $starOrange;
             }
         }
@@ -101,7 +102,11 @@
                 font-size: 16px;
                 line-height: 18px;
                 color: $darkBlue;
+                margin-top: 30px !important;
                 font-family: 'Futura';
+                @include mq(laptop) {
+                    margin-top: 20px !important;
+                }
             }
             &__register {
                 text-transform: uppercase;
@@ -128,6 +133,12 @@
                 font-weight: 750;
                 font-size: 14px;
                 line-height: 17px;
+                span {
+                    font-family: 'Futura';
+                }
+                .register__footer__container__title {
+                    color: #1E5C6B;
+                }
             }
             &__desc {
                 color: #1E5C6B;
@@ -139,6 +150,16 @@
                 font-style: normal;
                 @include mq(tablet) {
                     margin: 0 10px 0 10px;
+                }
+            }
+        }
+        &__description {
+            &__register {
+                p {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #1E5C6B;
                 }
             }
         }
@@ -166,6 +187,19 @@
         .content__left__footer {
             background-color: $darkYellow;
         }
+    }
+}
+
+.register__footer__container {
+    text-align: left !important;
+    padding-left: 5rem !important;
+    @include mq(tablet) {
+        margin: 0 -20px !important;
+    }
+    @include mq(laptop) {
+        margin: unset !important;
+        text-align: start !important;
+        padding-left: 7.2rem !important;
     }
 }
 

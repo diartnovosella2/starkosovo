@@ -4,6 +4,16 @@
         color: $darkBlue;
     }
     &__participate {
+        &__title {
+            font-family: 'Futura';
+            font-style: italic;
+            font-weight: 750;
+            font-size: 35px;
+            line-height: 103%;
+            /* identical to box height, or 36px */
+            text-transform: uppercase;
+            color: #1E5C6B;
+        }
         h2 {
             margin: 32px 0;
             @include mq(laptop) {
@@ -27,6 +37,17 @@
                     font-size: 14px;
                     line-height: 19px;
                 }
+            }
+        }
+        .apply__button {
+            width: 170px;
+            padding: 16px;
+            a {
+                font-style: italic;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                color: #FFFFFF;
             }
         }
     }
