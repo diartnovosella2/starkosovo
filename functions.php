@@ -508,7 +508,7 @@ function populate_register_fields() {
 
     $service = new Google_Service_Sheets($client);
     // id e sheetit, duhesh me ja bo share edhe emailin qe e ki te credentials.json 
-    $spreadsheetID = '1jxUI_eGAcnuPdj7E7qhSj-dePssNUtr3nnyGompPAsk'; 
+    $spreadsheetID = '12_JIBaJuBh2LkeRckzpmyUSY3tewO9yA2A7dMNbZj-o'; 
 
 
     $range = "Sheet1"; // emri i sheetit aty posht kur te hin ne google sheet 
