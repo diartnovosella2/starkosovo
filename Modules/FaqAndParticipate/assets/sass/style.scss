@@ -19,7 +19,7 @@
             }
         }
         h2 {
-            margin: 32px 0;
+            margin: 24px 0 16px 0;
             @include mq(laptop) {
                 margin: 2.4rem 0;
             }
@@ -40,7 +40,10 @@
                 &__desc {
                     font-size: 14px;
                     line-height: 19px;
-                    font-weight: bold;
+                    font-weight: normal;
+                    @include mq(tablet) {
+                        font-weight: bold;
+                    }
                 }
             }
         }
