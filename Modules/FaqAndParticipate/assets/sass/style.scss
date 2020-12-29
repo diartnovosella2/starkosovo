@@ -8,11 +8,15 @@
             font-family: 'Futura';
             font-style: italic;
             font-weight: 750;
-            font-size: 35px;
+            font-size: 28px;
+            width: 50%;
             line-height: 103%;
-            /* identical to box height, or 36px */
             text-transform: uppercase;
             color: #1E5C6B;
+            @include mq(laptop) {
+                width: 100%;
+                font-size: 35px;
+            }
         }
         h2 {
             margin: 32px 0;
@@ -36,6 +40,7 @@
                 &__desc {
                     font-size: 14px;
                     line-height: 19px;
+                    font-weight: bold;
                 }
             }
         }
@@ -69,6 +74,7 @@
                 font-size: 30px;
                 line-height: 137.5%;
                 margin-bottom: 32px;
+                margin-bottom: 37px !important;
                 @include mq(laptop) {
                     margin-bottom: 0;
                 }
