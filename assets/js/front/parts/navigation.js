@@ -36,20 +36,30 @@ jQuery(document).ready(function ($) {
   
         lastScrollTop = st;
     }
-      $(".header__navigation-toggle").click(function(){
+
+    $(".header__navigation-toggle").click(function(){
         $(".header__navigation").toggleClass("header__navigation-active");
         $('body').toggleClass("filter-overlay");
         $("header__navigation-active").slideToggle();
         $(".header__navigation-toggle").toggleClass("active");
-      });
+    });
 
  
-      var home_url = window.location.origin;
-      if ($(".404page").length || window.location.href.indexOf("blog") > -1 || window.location.href.indexOf("registration-form") > -1 || window.location.href.indexOf("articles") > -1 || window.location.href.indexOf("find-jobs") > -1  ) { 
+    var home_url = window.location.origin;
+    if ($(".404page").length || window.location.href.indexOf("blog") > -1 || window.location.href.indexOf("registration-form") > -1 || window.location.href.indexOf("articles") > -1 || window.location.href.indexOf("find-jobs") > -1  ) { 
         $('.header__navigation-menu li a').css('color', '#1E5C6B');
         $('.logo').attr('src', home_url  + '/wp-content/themes/starkosovo/assets/images/blue-logo.svg');
         $('.header__navigation-toggle--open').attr('src', home_url  + '/wp-content/themes/starkosovo/assets/images/hamburger-blue.png');
         $('.header').css('border-bottom', '1px solid #1E5C6B');
-      }
-
-  });
+    }
+    
+    if( $(window).width() < 600) {
+        $("#dateOfBirth").attr("type", "text");
+        $("#dateOfBirth").on('focusin', function(){
+            $(this).attr("type", "date");
+        });
+        $("#dateOfBirth").on('focusout', function(){
+            $(this).attr("type", "text");
+        });
+    }
+});
