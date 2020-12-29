@@ -14,10 +14,13 @@
             h2 {
                 color: $darkBlue;
                 font-weight: 750;
-                font-size: 35px;
+                font-size: 28px;
                 text-transform: uppercase;
                 flex-basis: 40%;
                 margin: 12px 0;
+                @include mq(laptop) {
+                    font-size: 35px;
+                }
             }
             p {
                 flex-basis: 50%;
@@ -104,12 +107,16 @@
                 max-width: 40%;
             }
             h2 {
-                max-width: 70%;
                 font-style: italic;
                 font-weight: 750;
                 font-size: 35px;
                 line-height: 103%;
                 color: $darkBlue;
+                text-align: center;
+                @include mq(laptop) {
+                    text-align: start;
+                    max-width: 70%;
+                }
             }
             p {
                 font-weight: normal;
