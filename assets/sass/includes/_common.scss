@@ -72,11 +72,11 @@ html {
         }
     }
     .blogz {
-        padding: 0 15px;
         flex-wrap: wrap !important;
         margin-top: 80px !important;
         @include mq(tablet) {
             margin-top: unset;
+            padding-left: 15px;
         }
         .article-card {
             &:nth-child(3n) {
@@ -99,5 +99,11 @@ html {
         .container {
             max-width: 1322px; 
         } 
+    }
+
+    @media (min-width: 992px) {
+        .es-field-wrap{
+            margin: 0 !important;
+        }
     }
 }
