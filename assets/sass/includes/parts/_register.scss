@@ -3,7 +3,10 @@
         background-image: unset;
         &__content__img {
             z-index: -1;
-            display: block;
+            display: none;
+            @include mq(laptop) {
+                display: block;
+            }
         }
     }
     .register__page__content {
