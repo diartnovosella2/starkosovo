@@ -11,3 +11,10 @@ package-lock.json
 *.map
 assets/dist/front.css
 assets/dist/front.js
+assets/dist/admin.css
+assets/dist/admin.js
+assets/dist/admin.js.map
+assets/dist/front.css
+assets/dist/front.css.map
+assets/dist/front.js
+assets/dist/front.js.map
