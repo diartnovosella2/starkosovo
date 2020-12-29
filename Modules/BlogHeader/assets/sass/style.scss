@@ -1,9 +1,10 @@
 .blog-header-module{
     position: relative;
-    height: 600px;
+    height: 642px;
     margin-top: 14px;
     @include mq(tablet){
         margin-top: 37px;
+        height: 552px;
     }
     .blog-header{
         display: flex;
@@ -129,6 +130,7 @@
                         font-weight: 900;
                         font-style: italic;
                         border: none;
+                        font-family: "Futura";
                         &:focus{
                             outline: none;
                             border: none;
@@ -158,7 +160,6 @@
 
             .single-p-d{
                 display: none;
-                padding-top: 5px;
                 @include mq(tablet){
                     display: block;
                 }
@@ -178,7 +179,7 @@
     }
 
     .background-img{
-        margin-top: 52px;
+        margin-top: 18px;
         img{
             object-fit: cover;
             left: 0;
@@ -204,6 +205,7 @@
         @include mq(tablet){
             padding-left: 84px;
             width: 40%;
+            height: 90%;
         }
         
         .featured-holder{
