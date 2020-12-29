@@ -4,6 +4,10 @@
         color: $darkBlue;
     }
     &__participate {
+        margin: 0 40px;
+        @include mq(laptop) {
+            margin: 0;
+        }
         &__title {
             font-family: 'Futura';
             font-style: italic;
