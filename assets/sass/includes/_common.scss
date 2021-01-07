@@ -106,4 +106,20 @@ html {
             margin: 0 !important;
         }
     }
+    
+    .insta-gallery-item{
+        padding: 0 !important;
+        width: 228.2px !important;
+    }
+
+    .insta-gallery-image-mask{
+        background: none !important;
+        &:hover{
+            background: none !important;
+        }
+    }
+
+    .insta-gallery-icon, .qligg-icon-instagram, .qligg-icon-gallery{
+        display: none !important;
+    }
 }
