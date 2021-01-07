@@ -7,6 +7,7 @@
         </div>
       </div>
       <div class="gallery-module">
+        <?php echo do_shortcode('[insta-gallery id="5"]');?>
         <?php 
           $gallery = get_field('picture', 'option');
           if($gallery):
