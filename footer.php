@@ -8,17 +8,6 @@
       </div>
       <div class="gallery-module">
         <?php echo do_shortcode('[insta-gallery id="5"]');?>
-        <?php 
-          $gallery = get_field('picture', 'option');
-          if($gallery):
-          foreach ($gallery as $ga): ?>
-            <div class="img-wrapper">
-              <img src="<?= $ga ?>" alt="img" >
-            </div>
-          <?php endforeach;
-          endif;
-        ?>
-
       </div>
       <div class="footer">
         <div class="footer__container">
