@@ -117,7 +117,10 @@ html {
     }
     
     .insta-gallery-feed{
-        width: 99.6% !important;
+        width: 98.6% !important;
+        @include mq(tablet){
+            width: 99.6% !important;
+        }
     }
 
     .insta-gallery-image-mask{
