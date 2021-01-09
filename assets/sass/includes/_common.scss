@@ -115,13 +115,6 @@ html {
     .qligg-mfp-wrap{
         width: 100% !important;
     }
-    
-    .insta-gallery-feed{
-        width: 98.6% !important;
-        @include mq(tablet){
-            width: 99.6% !important;
-        }
-    }
 
     .insta-gallery-image-mask{
         background: none !important;
@@ -136,5 +129,9 @@ html {
 
     .insta-gallery-actions{
         display: none !important;
+    }
+
+    .insta-gallery-list{
+        margin: 0 !important;
     }
 }
