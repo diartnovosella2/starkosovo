@@ -82,7 +82,9 @@
                 line-height: 137.5%;
                 margin-bottom: 32px;
                 margin-bottom: 37px !important;
+                text-align: center;
                 @include mq(laptop) {
+                    text-align: left;
                     margin-bottom: 0;
                 }
             }
