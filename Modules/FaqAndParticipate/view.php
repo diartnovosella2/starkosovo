@@ -30,7 +30,7 @@
         <?php } ?>
     </div>
     <?php if( $data['choose_design'] !== 'FAQ') { ?>  
-        <div>
+        <div class="mb-3">
             <button class="apply__button mt-3"> 
                 <?php if (strlen($data['register_url']) !== 0 ) { ?>
                     <a href="<?= $data['register_url'];?>"><?= $data['register_text'];?></a>
