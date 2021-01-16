@@ -1,6 +1,6 @@
       </div> <!-- .container -->
     </main> <!-- .module-page -->
-    <footer>
+    <footer class="<?php if(is_front_page()) echo 'main-home-footer'; ?>">
       <div class="container">
         <div class="follow-us">
           <span>FOLLOW US @STARKOSOVA</span>
