@@ -11,7 +11,7 @@
             <img class="text__centered__content__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/world.svg" alt="World">
             <div class="d-flex flex-column align-items-center text-center text__centered__content">
                 <h2>REGISTER NOW</h2>
-                <p style="width: 61%;">After we receive and review your information, we will contact you about the following procedures.</p>
+                <p class="register-paragraph">After we receive and review your information, we will contact you about the following procedures.</p>
             </div>
         </div>
 
