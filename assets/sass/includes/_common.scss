@@ -101,9 +101,10 @@ html {
         } 
     }
 
-    @media (min-width: 992px) {
-        .es-field-wrap{
-            margin: 0 !important;
+    .es-field-wrap{
+        margin: 0 !important;
+        @include mq(laptop){
+            margin: 0 0 0.6em 0 !important;
         }
     }
     
@@ -136,6 +137,18 @@ html {
     }
 
     .insta-gallery-list{
+        margin: 0 !important;
+    }
+
+    .single-article-module{
+        .module-title{
+            @include mq(laptop){
+                width: 422px !important;
+            }
+        }
+    }
+
+    label{
         margin: 0 !important;
     }
 }

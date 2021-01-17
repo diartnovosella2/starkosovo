@@ -25,9 +25,6 @@
                 <?php 
                     echo do_shortcode('[email-subscribers-form id="2"]');    
                 ?>
-                <div class="single-p-m">
-                    <p>We hate spam as much as you do!</p>
-                </div>
             </div>
             <div class="single-p-d">
                 <p>We hate spam as much as you do!</p>
