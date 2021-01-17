@@ -105,11 +105,11 @@
           
             .job-header{
                 background: #FFFFFF;
-                border: 1px solid rgba(210, 213, 219, 0.35);
-                border-radius: 4px;
-                margin: 0 0 28px 0;
+                margin: -30px -28px 28px -28px;
                 @include mq(tablet){
                     margin: 0 20px 0 0;
+                    border: 1px solid rgba(210, 213, 219, 0.35);
+                    border-radius: 4px;
                 }
                 .featured-img{
                     width: 100%;

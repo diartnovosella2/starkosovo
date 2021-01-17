@@ -62,4 +62,10 @@ jQuery(document).ready(function ($) {
             $(this).attr("type", "text");
         });
     }
+
+
+    if( $(window).width() < 768){
+        var txt1 = "<div class='single-p-m'><p>We hate spam as much as you do!</p></div>";   
+        $('.es-field-wrap').append(txt1);
+    }
 });
