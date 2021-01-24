@@ -17,7 +17,7 @@
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 
-    Global Site Tag: <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVSKXGJ74T"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
