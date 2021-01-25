@@ -30,13 +30,13 @@
             box-sizing: border-box;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
             margin: 0 -15px;
-            @include mq(tablet){
+            @include mq(tablet) {
                 margin: unset;
             }
             &__data {
                 border-bottom: 1px solid #E5E5E5;
                 padding-bottom: 24px;
-                @include mq(tablet){
+                @include mq(tablet) {
                     border-bottom: unset;
                     padding-bottom: unset;
                     min-width: 434px;
@@ -47,7 +47,7 @@
                     border-radius: 4px;
                     padding: 25px;
                     margin-right: 12px;
-                    @include mq(laptop){
+                    @include mq(laptop) {
                         margin-right: 29px;
                     }
                 }
@@ -59,7 +59,7 @@
                     color: $darkBlue;
                 }
                 .job__title {
-                    font-style: italic;
+                    // font-style: italic;
                     font-weight: 750;
                     font-size: 20px;
                     line-height: 103%;
@@ -96,7 +96,7 @@
                     padding-top: 17px;
                     font-size: 12px;
                     margin-bottom: 5px !important;
-                    @include mq(laptop){
+                    @include mq(laptop) {
                         padding-top: 0;
                     }
                 }
@@ -148,7 +148,7 @@
             input {
                 font-family: $font-family-base;
                 color: white;
-                font-style: italic;
+                // font-style: italic;
                 font-weight: 750;
                 font-size: 14px;
                 line-height: 17px;
@@ -224,38 +224,37 @@
     transform: rotate(90deg);
 }
 
-.mobile-trip{
+.mobile-trip {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 33px;
-    @include mq(laptop){
+    @include mq(laptop) {
         display: unset;
         justify-content: unset;
         align-items: unset;
         margin-top: unset;
     }
-
-    .apply__button{
+    .apply__button {
         padding: 9.5px 21px;
     }
 }
 
-.desktop-details{
+.desktop-details {
     display: none;
-    @include mq(laptop){
+    @include mq(laptop) {
         display: block;
     }
 }
 
-.mobile-details{
-    @include mq(laptop){
+.mobile-details {
+    @include mq(laptop) {
         display: none;
     }
 }
 
-.positions{
-    span{
+.positions {
+    span {
         margin-top: 16px;
         color: #1e5c6b;
         opacity: .5;
@@ -265,9 +264,9 @@
     }
 }
 
-.seperator{
+.seperator {
     display: none;
-    @include mq(laptop){
+    @include mq(laptop) {
         display: block;
         border: 1px solid #E5E5E5;
     }
