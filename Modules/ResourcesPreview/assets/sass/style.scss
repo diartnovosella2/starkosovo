@@ -1,68 +1,67 @@
-.resources-preview-container{
+.resources-preview-container {
     margin-top: 31px;
-    @include mq(tablet){
+    @include mq(tablet) {
         margin-top: 100px;
     }
-    .resources-header{
+    .resources-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
-        @include mq(tablet){
+        @include mq(tablet) {
             flex-direction: row;
         }
-        .resources-info{
-          @include max(767){
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-          }
-            .resources-title{
-                span{
+        .resources-info {
+            @include max(767) {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            .resources-title {
+                span {
                     font-family: $font-family-base;
-                    font-style: italic;
+                    // font-style: italic;
                     font-weight: 900;
                     font-size: 30px;
                     color: #1E5C6B;
                     text-transform: uppercase;
-                    @include mq(tablet){
+                    @include mq(tablet) {
                         font-size: 35px;
                     }
                 }
             }
-            .resources-description{
+            .resources-description {
                 width: 255px;
                 margin-top: 45px;
-                @include mq(tablet){
+                @include mq(tablet) {
                     width: unset;
                     margin: 0;
                 }
-                p{
+                p {
                     font-style: normal;
                     font-weight: 550;
                     font-size: 14px;
                     line-height: 21px;
                     color: #000000;
                     text-align: center;
-                    @include mq(tablet){
+                    @include mq(tablet) {
                         text-align: left;
                         width: 99%;
                     }
                 }
             }
         }
-
-        .header-button{
+        .header-button {
             margin-top: 32px;
-            @include mq(tablet){
-               margin: 0;
+            @include mq(tablet) {
+                margin: 0;
             }
-            a{
-                &:hover{
+            a {
+                &:hover {
                     text-decoration: none;
                 }
-                .blog-btn{
+                .blog-btn {
                     width: 109px;
                     height: 50px;
                     background: #EB7466;
@@ -75,56 +74,54 @@
                     font-weight: 900;
                     font-size: 14px;
                     font-style: italic;
-                    span{
+                    span {
                         font-family: $font-family-base;
                     }
                 }
             }
         }
     }
-
-    .articles-container{
+    .articles-container {
         display: flex;
         flex-wrap: wrap;
         margin-top: 50px;
-        @include mq(tablet){
+        @include mq(tablet) {
             margin-top: 46px;
             flex-wrap: unset;
         }
-        .article-card{
+        .article-card {
             margin-top: 32px;
             width: 100%;
-            &:first-child{
+            &:first-child {
                 margin-top: 0;
             }
-            @include mq(tablet){
+            @include mq(tablet) {
                 margin: 0 38px 0 0;
                 width: 32%;
-                &:last-child{
+                &:last-child {
                     margin-right: 0;
                 }
             }
-            .article-header{
+            .article-header {
                 margin: 0px -30px;
-                @include mq(tablet){
+                @include mq(tablet) {
                     margin: 0;
                 }
-                .article-image{
-                    img{
+                .article-image {
+                    img {
                         width: 100%;
                     }
                 }
             }
-
-            .article-body{
+            .article-body {
                 min-height: 155px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                .article-title{
+                .article-title {
                     padding-top: 29px;
                     min-height: 77px;
-                    span{
+                    span {
                         font-style: italic;
                         font-weight: 900;
                         font-size: 18px;
@@ -134,9 +131,9 @@
                         font-family: $font-family-base;
                     }
                 }
-                .article-description{
+                .article-description {
                     margin-top: 10px;
-                    span{
+                    span {
                         font-style: normal;
                         font-weight: 550;
                         font-size: 14px;
@@ -145,19 +142,17 @@
                         opacity: 0.5;
                     }
                 }
-
-                .article-btn{
+                .article-btn {
                     padding-top: 47px;
-                    @include mq(tablet){
-                        padding-top:30px;
+                    @include mq(tablet) {
+                        padding-top: 30px;
                     }
-                    
-                    a{
-                        &:hover{
+                    a {
+                        &:hover {
                             text-decoration: none;
                         }
-                        .read-more-btn{
-                            span{
+                        .read-more-btn {
+                            span {
                                 font-style: italic;
                                 font-weight: 900;
                                 font-size: 14px;
@@ -173,8 +168,7 @@
             }
         }
     }
-
-    .art-container{
+    .art-container {
         margin-top: 30px;
     }
 }
