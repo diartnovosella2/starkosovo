@@ -1,40 +1,39 @@
 .avaliable-jobs-container {
     margin-top: 32px;
-    @include mq(tablet){
+    @include mq(tablet) {
         margin-top: 100px;
     }
-    .module-header{
+    .module-header {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
         align-items: center;
         height: 132px;
-        @include mq(laptop){
+        @include mq(laptop) {
             flex-direction: row;
             height: unset;
         }
-        .module-info{
-            .module-title{
-                span{
+        .module-info {
+            .module-title {
+                span {
                     font-family: 'Futura';
-                    font-style: italic;
                     font-weight: 900;
                     font-size: 32px;
                     color: #1E5C6B;
-                    @include mq(tablet){
+                    @include mq(tablet) {
                         font-size: 35px;
                     }
                 }
             }
-            .module-desc{
+            .module-desc {
                 display: flex;
                 justify-content: center;
                 margin: 8px 0px 19px;
-                @include mq(tablet){
+                @include mq(tablet) {
                     display: unset;
                     justify-content: unset;
                 }
-                span{
+                span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: 550;
@@ -44,15 +43,14 @@
                 }
             }
         }
-
-        .header-button{
-            a{
+        .header-button {
+            a {
                 color: white;
                 font-weight: 700;
-                &:hover{
+                &:hover {
                     text-decoration: none;
                 }
-                .jobs-btn{
+                .jobs-btn {
                     background: #399EAC;
                     border-radius: 4px;
                     width: 189px;
@@ -60,27 +58,25 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-style: italic;
                     font-weight: 750;
                     font-size: 14px;
-                    span{
+                    span {
                         font-family: 'Futura';
                     }
                 }
             }
         }
     }
-    .jobs-container{
+    .jobs-container {
         display: flex;
         flex-direction: column;
         margin-top: 48px;
         margin-bottom: 17px;
-        @include mq(tablet){
+        @include mq(tablet) {
             flex-direction: row;
             margin-top: 24px;
         }
-
-        .job-card{
+        .job-card {
             width: 100%;
             background: #FFFFFF;
             border: 1px solid rgba(210, 213, 219, 0.35);
@@ -90,30 +86,29 @@
             flex-direction: column;
             justify-content: center;
             margin: 0 0 24px 0;
-            &:last-child{
+            &:last-child {
                 margin: 0;
             }
-            @include mq(laptop){
+            @include mq(laptop) {
                 margin: 0 13px 0 0;
                 flex-direction: row;
                 align-items: center;
                 height: 224px;
-                &:last-child{
+                &:last-child {
                     margin: 0;
                 }
             }
-          
-            .job-header{
+            .job-header {
                 background: #FFFFFF;
                 margin: -30px -28px 28px -28px;
-                @include mq(tablet){
+                @include mq(tablet) {
                     margin: 0 20px 0 0;
                     border: 1px solid rgba(210, 213, 219, 0.35);
                     border-radius: 4px;
                 }
-                .featured-img{
+                .featured-img {
                     width: 100%;
-                    @include mq(tablet){
+                    @include mq(tablet) {
                         width: 152px;
                     }
                     height: 155px;
@@ -122,29 +117,28 @@
                     align-items: center;
                 }
             }
-            .job-body{
+            .job-body {
                 display: flex;
                 flex-direction: column;
-                @include mq(laptop){
+                @include mq(laptop) {
                     justify-content: space-between;
                     min-height: 144px;
                 }
-                .owner{
+                .owner {
                     font-style: normal;
                     font-weight: 500;
                     font-size: 12px;
                     color: #1E5C6B;
                 }
-                .title{
+                .title {
                     font-family: Futura;
-                    font-style: italic;
                     font-weight: 750;
                     font-size: 20px;
                     color: #1E5C6B;
                     line-height: 103%;
                 }
-                .location-div{
-                    .location{
+                .location-div {
+                    .location {
                         font-style: normal;
                         font-weight: bold;
                         font-size: 12px;
@@ -152,9 +146,9 @@
                         margin-left: 8px;
                     }
                 }
-                .price-div{
+                .price-div {
                     margin: 10px 0 0 3px;
-                    .cost{
+                    .cost {
                         font-style: normal;
                         font-weight: bold;
                         font-size: 12px;
@@ -162,8 +156,7 @@
                         margin-left: 8px;
                     }
                 }
-               
-                .positions{
+                .positions {
                     margin-top: 16px;
                     color: #1E5C6B;
                     opacity: 0.5;

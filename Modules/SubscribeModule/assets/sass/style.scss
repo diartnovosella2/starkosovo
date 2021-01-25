@@ -1,7 +1,7 @@
 .subscribe-module {
     border-top: 1px solid rgba(30, 92, 107, 0.2);
     height: 487px;
-    @include mq(tablet){
+    @include mq(tablet) {
         height: 338px;
         border-bottom: 1px solid rgba(30, 92, 107, 0.2);
     }
@@ -9,22 +9,21 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    .title{
-        p{
+    .title {
+        p {
             font-family: "Futura";
-            font-style: italic;
             font-weight: 900;
             line-height: 103%;
             text-align: center;
             color: #1E5C6B;
             font-size: 28px;
-            @include mq(tablet){
+            @include mq(tablet) {
                 font-size: 35px;
             }
         }
     }
-    .description{
-        p{
+    .description {
+        p {
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: bold;
@@ -33,28 +32,27 @@
             text-align: center;
             color: #000000;
             padding: 32px 0px 26px;
-            @include mq(tablet){
+            @include mq(tablet) {
                 width: 68%;
                 margin: 0 auto;
                 padding: 11px 0px;
             }
         }
     }
-
-    .sub-wrapper{
+    .sub-wrapper {
         display: flex;
         flex-direction: column;
         margin-top: 4px;
-        .subscribe-form{
-            .es_subscription_form{
+        .subscribe-form {
+            .es_subscription_form {
                 display: flex;
                 flex-direction: column;
-                @include mq(tablet){
+                @include mq(tablet) {
                     flex-direction: row;
                 }
             }
-            .emaillist{
-                .es_txt_email{
+            .emaillist {
+                .es_txt_email {
                     width: 303px;
                     height: 50px;
                     border: 0;
@@ -64,29 +62,26 @@
                     outline: none;
                     font-weight: 550;
                     font-size: 14px;
-                    @include mq(tablet){
+                    @include mq(tablet) {
                         margin-right: 10px;
                     }
                 }
-                ::placeholder {
+                 ::placeholder {
                     color: #1E5C6B;
-                    opacity: 1; 
-                  }
-                  
-                  :-ms-input-placeholder { 
+                    opacity: 1;
+                }
+                 :-ms-input-placeholder {
                     color: #1E5C6B;
-                  }
-                  
-                  ::-ms-input-placeholder { 
+                }
+                 ::-ms-input-placeholder {
                     color: #1E5C6B;
-                  }
-
-                  .es_submit_button{
+                }
+                .es_submit_button {
                     background: #1E5C6B;
                     border-radius: 4px;
                     color: white;
                     width: 100%;
-                    @include mq(tablet){
+                    @include mq(tablet) {
                         width: 152px;
                     }
                     height: 50px;
@@ -96,16 +91,14 @@
                     text-transform: uppercase;
                     font-weight: 900;
                     font-family: "Futura";
-                    font-style: italic;
                     border: none;
-                    &:focus{
+                    &:focus {
                         outline: none;
                         border: none;
                     }
-                  }
+                }
             }
-
-            .es_spinner_image{
+            .es_spinner_image {
                 display: none !important;
             }
         }
