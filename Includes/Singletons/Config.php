@@ -81,15 +81,15 @@ class Config extends _Config
     public function taxonomies($child_array = [])
     {
         
-        $child_array = array(
-            array(
-                'name'     => 'application-type',
-                'singular' => 'Application Type',
-                'plural'   => 'Application Types',
-                'posttype' => 'application',
-                'rewrite'  => 'applications/category',
-            ),
-        );
+        // $child_array = array(
+        //     array(
+        //         'name'     => 'application-type',
+        //         'singular' => 'Application Type',
+        //         'plural'   => 'Application Types',
+        //         'posttype' => 'application',
+        //         'rewrite'  => 'applications/category',
+        //     ),
+        // );
 
         return parent::taxonomies($child_array);
     }
