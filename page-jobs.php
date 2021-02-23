@@ -7,7 +7,8 @@
         'posts_per_page' =>  10,
         'orderby'        => 'publish_date',
         'order'          => 'DESC',
-        'fields'         => 'ids'
+        'fields'         => 'ids',
+        'supports'       => array( 'title', 'revisions', 'thumbnail', )
     );
     $query = new WP_Query($args);
     $posts_array = (array)$query;
