@@ -12,6 +12,13 @@
     $query = new WP_Query($args);
     $posts_array = (array)$query;
     $jobs = $posts_array['posts'];
+
+    foreach($jobs as $jobId) { 
+        $price     = get_field('price_per_hour', $jobId);
+        $city      = get_field('city', $jobId);
+        $state     = get_field('state', $jobId);
+        $employee     = get_field('employee', $jobId);
+    }
 ?>
 
 <div class="jobs">

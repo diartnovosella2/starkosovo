@@ -55,6 +55,14 @@ class Config extends _Config
                 'rewrite'  => 'applications'
             ),
             array(
+                'name'     => 'test',
+                'singular' => array('test', 'test'),
+                'plural'   => array('tests', 'tests'),
+                'supports' => array('title', 'thumbnail', 'revisions'),
+                'order'    => 5,
+                'rewrite'  => 'tests'
+            ),
+            array(
                 'name'     => 'registration',
                 'singular' => array('Registration', 'registration'),
                 'plural'   => array('Registrations', 'registrations'),
