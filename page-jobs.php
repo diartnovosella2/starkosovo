@@ -2,7 +2,7 @@
     /* Template Name: Job Application */
     get_header(); 
     $args = array(
-        'post_type'      => 'job',
+        'post_type'      => 'application',
         'post_status'    => 'publish',
         'posts_per_page' =>  10,
         'orderby'        => 'publish_date',
