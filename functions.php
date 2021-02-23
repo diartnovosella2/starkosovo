@@ -458,7 +458,7 @@ function gallery_fields(){
     endif;
 }
 
-add_theme_support( 'post-thumbnails', array( 'job') );
+add_theme_support( 'post-thumbnails', array( 'application') );
 
 function short_content($content, $len){
     if (strlen($content) > $len){
@@ -591,7 +591,7 @@ function filter_jobs() {
     $jobQueru    = $jobTitle !== '' ? $meta_args[] = array('key' => 'job_position', 'value' => $jobTitle, 'compare' => 'LIKE')   : null;
 
     $args = array(
-        'post_type'       => 'job',
+        'post_type'       => 'application',
         'post_status'     => 'publish',
         'posts_per_page'  =>  -1,
         'orderby'         => 'publish_date',

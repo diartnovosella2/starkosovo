@@ -55,14 +55,6 @@ class Config extends _Config
                 'rewrite'  => 'applications'
             ),
             array(
-                'name'     => 'job',
-                'singular' => array('Job', 'job'),
-                'plural'   => array('Jobs', 'jobs'),
-                'supports' => array('title', 'thumbnail', 'revisions'),
-                'order'    => 5,
-                'rewrite'  => 'jobs'
-            ),
-            array(
                 'name'     => 'registration',
                 'singular' => array('Registration', 'registration'),
                 'plural'   => array('Registrations', 'registrations'),
