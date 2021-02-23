@@ -50,6 +50,10 @@
                     @include mq(laptop) {
                         margin-right: 29px;
                     }
+                    img {
+                        width: 105px;
+                        height: 75px;
+                    }
                 }
                 .job__name {
                     font-style: normal;
