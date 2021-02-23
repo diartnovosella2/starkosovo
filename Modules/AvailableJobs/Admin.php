@@ -212,7 +212,7 @@ class Admin
                         'id' => '',
                     ),
                     'post_type' => array(
-                        0 => 'application',
+                        0 => 'job',
                     ),
                     'taxonomy' => '',
                     'filters' => array(
