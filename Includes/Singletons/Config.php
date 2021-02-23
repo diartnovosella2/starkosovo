@@ -50,7 +50,7 @@ class Config extends _Config
                 'name'     => 'application',
                 'singular' => array('Application', 'application'),
                 'plural'   => array('Applications', 'applications'),
-                'supports' => array('title', 'thumbnail', 'revisions'),
+                'supports' => array('title', 'revisions'),
                 'order'    => 5,
                 'rewrite'  => 'applications'
             ),
