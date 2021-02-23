@@ -13,12 +13,31 @@
     $posts_array = (array)$query;
     $jobs = $posts_array['posts'];
 
+    $statesArray   = [];
+    $cityArray     = [];
+    $employeeArray = [];
+    $priceArray    = [];
+    $jobPositions    = [];
+
     foreach($jobs as $jobId) { 
         $price     = get_field('price_per_hour', $jobId);
         $city      = get_field('city', $jobId);
         $state     = get_field('state', $jobId);
-        $employee     = get_field('employee', $jobId);
+        $employee  = get_field('job_name', $jobId);
+        $jobPosition  = get_field('job_position', $jobId);
+        
+        $priceArray[]    = $price;
+        $statesArray[]   = $city;
+        $cityArray[]     =  $state;
+        $employeeArray[] = $employee;
+        $jobPositions[] = $jobPosition;
     }
+
+    $priceArray = array_unique($priceArray);
+    $statesArray = array_unique($statesArray);
+    $cityArray = array_unique($cityArray);
+    $employeeArray = array_unique($employeeArray);
+    $jobPositions = array_unique($jobPositions);
 ?>
 
 <div class="jobs">
@@ -42,13 +61,15 @@
                         <div class="d-flex my-2">
                             <select name="city" id="city">
                                 <option selected>City</option>
-                                <option value="Pristina">Pristina</option>
-                                <option value="Peja">Peja</option>
+                                <?php foreach($cityArray as $city) {  ?>
+                                    <option value="<?= $city; ?>"><?= $city; ?></option>
+                                <?php } ?>
                             </select>
                             <select name="state" id="state">
                                 <option selected>State</option>
-                                <option value="Kosova">Kosova</option>
-                                <option value="Albania">Albania</option>
+                                <?php foreach($statesArray as $state) {  ?>
+                                    <option value="<?= $state; ?>"><?= $state; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
@@ -57,8 +78,9 @@
                         <div class="d-flex my-2">
                             <select name="employee" id="employee">
                                 <option selected>Employee</option>
-                                <option value="Vodafone">Vodafone</option>
-                                <option value="Starlabs">Starlabs</option>
+                                <?php foreach($employeeArray as $employee) {  ?>
+                                    <option value="<?= $employee; ?>"><?= $employee; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
@@ -67,10 +89,9 @@
                         <div class="d-flex my-2">
                             <select name="job_name" id="job_name">
                                 <option selected>Job Position</option>
-                                <option value="Web Developer">Web Developer</option>
-                                <option value="Product Designer">Product Designer</option>
-                                <option value="Programmer">Programmer</option>
-                                <option value="Networking">Networking</option>
+                                <?php foreach($jobPositions as $jobPosition) {  ?>
+                                    <option value="<?= $jobPosition; ?>"><?= $jobPosition; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
@@ -79,10 +100,9 @@
                         <div class="d-flex my-2">
                             <select name="salary" id="salary">
                                 <option selected>Hours</option>
-                                <option value="15">$15</option>
-                                <option value="20">$20</option>
-                                <option value="40">$40</option>
-                                <option value="60">$60</option>
+                                <?php foreach($priceArray as $price) {  ?>
+                                    <option value="<?= $price; ?>"><?= $price; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
