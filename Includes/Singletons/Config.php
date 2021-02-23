@@ -55,12 +55,12 @@ class Config extends _Config
                 'rewrite'  => 'applications'
             ),
             array(
-                'name'     => 'test',
-                'singular' => array('test', 'test'),
-                'plural'   => array('tests', 'tests'),
+                'name'     => 'job',
+                'singular' => array('Job', 'job'),
+                'plural'   => array('Jobs', 'jobs'),
                 'supports' => array('title', 'thumbnail', 'revisions'),
                 'order'    => 5,
-                'rewrite'  => 'tests'
+                'rewrite'  => 'jobs'
             ),
             array(
                 'name'     => 'registration',
@@ -81,15 +81,15 @@ class Config extends _Config
     public function taxonomies($child_array = [])
     {
         
-        // $child_array = array(
-        //     array(
-        //         'name'     => 'application-type',
-        //         'singular' => 'Application Type',
-        //         'plural'   => 'Application Types',
-        //         'posttype' => 'application',
-        //         'rewrite'  => 'applications/category',
-        //     ),
-        // );
+        $child_array = array(
+            // array(
+            //     'name'     => 'application-type',
+            //     'singular' => 'Application Type',
+            //     'plural'   => 'Application Types',
+            //     'posttype' => 'application',
+            //     'rewrite'  => 'applications/category',
+            // ),
+        );
 
         return parent::taxonomies($child_array);
     }
