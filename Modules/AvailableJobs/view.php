@@ -9,7 +9,7 @@
 switch($data['selector']){
     case 'latest':
         $args = array(
-            'post_type'      => 'job',
+            'post_type'      => 'application',
             'post_status'    => 'publish',
             'posts_per_page' => 3,
             'orderby'        => 'publish_date',
@@ -21,7 +21,7 @@ switch($data['selector']){
         break;
     case 'manual':
         $args = array(
-            'post_type'      => 'job',
+            'post_type'      => 'application',
             'post_status'    => 'publish',
             'post__in'       => $data['manual_jobs'],
             'orderby'        => 'publish_date',
