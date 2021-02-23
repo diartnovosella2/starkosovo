@@ -458,6 +458,8 @@ function gallery_fields(){
     endif;
 }
 
+add_theme_support( 'post-thumbnails', array( 'application') );
+
 function short_content($content, $len){
     if (strlen($content) > $len){
       $content = substr($content, 0, $len);
