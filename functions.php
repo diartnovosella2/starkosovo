@@ -461,7 +461,6 @@ function gallery_fields(){
 add_action('init', 'addJobFields');
 function addJobFields() {
     if( function_exists('acf_add_local_field_group') ):
-
         acf_add_local_field_group(array(
             'key' => 'group_5fa9b3c5b45d6',
             'title' => 'Job Fields',
@@ -623,6 +622,25 @@ function addJobFields() {
                     ),
                 ),
                 array(
+                    'key' => 'field_605d1cf83ab57',
+                    'label' => 'Positions Available',
+                    'name' => 'positions_available',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '50',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => 1,
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
                     'key' => 'field_5fdf93d084a75',
                     'label' => 'Job Position (This fills by itself on update so please don\'t type anything)',
                     'name' => 'job_position',
@@ -631,7 +649,7 @@ function addJobFields() {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
-                        'width' => '',
+                        'width' => '50',
                         'class' => '',
                         'id' => '',
                     ),
@@ -650,20 +668,6 @@ function addJobFields() {
                         'value' => 'application',
                     ),
                 ),
-                array(
-                    array(
-                        'param' => 'post_type',
-                        'operator' => '==',
-                        'value' => 'post',
-                    ),
-                ),
-                array(
-                    array(
-                        'param' => 'post_type',
-                        'operator' => '==',
-                        'value' => 'post',
-                    ),
-                ),
             ),
             'menu_order' => 0,
             'position' => 'acf_after_title',
@@ -674,8 +678,7 @@ function addJobFields() {
             'active' => true,
             'description' => '',
         ));
-        
-        endif;
+    endif;
 }
 
 add_theme_support( 'post-thumbnails', array( 'application') );
@@ -817,7 +820,7 @@ function filter_jobs() {
         'order'           => 'DESC',
         'fields'          => 'ids',
         'meta_query'	  => array(
-            'relation'  => 'AND',
+            'relation'  => 'OR',
             $meta_args
         ),
     );
@@ -835,6 +838,7 @@ function filter_jobs() {
         $city         = get_field('city', $jobId);
         $state        = get_field('state', $jobId);
         $subtitle     = get_field('subtitle', $jobId);
+        $positionsAvailable = get_field('positions_available', $jobId);
         $jobTitle     = get_the_title($jobId);
 
         $filterJobs['thumbnail']    = $thumbnail;
@@ -847,6 +851,7 @@ function filter_jobs() {
         $filterJobs['description']  = $description;
         $filterJobs['price']        = $price;
         $filterJobs['jobUrl']       = get_home_url() . '/registration-form/?id=' . $jobId;
+        $filterJobs['positionAvailable'] = $positionsAvailable;
         array_push($jobsArray, $filterJobs);
     };
     echo json_encode($jobsArray);

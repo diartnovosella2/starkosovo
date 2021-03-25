@@ -32,6 +32,10 @@
             margin: 0 -15px;
             @include mq(tablet) {
                 margin: unset;
+                flex-direction: column !important;
+            }
+            @include mq(laptop) {
+                flex-direction: row !important;
             }
             &__data {
                 border-bottom: 1px solid #E5E5E5;
@@ -39,7 +43,7 @@
                 @include mq(tablet) {
                     border-bottom: unset;
                     padding-bottom: unset;
-                    min-width: 434px;
+                    width: 434px;
                 }
                 &__img {
                     border: 1px solid $lightGray;
