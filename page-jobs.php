@@ -127,8 +127,7 @@
                 $state     = get_field('state', $jobId);
                 $subtitle  = get_field('subtitle', $jobId);
                 $jobTitle  = get_the_title($jobId);
-                $positions_a = get_field('positions_avaliable', $jobId);
-
+                $positions_available = get_field('positions_available', $jobId);
             ?> 
                 <div class="jobs__container__single d-flex flex-column flex-md-row justify-content-between mb-2 p-3">
                     <div class="jobs__container__single__data d-flex align-items-center">
@@ -154,7 +153,7 @@
                             </div>
                             <?php if( !empty($otherDetails) ) { ?>
                             <div class="positions">
-                                <span><?= $positions_a ?> positions avaliable</span>
+                                <span><?= $positions_available ?> positions avaliable</span>
                             </div>
                             <?php } ?>
                         </div>
