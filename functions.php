@@ -458,8 +458,227 @@ function gallery_fields(){
     endif;
 }
 
-add_theme_support( 'post-thumbnails', array( 'application') );
+add_action('init', 'addJobFields');
+function addJobFields() {
+    if( function_exists('acf_add_local_field_group') ):
 
+        acf_add_local_field_group(array(
+            'key' => 'group_5fa9b3c5b45d6',
+            'title' => 'Job Fields',
+            'fields' => array(
+                array(
+                    'key' => 'field_5fa9bfd82669a',
+                    'label' => 'Employee',
+                    'name' => 'job_name',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '20',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5fb82d1cbe847',
+                    'label' => 'City',
+                    'name' => 'city',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '25',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5fb82d22be848',
+                    'label' => 'State',
+                    'name' => 'state',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '20',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5fa9b44e7525c',
+                    'label' => 'Subtitle',
+                    'name' => 'subtitle',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '25',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_5fa9b3e47525b',
+                    'label' => 'Price per Hour',
+                    'name' => 'price_per_hour',
+                    'type' => 'number',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '10',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'min' => 1,
+                    'max' => 500,
+                    'step' => '',
+                ),
+                array(
+                    'key' => 'field_5fa9b45a7525d',
+                    'label' => 'Description',
+                    'name' => 'description',
+                    'type' => 'textarea',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => 4,
+                    'new_lines' => 'wpautop',
+                ),
+                array(
+                    'key' => 'field_5fa9b46c7525e',
+                    'label' => 'Other Details',
+                    'name' => 'other_details',
+                    'type' => 'repeater',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'collapsed' => '',
+                    'min' => 0,
+                    'max' => 0,
+                    'layout' => 'row',
+                    'button_label' => '',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_5fa9b47d7525f',
+                            'label' => 'Name',
+                            'name' => 'name',
+                            'type' => 'text',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'default_value' => '',
+                            'placeholder' => '',
+                            'prepend' => '',
+                            'append' => '',
+                            'maxlength' => '',
+                        ),
+                    ),
+                ),
+                array(
+                    'key' => 'field_5fdf93d084a75',
+                    'label' => 'Job Position (This fills by itself on update so please don\'t type anything)',
+                    'name' => 'job_position',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'application',
+                    ),
+                ),
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'post',
+                    ),
+                ),
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'post',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'acf_after_title',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        
+        endif;
+}
+
+add_theme_support( 'post-thumbnails', array( 'application') );
 function short_content($content, $len){
     if (strlen($content) > $len){
       $content = substr($content, 0, $len);
