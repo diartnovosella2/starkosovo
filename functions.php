@@ -461,6 +461,7 @@ function gallery_fields(){
 add_action('init', 'addJobFields');
 function addJobFields() {
     if( function_exists('acf_add_local_field_group') ):
+
         acf_add_local_field_group(array(
             'key' => 'group_5fa9b3c5b45d6',
             'title' => 'Job Fields',
@@ -471,7 +472,7 @@ function addJobFields() {
                     'name' => 'job_name',
                     'type' => 'text',
                     'instructions' => '',
-                    'required' => 0,
+                    'required' => 1,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '20',
@@ -490,7 +491,7 @@ function addJobFields() {
                     'name' => 'city',
                     'type' => 'text',
                     'instructions' => '',
-                    'required' => 0,
+                    'required' => 1,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '25',
@@ -509,7 +510,7 @@ function addJobFields() {
                     'name' => 'state',
                     'type' => 'text',
                     'instructions' => '',
-                    'required' => 0,
+                    'required' => 1,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '20',
@@ -528,7 +529,7 @@ function addJobFields() {
                     'name' => 'subtitle',
                     'type' => 'text',
                     'instructions' => '',
-                    'required' => 0,
+                    'required' => 1,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '25',
@@ -547,7 +548,7 @@ function addJobFields() {
                     'name' => 'price_per_hour',
                     'type' => 'number',
                     'instructions' => '',
-                    'required' => 0,
+                    'required' => 1,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '10',
@@ -568,7 +569,7 @@ function addJobFields() {
                     'name' => 'description',
                     'type' => 'textarea',
                     'instructions' => '',
-                    'required' => 0,
+                    'required' => 1,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '',
@@ -587,7 +588,7 @@ function addJobFields() {
                     'name' => 'other_details',
                     'type' => 'repeater',
                     'instructions' => '',
-                    'required' => 0,
+                    'required' => 1,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '',
@@ -660,7 +661,7 @@ function addJobFields() {
                     array(
                         'param' => 'post_type',
                         'operator' => '==',
-                        'value' => 'job',
+                        'value' => 'post',
                     ),
                 ),
             ),
@@ -673,6 +674,7 @@ function addJobFields() {
             'active' => true,
             'description' => '',
         ));
+        
         endif;
 }
 
