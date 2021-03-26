@@ -810,7 +810,7 @@ function filter_jobs() {
     $stateQuery  = $state    !== '' ? $meta_args[] = array('key' => 'state', 'value' => $state, 'compare' => 'LIKE')             : null;
     $salaryQuery = $salary   !== '' ? $meta_args[] = array('key' => 'price_per_hour', 'value' => $salary, 'compare' => '=')      : null;
     $empQuery    = $employee !== '' ? $meta_args[] = array('key' => 'job_name', 'value' => $employee, 'compare' => 'LIKE')       : null;
-    $jobQueru    = $jobTitle !== '' ? $meta_args[] = array('key' => 'job_position', 'value' => $jobTitle, 'compare' => 'LIKE')   : null;
+    $jobQuery    = $jobTitle !== '' ? $meta_args[] = array('key' => 'job_position', 'value' => $jobTitle, 'compare' => 'LIKE')   : null;
 
     $args = array(
         'post_type'       => 'application',

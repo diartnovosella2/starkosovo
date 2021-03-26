@@ -279,3 +279,26 @@
         border: 1px solid #E5E5E5;
     }
 }
+
+.page-numbers {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    li {
+        a,
+        span {
+            font-size: 18px;
+            padding: 10px;
+            &:hover {
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+        .page-numbers {
+            color: #EB7466;
+        }
+        .current {
+            color: black;
+        }
+    }
+}
