@@ -1,15 +1,18 @@
 <?php 
     /* Template Name: Job Application */
     get_header(); 
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
     $args = array(
         'post_type'      => 'application',
         'post_status'    => 'publish',
-        'posts_per_page' =>  10,
+        'posts_per_page' =>  5,
         'orderby'        => 'publish_date',
         'order'          => 'DESC',
-        'fields'         => 'ids'
+        'fields'         => 'ids',
+        'paged' => $paged
     );
     $query = new WP_Query($args);
+    $total = $query->max_num_pages;
     $posts_array = (array)$query;
     $jobs = $posts_array['posts'];
 
@@ -199,6 +202,23 @@
                     </div>
                 </div>
             <?php } ?>
+            <?php 
+                if ( $total > 1 )  {
+                    // Get the current page
+                    if ( !$current_page = get_query_var('paged') )
+                        $current_page = 1;
+                    // Structure of “format” depends on whether we’re using pretty permalinks
+                    $format = empty( get_option('permalink_structure') ) ? '&page=%#%' : 'page/%#%/';
+                    echo paginate_links(array(
+                        'base'      => get_pagenum_link(1) . '%_%',
+                        'format'    => $format,
+                        'current'   => $current_page,
+                        'total'     => $total,
+                        'mid_size'  => 4,
+                        'type'      => 'list'
+                    ));
+                } 
+            ?>
         </div>
     </div>
 </div>
