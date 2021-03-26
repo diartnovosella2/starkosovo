@@ -30,8 +30,8 @@
         $jobPosition  = strtolower(get_field('job_position', $jobId));
         
         $priceArray[]    = $price;
-        $statesArray[]   = $city;
-        $cityArray[]     =  $state;
+        $statesArray[]   = $state;
+        $cityArray[]     =  $city;
         $employeeArray[] = $employee;
         $jobPositions[] = ucwords($jobPosition);
     }
