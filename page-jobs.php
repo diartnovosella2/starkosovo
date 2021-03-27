@@ -104,7 +104,7 @@
                             <select name="salary" id="salary">
                                 <option selected>Hours</option>
                                 <?php foreach($priceArray as $price) {  ?>
-                                    <option value="<?= $price; ?>"><?= $price; ?> $</option>
+                                    <option value="<?= $price; ?>"><?= $price; ?> <span>$</span></option>
                                 <?php } ?>
                             </select>
                         </div>
