@@ -20,7 +20,7 @@
     $cityArray     = [];
     $employeeArray = [];
     $priceArray    = [];
-    $jobPositions    = [];
+    $jobPositions  = [];
 
     foreach($jobs as $jobId) { 
         $price     = floatval(get_field('price_per_hour', $jobId));
@@ -29,14 +29,15 @@
         $employee  = get_field('job_name', $jobId);
         $jobPosition  = strtolower(get_field('job_position', $jobId));
         
-        $priceArray[]    = $price;
+        $priceArray[]      = $price;
         $statesArray[]   = $state;
         $cityArray[]     =  $city;
         $employeeArray[] = $employee;
-        $jobPositions[] = ucwords($jobPosition);
+        $jobPositions[]  = ucwords($jobPosition);
     }
 
     $priceArray = array_unique($priceArray);
+    asort($priceArray);
     $statesArray = array_unique($statesArray);
     $cityArray = array_unique($cityArray);
     $employeeArray = array_unique($employeeArray);
