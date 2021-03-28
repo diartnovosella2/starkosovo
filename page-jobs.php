@@ -5,7 +5,7 @@
     $args = array(
         'post_type'      => 'application',
         'post_status'    => 'publish',
-        'posts_per_page' =>  5,
+        'posts_per_page' =>  30,
         'orderby'        => 'publish_date',
         'order'          => 'DESC',
         'fields'         => 'ids',
@@ -37,11 +37,15 @@
     }
 
     $priceArray = array_unique($priceArray);
-    asort($priceArray);
     $statesArray = array_unique($statesArray);
     $cityArray = array_unique($cityArray);
     $employeeArray = array_unique($employeeArray);
     $jobPositions = array_unique($jobPositions);
+    asort($priceArray);
+    asort($statesArray);
+    asort($cityArray);
+    asort($employeeArray);
+    asort($jobPositions);
 ?>
 
 <div class="jobs">
