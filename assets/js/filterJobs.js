@@ -44,6 +44,7 @@ jQuery(document).ready(function ($) {
                     $('.filters__jobs__available').text(jobsAvailable);
                     response.forEach(element => {
                         if (element['otherDetails'] && element['otherDetails'].length !== 0) {
+                            otherDetailsContainer_mobile = `<div class="seperator"></div><div class="jobs__otherDetails mobile-details">`;
                             otherDetailsContainer = `<div class="seperator"></div><div class="jobs__otherDetails desktop-details">`;
                             element['otherDetails'].forEach(details => {
                                 otherDetails = `
@@ -54,8 +55,10 @@ jQuery(document).ready(function ($) {
                                         </svg>
                                         <p>` + details['name'] +`</p> 
                                     </div>`;
+                                otherDetailsContainer_mobile += otherDetails;
                                 otherDetailsContainer += otherDetails;
                             });
+                            otherDetailsContainer_mobile += '</div>';
                             otherDetailsContainer += '</div>';
                         } 
 
@@ -67,7 +70,7 @@ jQuery(document).ready(function ($) {
                         
                         if(element['subtitle']) {
                             subtitleAndDesc = `<div class="seperator"></div>
-                            <div class="jobs__container__single__text w-25">
+                            <div class="jobs__container__single__text">
                                 <p class="jobs__container__single__text__sub" >` + element['subtitle'] +`</p>
                                 <div class="jobs__container__single__text__desc">` + element['description'] +`</div>
                             </div>`;
@@ -99,10 +102,11 @@ jQuery(document).ready(function ($) {
                                 </div>
                             </div>
                             ` + subtitleAndDesc + otherDetailsContainer + `
-                            <div>
-                                <button class="apply__button mt-3"> 
+                            <div class="mobile-trip">
+                                <button class="apply__button"> 
                                     <a href="`+ element['jobUrl'] +`">APPLY NOW</a>
                                 </button>
+                                `+ otherDetailsContainer_mobile +`
                             </div>
                         </div>`;
                         $('.filter__jobs').append(newData);
