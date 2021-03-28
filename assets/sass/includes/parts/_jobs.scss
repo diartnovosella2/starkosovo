@@ -91,6 +91,9 @@
             }
             &__text {
                 width: 100%;
+                @include mq(tablet) {
+                    padding: 0 10px;
+                }
                 @include mq(laptop) {
                     width: 25%;
                 }
@@ -250,7 +253,11 @@
 
 .desktop-details {
     display: none;
+    @include mq(tablet) {
+        padding: 0 10px;
+    }
     @include mq(laptop) {
+        width: 15%;
         display: block;
     }
 }
