@@ -11,10 +11,24 @@
         'fields'         => 'ids',
         'paged' => $paged
     );
+
     $query = new WP_Query($args);
     $total = $query->max_num_pages;
     $posts_array = (array)$query;
     $jobs = $posts_array['posts'];
+
+    $argsForFilters = array(
+        'post_type'      => 'application',
+        'post_status'    => 'publish',
+        'posts_per_page' =>  -1,
+        'orderby'        => 'publish_date',
+        'order'          => 'DESC',
+        'fields'         => 'ids',
+    );
+    
+    $queryWithFilters = new WP_Query($argsForFilters);
+    $posts_array = (array)$queryWithFilters;
+    $jobsFilter = $posts_array['posts'];
 
     $statesArray   = [];
     $cityArray     = [];
@@ -22,11 +36,11 @@
     $priceArray    = [];
     $jobPositions  = [];
 
-    foreach($jobs as $jobId) { 
-        $price     = floatval(get_field('price_per_hour', $jobId));
-        $city      = get_field('city', $jobId);
-        $state     = get_field('state', $jobId);
-        $employee  = get_field('job_name', $jobId);
+    foreach($jobsFilter as $jobId) { 
+        $price        = get_field('price_per_hour', $jobId);
+        $city         = get_field('city', $jobId);
+        $state        = get_field('state', $jobId);
+        $employee     = get_field('job_name', $jobId);
         $jobPosition  = strtolower(get_field('job_position', $jobId));
         
         $priceArray[]      = $price;
@@ -61,7 +75,7 @@
                     <path d="M0.5 0.5L4 4L0.5 7.5" stroke="white"/>
                 </svg>
             </button>
-            <span class="filters__jobs__available text-center d-block d-md-none"></span>
+            <span class="filters__jobs__available text-center text-md-left d-block mb-0 mb-md-2"></span>
             <form id="filterJobs">
                 <div class="filterJobs__container flex-column flex-lg-row">
                     <div class="jobs__filters__select jobs__filters__location">
@@ -109,7 +123,7 @@
                             <select name="salary" id="salary">
                                 <option selected>Hours</option>
                                 <?php foreach($priceArray as $price) {  ?>
-                                    <option value="<?= $price; ?>"><?= $price; ?> <span>$</span></option>
+                                    <option value="<?= $price; ?>"><?= $price; ?><span> $</span></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -160,20 +174,20 @@
                                 </div>
                             </div>
                             <?php if( !empty($otherDetails) ) { ?>
-                            <div class="positions">
-                                <span><?= $positions_available ?> positions avaliable</span>
-                            </div>
+                                <div class="positions">
+                                    <span><?= $positions_available ?> positions avaliable</span>
+                                </div>
                             <?php } ?>
                         </div>
                     </div>
                     <?php if( !empty($subtitle) || !empty($description) ) { ?>
-                    <div class="seperator"></div>
-                    <div class="jobs__container__single__text">
-                        <p class="jobs__container__single__text__sub" ><?= $subtitle; ?></p>
-                        <div class="jobs__container__single__text__desc">
-                            <?= $description; ?>
+                        <div class="seperator"></div>
+                        <div class="jobs__container__single__text">
+                            <p class="jobs__container__single__text__sub" ><?= $subtitle; ?></p>
+                            <div class="jobs__container__single__text__desc">
+                                <?= $description; ?>
+                            </div>
                         </div>
-                    </div>
                     <?php } ?>
                     <?php if( !empty($otherDetails) ) { ?>
                         <div class="seperator"></div>

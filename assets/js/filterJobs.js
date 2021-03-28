@@ -1,6 +1,9 @@
 jQuery(document).ready(function ($) {
     $('#filterJobs').on('submit', function(e) {
         e.preventDefault();
+        var positions_available;
+        var subtitleAndDesc = '';
+
         cityValue   = $('#city').children("option:selected").attr('value');
         stateValue  = $('#state').children("option:selected").attr('value');
         jobName     = $('#job_name').children("option:selected").attr('value');
@@ -40,8 +43,8 @@ jQuery(document).ready(function ($) {
                     jobsAvailable = response.length + jobsValue + ' available within your search';
                     $('.filters__jobs__available').text(jobsAvailable);
                     response.forEach(element => {
-                        if (element['otherDetails'].length !== 0) {
-                            otherDetailsContainer = `<div class="jobs__otherDetails">`;
+                        if (element['otherDetails'] && element['otherDetails'].length !== 0) {
+                            otherDetailsContainer = `<div class="seperator"></div><div class="jobs__otherDetails desktop-details">`;
                             element['otherDetails'].forEach(details => {
                                 otherDetails = `
                                     <div class="jobs__otherDetails__single d-flex align-items-center mb-1"> 
@@ -54,11 +57,25 @@ jQuery(document).ready(function ($) {
                                 otherDetailsContainer += otherDetails;
                             });
                             otherDetailsContainer += '</div>';
+                        } 
+
+                        if(element['positionAvailable'] == 1 || element['positionAvailable'] == null) {
+                            positions_available = `<div class="positions"><span>1 position avaliable</span> </div>`;
+                        } else {
+                            positions_available = `<div class="positions"><span>`+ element['positionAvailable'] +` positions avaliable</span> </div>`;
+                        }
+                        
+                        if(element['subtitle']) {
+                            subtitleAndDesc = `<div class="seperator"></div>
+                            <div class="jobs__container__single__text w-25">
+                                <p class="jobs__container__single__text__sub" >` + element['subtitle'] +`</p>
+                                <div class="jobs__container__single__text__desc">` + element['description'] +`</div>
+                            </div>`;
                         }
                         newData = `
-                        <div class="jobs__container__single d-flex flex-column flex-md-row justify-content-between mb-3 p-3">
+                        <div class="jobs__container__single d-flex flex-column flex-md-row justify-content-between mb-2 p-3">
                             <div class="jobs__container__single__data d-flex align-items-center">
-                                <div class="jobs__container__single__data__img mr-4">
+                                <div class="jobs__container__single__data__img">
                                     ` + element['thumbnail'] +`
                                 </div>
                                 <div>
@@ -77,15 +94,11 @@ jQuery(document).ready(function ($) {
                                             </svg>
                                             <p class="ml-2">` + element['price'] +`/h</p>
                                         </div>
+                                        ` + positions_available + `
                                     </div>
                                 </div>
                             </div>
-        
-                            <div class="jobs__container__single__text w-25">
-                                <p class="jobs__container__single__text__sub" >` + element['subtitle'] +`</p>
-                                <div class="jobs__container__single__text__desc">` + element['description'] +`</div>
-                            </div>
-                            ` + otherDetailsContainer + `
+                            ` + subtitleAndDesc + otherDetailsContainer + `
                             <div>
                                 <button class="apply__button mt-3"> 
                                     <a href="`+ element['jobUrl'] +`">APPLY NOW</a>
