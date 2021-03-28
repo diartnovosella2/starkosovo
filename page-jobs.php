@@ -166,6 +166,7 @@
                             <?php } ?>
                         </div>
                     </div>
+                    <?php if( !empty($subtitle) || !empty($description) ) { ?>
                     <div class="seperator"></div>
                     <div class="jobs__container__single__text">
                         <p class="jobs__container__single__text__sub" ><?= $subtitle; ?></p>
@@ -173,8 +174,9 @@
                             <?= $description; ?>
                         </div>
                     </div>
-                    <div class="seperator"></div>
+                    <?php } ?>
                     <?php if( !empty($otherDetails) ) { ?>
+                        <div class="seperator"></div>
                         <div class="jobs__otherDetails desktop-details"> 
                             <?php foreach ($otherDetails as $details) { ?>
                                 <div class="jobs__otherDetails__single d-flex align-items-center mb-1"> 

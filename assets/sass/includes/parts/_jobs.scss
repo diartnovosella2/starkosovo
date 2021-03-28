@@ -115,6 +115,10 @@
         }
     }
     &__otherDetails {
+        margin-left: 24px;
+        @include mq(tablet) {
+            margin-left: 0;
+        }
         &__single {
             svg {
                 height: 14px;
