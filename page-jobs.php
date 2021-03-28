@@ -221,8 +221,8 @@
                         'total'     => $total,
                         'mid_size'  => 4,
                         'type'      => 'list',
-                        'prev_text' => '<span>Previous</span>',
-                        'next_text' => '<span>Next</span>'
+                        'prev_text' => '<span class="previous_blog">Previous</span>',
+                        'next_text' => '<span class="next_blog">Next</span>'
                     ));
                 } 
             ?>
