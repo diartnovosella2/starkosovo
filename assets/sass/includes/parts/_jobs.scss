@@ -123,8 +123,10 @@
             svg {
                 height: 14px;
                 width: 14px;
+                flex-basis: 10%;
             }
             p {
+                flex-basis: 90%;
                 margin-left: 14px !important;
                 font-weight: normal;
                 font-size: 12px;
