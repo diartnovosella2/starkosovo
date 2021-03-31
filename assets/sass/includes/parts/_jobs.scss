@@ -49,14 +49,14 @@
                     border: 1px solid $lightGray;
                     box-sizing: border-box;
                     border-radius: 4px;
-                    padding: 25px;
+                    padding: 15px;
                     margin-right: 12px;
                     @include mq(laptop) {
                         margin-right: 29px;
                     }
                     img {
-                        width: 105px;
-                        height: 75px;
+                        width: 170px;
+                        height: 120px;
                     }
                 }
                 .job__name {
